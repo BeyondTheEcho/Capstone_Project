@@ -19,7 +19,7 @@ public class ToolManager : MonoBehaviour
 
         foreach (var tool in m_Tools)
         {
-            Instantiate(tool, m_ToolSpawns[i].transform);
+            Instantiate(tool, m_ToolSpawns[i].transform.position, Quaternion.identity);
             
             i++;
         }
