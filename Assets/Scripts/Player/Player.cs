@@ -8,6 +8,8 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
+    private ToolManager m_ToolManager;
+
     private ToolType? m_CurrentTool = null;
     private TMP_Text m_ToolPrompt;
 
@@ -17,6 +19,7 @@ public class Player : MonoBehaviour
     void Awake()
     {
         m_ToolPrompt = GetComponentInChildren<TMP_Text>();
+        m_ToolManager = FindObjectOfType<ToolManager>();
     }
 
     void Update()
@@ -29,6 +32,11 @@ public class Player : MonoBehaviour
                 m_ToolRef.DestroyTool();
                 Debug.Log(m_CurrentTool.ToString());
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            DropTool();
         }
     }
 
@@ -61,7 +69,18 @@ public class Player : MonoBehaviour
 
     void DropTool()
     {
+        int i = 0;
 
+        foreach (var tool in m_ToolManager.m_Tools)
+        {
+            if (m_ToolManager.m_Tools[i].name == m_CurrentTool.ToString())
+            {
+                Instantiate(m_ToolManager.m_Tools[i], transform.position, Quaternion.identity);
+                m_CurrentTool = null;
+            }
+
+            i++;
+        }
     }
 
     public ToolType? GetCurrentTool()
