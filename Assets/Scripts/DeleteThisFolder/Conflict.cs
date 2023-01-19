@@ -6,6 +6,12 @@ public class Conflict : MonoBehaviour
 {
     public void DoPublicStuff()
     {
-        Debug.Log("This Function Does Public Stuff Because Reasons.");
+        Debug.LogError("This Function Dsdfdsfoes Public Stuff Because Reasons.");
+        int newVal = 0;
+
+        if (newVal != 0)
+        {
+            Debug.Log("HEYO!");
+        }
     }
 }
