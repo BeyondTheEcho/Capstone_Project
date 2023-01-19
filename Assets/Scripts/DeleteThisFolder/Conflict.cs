@@ -6,6 +6,6 @@ public class Conflict : MonoBehaviour
 {
     public void DoPublicStuff()
     {
-        Debug.Log("This Function Does Public Stuff Because Reasons.");
+        Debug.LogWarning("DANGER WILL ROBINSON");
     }
 }
