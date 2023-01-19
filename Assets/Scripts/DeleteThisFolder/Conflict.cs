@@ -6,7 +6,7 @@ public class Conflict : MonoBehaviour
 {
     public void DoPublicStuff()
     {
-        Debug.LogError("This Function Dsdfdsfoes Public Stuff Because Reasons.");
+        Debug.LogWarning("DANGER WILL ROBINSON");
         int newVal = 0;
 
         if (newVal != 0)
