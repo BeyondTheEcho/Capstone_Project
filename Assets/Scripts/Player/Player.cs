@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
     public ToolType? m_CurrentTool { get; set; }
 
     //Private Serialized Vars
-    [SerializeField] private float m_InteractRange = 3.0f;
+    [SerializeField] private float m_InteractRange = 1.7f; //Default Value lines up with colliders
 
     //Private Vars
     private ToolManager m_ToolManager;

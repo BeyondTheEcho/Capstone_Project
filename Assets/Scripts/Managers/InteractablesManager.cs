@@ -53,7 +53,7 @@ public class InteractablesManager : MonoBehaviour
             }
         }
 
-        if (distance > pickupRange)
+        if (distance > pickupRange * pickupRange)
         {
             return null;
         }
@@ -68,8 +68,7 @@ public class InteractablesManager : MonoBehaviour
 
     public void RemoveInteractable(InteractableBase interactableObject)
     {
-        InteractableBase toDelete = m_InteractableObjects.Find(x => x == interactableObject);
-        m_InteractableObjects.Remove(toDelete);
+        m_InteractableObjects.Remove(interactableObject);
     }
 
     public void AddPromptObject(Player player, InteractableBase promptObject)
@@ -81,8 +80,7 @@ public class InteractablesManager : MonoBehaviour
 
     public void RemovePromptObject(Player player, InteractableBase promptObject)
     {
-        InteractableBase toDelete = m_TextPromptInteractables.Find(x => x == promptObject);
-        m_TextPromptInteractables.Remove(toDelete);
+        m_TextPromptInteractables.Remove(promptObject);
 
         UpdateInteractableTextPrompt(player, promptObject);
     }
