@@ -5,16 +5,20 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Experimental.Playables;
 using TMPro;
+using System.Linq;
+using System;
 
 public class Player : MonoBehaviour
 {
+    //Public Vars
+    public ToolType? m_CurrentTool { get; set; }
+
+    //Private Serialized Vars
+    [SerializeField] private float m_InteractRange = 1.7f; //Default Value lines up with colliders
+
+    //Private Vars
     private ToolManager m_ToolManager;
-
-    private ToolType? m_CurrentTool = null;
     private TMP_Text m_ToolPrompt;
-
-    private bool m_InToolRange = false;
-    private Tool m_ToolRef;
 
     void Awake()
     {
@@ -26,11 +30,13 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (m_InToolRange)
+            InteractableBase item = null;
+                
+            item = InteractablesManager.s_Instance.ReturnClosestInteractableInRange(this, m_InteractRange);
+
+            if (item != null)
             {
-                m_CurrentTool = m_ToolRef.ReturnToolType();
-                m_ToolRef.DestroyTool();
-                Debug.Log(m_CurrentTool.ToString());
+                item.OnInteract(this);
             }
         }
 
@@ -42,29 +48,23 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.TryGetComponent(out Tool tool))
-        {
-            //sets flag / stores ref
-            m_InToolRange = true;
-            m_ToolRef = tool;
-
-            //Updates the tool prompt above the player
-            m_ToolPrompt.enabled = true;
-            m_ToolPrompt.text = $"Press F to pickup the {tool.ReturnToolType().ToString()}.";
+        if (col.gameObject.TryGetComponent(out InteractableBase interactable))
+        {         
+            InteractablesManager.s_Instance.AddPromptObject(this, interactable);
         }
     }
 
     void OnTriggerExit2D(Collider2D col)
     {
-        if (col.gameObject.TryGetComponent(out Tool tool))
+        if (col.gameObject.TryGetComponent(out InteractableBase interactable))
         {
-            //Sets flag
-            m_InToolRange = false;
-
-            //Updates the tool prompt above the player
-            m_ToolPrompt.text = "";
-            m_ToolPrompt.enabled = false;
+            InteractablesManager.s_Instance.RemovePromptObject(this, interactable);
         }
+    }
+
+    public void UpdatePrompt(string prompt)
+    {
+        m_ToolPrompt.text = prompt;
     }
 
     void DropTool()
@@ -81,10 +81,5 @@ public class Player : MonoBehaviour
 
             i++;
         }
-    }
-
-    public ToolType? GetCurrentTool()
-    {
-        return m_CurrentTool;
     }
 }
