@@ -8,34 +8,45 @@ using TMPro;
 
 public class OrderManager : MonoBehaviour
 {
-    private int baseOrderSize = 10;
-    private int difficulties = 2; //will take from players' choice, it's just a temporary here
-    
-    public TextMeshProUGUI timeText; //for development needs, easy to see value; won't show to player in the game
-    private float timeNum=0;
-    // Start is called before the first frame update
+    //Difficulty (Defaulted until main menu branch is merged)
+    private Difficulty m_Difficulty = Difficulty.medium;
+
+    //Order Vars
+    private int m_BaseOrderSize = 10;
+    private float m_OrderSize;
+
+    //Chaos Vars
+    private float m_Chaos = 0.0f;
+    private float m_ChaosIncrement = 0.01f;
+    private float m_ChaosIncrementRate = 3.0f;
+    Coroutine m_ChaosCoroutine;
+
     void Start()
     {
-        
+        m_ChaosCoroutine = StartCoroutine(IncrementChaos());
     }
 
-    // Update is called once per frame
     void Update()
     {
-        ChaosMultiplyer();
+
     }
 
-    public void ChaosMultiplyer()
+    IEnumerator IncrementChaos()
     {
-        float chaos = Timer();
-        float orderSize = 1+baseOrderSize * difficulties * chaos/10000;
-        timeText.text = orderSize.ToString() + "s";
+        yield return new WaitForSeconds(m_ChaosIncrementRate);
+
+        m_Chaos += m_ChaosIncrement;
     }
 
-    private float Timer()
+    public void CalculateOrderSize()
     {
-        timeNum = timeNum + Time.deltaTime;
-        
-        return timeNum;
+        m_OrderSize = (m_BaseOrderSize * (int)m_Difficulty) * m_Chaos;
+    }
+
+    private enum Difficulty
+    {
+        easy = 1,
+        medium = 2,
+        hard = 3
     }
 }
