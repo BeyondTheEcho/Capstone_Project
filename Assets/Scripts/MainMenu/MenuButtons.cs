@@ -10,4 +10,12 @@ public class MenuButtons : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
     }
+
+    public void QuitGame() //For not built version (https://gamedevbeginner.com/how-to-quit-the-game-in-unity/)
+    {
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+        Application.Quit();
+    }
 }
