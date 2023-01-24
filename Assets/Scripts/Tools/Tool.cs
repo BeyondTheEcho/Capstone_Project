@@ -8,6 +8,8 @@ public class Tool : InteractableBase
 {
     [SerializeField] private float m_DespawnTime = 30.0f;
     [SerializeField] private ToolType m_ToolType;
+    public GameObject getLocalizationText;
+    private string getText;
 
     void Awake()
     {
@@ -37,6 +39,7 @@ public class Tool : InteractableBase
 
     public override string ReturnTextPrompt()
     {
-        return $"Press 'F' to pickup the {m_ToolType.ToString()}.";
+        getText = getLocalizationText.GetComponent<LocalizationManager>().GetPickUpHintText();
+        return getText + $" {m_ToolType.ToString()}.";
     }
 }
