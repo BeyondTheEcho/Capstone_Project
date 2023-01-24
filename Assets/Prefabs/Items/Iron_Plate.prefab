@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5954418734901280410}
   - component: {fileID: 9073936486558804565}
   - component: {fileID: 7199943462005991655}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Iron_Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,3 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54c3c9db7b259104f96dcc85edefa327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ItemType: 0
+  m_IronSprites:
+  - {fileID: 21300000, guid: 381e907b0da6ab54c9b853c2d684e39d, type: 3}
+  - {fileID: 21300000, guid: e0b2b8839886dfc49bef6ac1e2d8bd70, type: 3}
+  - {fileID: 21300000, guid: 190ceef145bc8914189b7843dd32a735, type: 3}
