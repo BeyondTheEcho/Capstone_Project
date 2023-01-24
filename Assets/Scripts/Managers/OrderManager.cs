@@ -1,10 +1,8 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using System.Threading;
 using UnityEngine;
-using UnityEngine.UIElements;
 using TMPro;
+using Random = UnityEngine.Random;
 
 public class OrderManager : MonoBehaviour
 {
@@ -12,14 +10,26 @@ public class OrderManager : MonoBehaviour
     private Difficulty m_Difficulty = Difficulty.medium;
 
     //Order Vars
+    [Header("Order Settings")]
+    [SerializeField] private GameObject[] m_OrderItems;
+    [SerializeField] private Transform m_OrderSpawnLocation;
     private int m_BaseOrderSize = 10;
-    private float m_OrderSize;
+    private int m_CurrentOrderSize = 0;
+    private int m_MaxOrderSize = 0;
+    private int m_CurrentOrderItem;
+    private float m_OrderSpawnDelay = 1.5f;
 
     //Chaos Vars
     private float m_Chaos = 0.0f;
     private float m_ChaosIncrement = 0.01f;
     private float m_ChaosIncrementRate = 3.0f;
     Coroutine m_ChaosCoroutine;
+
+    //UI Vars
+    [Header("UI Settings")]
+    [SerializeField] private TMP_Text m_ChaosText;
+    [SerializeField] private TMP_Text m_OrderText;
+
 
     void Start()
     {
@@ -28,19 +38,56 @@ public class OrderManager : MonoBehaviour
 
     void Update()
     {
+        UpdateUI();
 
+        if (m_CurrentOrderSize == 0)
+        {
+            GenerateOrder();
+        }
+    }
+
+    private IEnumerator SpawnOrder(int items)
+    {
+        for (int i = items; i != 0; i--)
+        {
+            yield return new WaitForSeconds(m_OrderSpawnDelay);
+
+            Instantiate(m_OrderItems[m_CurrentOrderItem], m_OrderSpawnLocation.position, Quaternion.identity);
+        }
+    }
+
+    private void GenerateOrder()
+    {
+        CalculateMaxOrderSize();
+
+        m_CurrentOrderSize = Random.Range(1, m_MaxOrderSize);
+
+        int orderItemMax = m_OrderItems.Length - 1;
+
+        m_CurrentOrderItem = Random.Range(0, orderItemMax);
+
+        StartCoroutine(SpawnOrder(m_CurrentOrderSize));
+    }
+
+    private void UpdateUI()
+    {
+        m_ChaosText.text = $"Chaos: {m_Chaos}";
+        m_OrderText.text = $"Order Size: {m_MaxOrderSize}";
     }
 
     IEnumerator IncrementChaos()
     {
-        yield return new WaitForSeconds(m_ChaosIncrementRate);
+        while (true)
+        {
+            yield return new WaitForSeconds(m_ChaosIncrementRate);
 
-        m_Chaos += m_ChaosIncrement;
+            m_Chaos += m_ChaosIncrement;
+        }
     }
 
-    public void CalculateOrderSize()
+    public void CalculateMaxOrderSize()
     {
-        m_OrderSize = (m_BaseOrderSize * (int)m_Difficulty) * m_Chaos;
+        m_MaxOrderSize = (int)((m_BaseOrderSize * (int) m_Difficulty) * m_Chaos);
     }
 
     private enum Difficulty
