@@ -10,4 +10,17 @@ public class MenuButtons : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
     }
+
+    //public void QuitGame()
+    //{
+    //    Application.Quit();
+    //}
+
+    public void QuitGame()
+    {
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #endif
+        Application.Quit();
+    }
 }
