@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     //Serialized Vars
     [SerializeField] private float m_Speed = 10.0f;
+    public PlayerNumber playerNumber;
 
     //Refs
     private Rigidbody2D m_Rigidbody;
@@ -24,9 +25,28 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 velocity;
 
-        velocity.x = Input.GetAxis("Horizontal");
-        velocity.y = Input.GetAxis("Vertical");
+        if (playerNumber == PlayerNumber.PlayerOne)
+        {
+            velocity.x = Input.GetAxisRaw("Horizontal");
+            velocity.y = Input.GetAxisRaw("Vertical");
 
-        m_Rigidbody.MovePosition(m_Rigidbody.position + velocity * m_Speed * Time.fixedDeltaTime);
+            m_Rigidbody.MovePosition(m_Rigidbody.position + velocity * m_Speed * Time.fixedDeltaTime);
+        }
+
+        if (playerNumber == PlayerNumber.PlayerTwo)
+        {
+            velocity.x = Input.GetAxisRaw("Horizontal2");
+            velocity.y = Input.GetAxisRaw("Vertical2");
+
+            m_Rigidbody.MovePosition(m_Rigidbody.position + velocity * m_Speed * Time.fixedDeltaTime);
+        }
+    }
+
+    public enum PlayerNumber
+    {
+        PlayerOne,
+        PlayerTwo,
+        PlayerThree,
+        PlayerFour
     }
 }
