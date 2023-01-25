@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Item : InteractableBase
+public class Item : InteractableBase, IDropable
 {
     [SerializeField] private ItemType m_ItemType;
 
@@ -15,17 +16,13 @@ public class Item : InteractableBase
 
     void Awake()
     {
+        StoreRef();
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Start()
     {
         UpdateItem();
-    }
-
-    void Update()
-    {
-        
     }
 
     private void UpdateItem()
@@ -48,7 +45,12 @@ public class Item : InteractableBase
 
     public override void OnInteract(Player player)
     {
-        throw new System.NotImplementedException();
+        player.m_HeldItem = this;
+
+        gameObject.transform.position = player.transform.position;
+        gameObject.transform.parent = player.transform;
+
+        gameObject.SetActive(false);
     }
 
     public override string ReturnTextPrompt()
@@ -59,5 +61,19 @@ public class Item : InteractableBase
     private enum ItemType
     {
         IronPlate,
+    }
+
+    public void OnDrop(Player player)
+    {
+        player.m_HeldItem = null;
+
+        gameObject.transform.parent = null;
+
+        gameObject.SetActive(true);
+    }
+
+    private void OnDestroy()
+    {
+        DeleteRef();
     }
 }
