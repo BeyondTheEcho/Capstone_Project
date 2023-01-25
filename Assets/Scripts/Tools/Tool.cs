@@ -35,6 +35,8 @@ public class Tool : InteractableBase, IDropable
         gameObject.transform.position = player.transform.position;
         gameObject.transform.parent = player.transform;
 
+        DeleteRef();
+
         gameObject.SetActive(false);
     }
 
@@ -55,6 +57,8 @@ public class Tool : InteractableBase, IDropable
         gameObject.transform.parent = null;
 
         gameObject.SetActive(true);
+
+        StoreRef();
 
         m_DespawnCoroutine = StartCoroutine(DespawnCountdown());
     }

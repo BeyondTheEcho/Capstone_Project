@@ -42,7 +42,21 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.G) && m_HeldItem != null)
         {
-            m_HeldItem.OnDrop(this);
+            InteractableBase item = null;
+
+            item = InteractablesManager.s_Instance.ReturnClosestInteractableInRange(this, m_InteractRange);
+
+            if (item != null)
+            {
+                if (item.TryGetComponent(out Belts belt))
+                {
+                    belt.PlaceItemOnBelt(this);
+                }
+            }
+            else
+            {
+                m_HeldItem.OnDrop(this);
+            }
         }
     }
 
