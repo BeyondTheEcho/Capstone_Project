@@ -24,6 +24,12 @@ public class InteractablesManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Returns the closest object that inherits from InteractableBase in the range provided as InteractableBase
+    /// </summary>
+    /// <param name="player">Instance of the player calling the method</param>
+    /// <param name="pickupRange">Range the player can interact in</param>
+    /// <returns></returns>
     public InteractableBase? ReturnClosestInteractableInRange(Player player, float pickupRange)
     {
         if (m_InteractableObjects.Count == 0)
@@ -53,6 +59,12 @@ public class InteractablesManager : MonoBehaviour
         return closestObject;
     }
 
+    /// <summary>
+    /// Returns the closest object that inherits from InteractableBase in the range provided that does not have the Belts script attached as InteractableBase
+    /// </summary>
+    /// <param name="player">Instance of the player calling the method</param>
+    /// <param name="pickupRange">Range the player can interact in</param>
+    /// <returns></returns>
     public InteractableBase? ReturnClosestPickupableInRange(Player player, float pickupRange)
     {
         if (m_InteractableObjects.Count == 0)
