@@ -42,6 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Player
+    uniqueID: 447809123
+    locked: 0
   - name: Tools
     uniqueID: 2947576823
+    locked: 0
+  - name: Belts
+    uniqueID: 302468589
     locked: 0

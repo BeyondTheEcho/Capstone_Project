@@ -125,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590a464a9f41b3940a08b20212e39c27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_NextWaypoint: {fileID: 0}
 --- !u!249 &1042419093
 AreaEffector2D:
   serializedVersion: 2
