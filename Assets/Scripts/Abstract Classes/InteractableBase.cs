@@ -16,6 +16,4 @@ public abstract class InteractableBase : MonoBehaviour
     {
         InteractablesManager.s_Instance.RemoveInteractable(this);
     }
-
-
 }

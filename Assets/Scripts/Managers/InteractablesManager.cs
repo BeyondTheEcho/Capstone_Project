@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using JetBrains.Annotations;
 using UnityEngine;
 using static UnityEditor.Progress;
 
@@ -22,15 +23,6 @@ public class InteractablesManager : MonoBehaviour
             s_Instance = this;
         }
     }
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
-    }
 
     public InteractableBase? ReturnClosestInteractableInRange(Player player, float pickupRange)
     {
@@ -49,6 +41,44 @@ public class InteractablesManager : MonoBehaviour
             if (delta < distance)
             {
                 closestObject = interactable;
+                distance = delta;
+            }
+        }
+
+        if (distance > pickupRange * pickupRange)
+        {
+            return null;
+        }
+
+        return closestObject;
+    }
+
+    public InteractableBase? ReturnClosestPickupableInRange(Player player, float pickupRange)
+    {
+        if (m_InteractableObjects.Count == 0)
+        {
+            return null;
+        }
+
+        List<InteractableBase> pickupables = new List<InteractableBase>();
+        float distance = float.MaxValue;
+        InteractableBase closestObject = null;
+
+        foreach (var interactable in m_InteractableObjects)
+        {
+            if (!interactable.TryGetComponent(out Belts belts))
+            {
+                pickupables.Add(interactable);
+            }
+        }
+
+        foreach (var pickupable in pickupables)
+        {
+            float delta = (player.transform.position - pickupable.gameObject.transform.position).sqrMagnitude;
+
+            if (delta < distance)
+            {
+                closestObject = pickupable;
                 distance = delta;
             }
         }

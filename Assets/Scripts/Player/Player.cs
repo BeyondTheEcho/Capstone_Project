@@ -34,6 +34,11 @@ public class Player : MonoBehaviour
                 
             item = InteractablesManager.s_Instance.ReturnClosestInteractableInRange(this, m_InteractRange);
 
+            if (item.TryGetComponent(out Belts belt))
+            {
+                item = InteractablesManager.s_Instance.ReturnClosestPickupableInRange(this, m_InteractRange);
+            }
+
             if (item != null)
             {
                 item.OnInteract(this);
