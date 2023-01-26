@@ -24,6 +24,9 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 velocity;
+      
+        velocity.x = Input.GetAxisRaw("Horizontal");
+        velocity.y = Input.GetAxisRaw("Vertical");
 
         if (playerNumber == PlayerNumber.PlayerOne)
         {
