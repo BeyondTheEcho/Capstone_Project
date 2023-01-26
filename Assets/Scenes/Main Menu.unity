@@ -131,6 +131,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8545914525214816564, guid: da68ecc51b4288c428d089196c237e06, type: 3}
+      propertyPath: Alarm
+      value: 
+      objectReference: {fileID: 8300000, guid: 7d1c355438a169646bfe08a1f3003107, type: 3}
+    - target: {fileID: -8545914525214816564, guid: da68ecc51b4288c428d089196c237e06, type: 3}
+      propertyPath: Clamp
+      value: 
+      objectReference: {fileID: 8300000, guid: f514275817c1e3941a214b3c39e0ded7, type: 3}
+    - target: {fileID: -8545914525214816564, guid: da68ecc51b4288c428d089196c237e06, type: 3}
+      propertyPath: Heat_treating
+      value: 
+      objectReference: {fileID: 8300000, guid: 6fc00596237c324488ce9c2652743ca5, type: 3}
+    - target: {fileID: -8545914525214816564, guid: da68ecc51b4288c428d089196c237e06, type: 3}
       propertyPath: audioClips.Array.size
       value: 2
       objectReference: {fileID: 0}
