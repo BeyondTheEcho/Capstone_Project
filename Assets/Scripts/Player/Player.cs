@@ -11,7 +11,7 @@ using System;
 public class Player : MonoBehaviour
 {
     //Public Vars
-    public ToolType? m_CurrentTool { get; set; }
+    public IDropable m_HeldItem;
 
     //Private Serialized Vars
     [SerializeField] private float m_InteractRange = 1.7f; //Default Value lines up with colliders
@@ -36,13 +36,35 @@ public class Player : MonoBehaviour
 
             if (item != null)
             {
-                item.OnInteract(this);
+                if (item.TryGetComponent(out Belts belt))
+                {
+                    item = InteractablesManager.s_Instance.ReturnClosestPickupableInRange(this, m_InteractRange);
+                }
+
+                if (item != null)
+                {
+                    item.OnInteract(this);
+                }
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.G) && m_HeldItem != null)
         {
-            DropTool();
+            InteractableBase item = null;
+
+            item = InteractablesManager.s_Instance.ReturnClosestInteractableInRange(this, m_InteractRange);
+
+            if (item != null)
+            {
+                if (item.TryGetComponent(out Belts belt))
+                {
+                    belt.PlaceItemOnBelt(this);
+                }
+            }
+            else
+            {
+                m_HeldItem.OnDrop(this);
+            }
         }
     }
 
@@ -67,19 +89,4 @@ public class Player : MonoBehaviour
         m_ToolPrompt.text = prompt;
     }
 
-    void DropTool()
-    {
-        int i = 0;
-
-        foreach (var tool in m_ToolManager.m_Tools)
-        {
-            if (m_ToolManager.m_Tools[i].name == m_CurrentTool.ToString())
-            {
-                Instantiate(m_ToolManager.m_Tools[i], transform.position, Quaternion.identity);
-                m_CurrentTool = null;
-            }
-
-            i++;
-        }
-    }
 }
