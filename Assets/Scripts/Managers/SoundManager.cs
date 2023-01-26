@@ -5,59 +5,63 @@ using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
-    Scene scene;
-    string sceneName;
-    public AudioSource audioSource;
-    public AudioClip Alarm;
-    public AudioClip Clamp;
-    public AudioClip Heat_treating;
-    public List<AudioClip> audioClips = new List<AudioClip>();
+    Scene m_Scene;
+    string m_SceneName;
+    [SerializeField] private AudioSource m_AudioSource;
+    [SerializeField] private List<AudioClip> m_AudioClips = new List<AudioClip>();
 
-    public static SoundManager Instance { get; private set; }
+    [Header("Sound Clips")]
+
+    [SerializeField] private AudioClip m_Alarm;
+    [SerializeField] private AudioClip m_Clamp;
+    [SerializeField] private AudioClip m_Heat_treating;
+
+    public static SoundManager s_Instance { get; private set; }
+
     private void Awake()
     {
     
-        if (Instance != null && Instance != this)
+        if (s_Instance != null && s_Instance != this)
         {
             Destroy(this);
         }
         else
         {
-            Instance = this;
+            s_Instance = this;
         }
     }
 
     void Start()
     {
 
-        scene = SceneManager.GetActiveScene();
-        sceneName = scene.name;
-        if (sceneName == "Main Menu")
+        m_Scene = SceneManager.GetActiveScene();
+        m_SceneName = m_Scene.name;
+        if (m_SceneName == "Main Menu")
         {
-            audioSource.Stop();
-            audioSource.clip = audioClips[0];
-            audioSource.Play();
+            m_AudioSource.Stop();
+            m_AudioSource.clip = m_AudioClips[0];
+            m_AudioSource.Play();
         }
-        else if (sceneName == "Game")
+        else if (m_SceneName == "Game")
         {
-            audioSource.Stop();
-            audioSource.clip = audioClips[1];
-            audioSource.Play();
+            m_AudioSource.Stop();
+            m_AudioSource.clip = m_AudioClips[1];
+            m_AudioSource.Play();
         }
     }
     
     public void PlayAlarm()
     {
-        audioSource.PlayOneShot(Alarm, 0.5f);
+        m_AudioSource.PlayOneShot(m_Alarm, 0.5f);
     }
 
     public void PlayClamp()
     {
-        audioSource.PlayOneShot(Clamp, 0.5f);
+        m_AudioSource.PlayOneShot(m_Clamp, 0.5f);
     }
 
     public void PlayHeatTreat()
     {
-        audioSource.PlayOneShot(Heat_treating, 0.5f);
+        m_AudioSource.PlayOneShot(m_Heat_treating, 0.5f);
     }
 }
