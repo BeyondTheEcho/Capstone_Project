@@ -25,29 +25,29 @@ public class CurrencyManager : MonoBehaviour
 
     void Start()
     {
-        Instance.m_CurrencyText.text = Instance.m_TotalCurrency.ToString();        
+        m_CurrencyText.text = m_TotalCurrency.ToString();
     }
 
     void Update()
     {
         if (Input.GetKeyDown("o"))
         {
-            AddCurrency();
+            AddCurrency(5);
         }
         if (Input.GetKeyDown("p"))
         {
-            RemoveCurrency();
+            RemoveCurrency(5);
         }
     }
 
-    private void AddCurrency()
+    private void AddCurrency(int amount)
     {
-        m_TotalCurrency += 5;
+        m_TotalCurrency += amount;
         m_CurrencyText.text = m_TotalCurrency.ToString();
     }
-    private void RemoveCurrency()
+    private void RemoveCurrency(int amount)
     {
-        m_TotalCurrency -= 5;
+        m_TotalCurrency -= amount;
         m_CurrencyText.text = m_TotalCurrency.ToString();
     }
 }
