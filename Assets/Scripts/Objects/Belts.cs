@@ -12,18 +12,6 @@ public class Belts : InteractableBase
         StoreRef();
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void PlaceItemOnBelt(Player player)
     {
         MonoBehaviour mono = (MonoBehaviour) player.m_HeldItem;
