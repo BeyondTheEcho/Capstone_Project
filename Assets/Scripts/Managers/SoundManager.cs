@@ -8,6 +8,9 @@ public class SoundManager : MonoBehaviour
     Scene scene;
     string sceneName;
     public AudioSource audioSource;
+    public AudioClip Alarm;
+    public AudioClip Clamp;
+    public AudioClip Heat_treating;
     public List<AudioClip> audioClips = new List<AudioClip>();
 
     public static SoundManager Instance { get; private set; }
@@ -42,17 +45,19 @@ public class SoundManager : MonoBehaviour
             audioSource.Play();
         }
     }
-
-    // Update is called once per frame
-    void Update()
+    
+    public void PlayAlarm()
     {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            Application.LoadLevel("Game");
-        }
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Application.LoadLevel("MainMenu");
-        }
+        audioSource.PlayOneShot(Alarm, 0.5f);
+    }
+
+    public void PlayClamp()
+    {
+        audioSource.PlayOneShot(Clamp, 0.5f);
+    }
+
+    public void PlayHeatTreat()
+    {
+        audioSource.PlayOneShot(Heat_treating, 0.5f);
     }
 }
