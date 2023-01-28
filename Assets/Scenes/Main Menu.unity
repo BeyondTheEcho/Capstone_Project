@@ -2033,8 +2033,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ba18fac4488b3a45a761ac0d6eae8fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playButtontext: {fileID: 817404771}
-  quitButtontext: {fileID: 1529472349}
+  m_playButtontext: {fileID: 817404771}
+  m_quitButtontext: {fileID: 1529472349}
   m_Language: 0
 --- !u!4 &1721928556
 Transform:

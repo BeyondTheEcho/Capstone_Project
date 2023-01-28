@@ -7,13 +7,13 @@ using UnityEngine.UI;
 
 public class LanguageSettings : MonoBehaviour
 {
-    [SerializeField] private TMPro.TMP_Text playButtontext;
-    [SerializeField] private TMPro.TMP_Text quitButtontext;
+    [SerializeField] private TMPro.TMP_Text m_playButtontext;
+    [SerializeField] private TMPro.TMP_Text m_quitButtontext;
     [SerializeField] private Languages m_Language;
 
     public static LanguageSettings s_Instance { get; private set; }
 
-    Dictionary<string, string> French = new Dictionary<string, string>(); 
+    Dictionary<string, string> m_LocalizationDictionary_French = new Dictionary<string, string>(); 
 
     private void Awake()
     {
@@ -32,10 +32,10 @@ public class LanguageSettings : MonoBehaviour
         DontDestroyOnLoad(this);
 
         // Store all the text here. 
-        French.Add("Clock In!", "Horloge d'entrée!");
-        French.Add("Quit to Desktop", "Quitter sur le bureau");
-        French.Add($"Press 'F' to pickup the ", $"Appuyez sur 'F' pour récupérer le ");
-        French.Add("example", "exemple");
+        m_LocalizationDictionary_French.Add("Clock In!", "Horloge d'entrée!");
+        m_LocalizationDictionary_French.Add("Quit to Desktop", "Quitter sur le bureau");
+        m_LocalizationDictionary_French.Add($"Press 'F' to pickup the ", $"Appuyez sur 'F' pour récupérer le ");
+        m_LocalizationDictionary_French.Add("example", "exemple");
     }
 
     // Update is called once per frame
@@ -47,15 +47,15 @@ public class LanguageSettings : MonoBehaviour
     public void EnglishChosen()
     {
         m_Language = Languages.English;
-        playButtontext.text = "Clock In!";
-        quitButtontext.text = "Quit to Desktop";
+        m_playButtontext.text = "Clock In!";
+        m_quitButtontext.text = "Quit to Desktop";
     }
 
     public void FrenchChosen()
     {
         m_Language = Languages.French;
-        playButtontext.text = GetLocalizedString("Clock In!");
-        quitButtontext.text = GetLocalizedString("Quit to Desktop");
+        m_playButtontext.text = GetLocalizedString("Clock In!");
+        m_quitButtontext.text = GetLocalizedString("Quit to Desktop");
     }
 
     public string GetLocalizedString(string sourceStr)
@@ -66,9 +66,9 @@ public class LanguageSettings : MonoBehaviour
                 return sourceStr;
 
             case Languages.French:
-                if (French.ContainsKey(sourceStr))
+                if (m_LocalizationDictionary_French.ContainsKey(sourceStr))
                 {
-                    return French[sourceStr];
+                    return m_LocalizationDictionary_French[sourceStr];
                 }
                 else
                 {
