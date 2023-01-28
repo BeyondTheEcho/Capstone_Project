@@ -7,8 +7,8 @@ using UnityEngine.UI;
 
 public class LanguageSettings : MonoBehaviour
 {
-    [SerializeField] private TMPro.TMP_Text m_PlayButtontext;
-    [SerializeField] private TMPro.TMP_Text m_QuitButtontext;
+    [SerializeField] private TMPro.TMP_Text m_PlayButtonText;
+    [SerializeField] private TMPro.TMP_Text m_QuitButtonText;
     [SerializeField] private Languages m_Language;
 
     public static LanguageSettings s_Instance { get; private set; }
@@ -47,15 +47,15 @@ public class LanguageSettings : MonoBehaviour
     public void EnglishChosen()
     {
         m_Language = Languages.English;
-        m_PlayButtontext.text = "Clock In!";
-        m_QuitButtontext.text = "Quit to Desktop";
+        m_PlayButtonText.text = "Clock In!";
+        m_QuitButtonText.text = "Quit to Desktop";
     }
 
     public void FrenchChosen()
     {
         m_Language = Languages.French;
-        m_PlayButtontext.text = GetLocalizedString("Clock In!");
-        m_QuitButtontext.text = GetLocalizedString("Quit to Desktop");
+        m_PlayButtonText.text = GetLocalizedString("Clock In!");
+        m_QuitButtonText.text = GetLocalizedString("Quit to Desktop");
     }
 
     public string GetLocalizedString(string sourceStr)
