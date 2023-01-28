@@ -47,7 +47,7 @@ public class Tool : InteractableBase, IDropable
 
     public override string ReturnTextPrompt()
     {
-        m_getText = LanguageSettings.s_Instance.GetLocalizedString($"Press 'F' to pickup the ");
+        m_getText = LanguageSettings.s_Instance.GetLocalizedString("Press 'F' to pickup the ");
         
         return m_getText + $" {m_ToolType.ToString()}.";
     }
