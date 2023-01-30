@@ -143,7 +143,15 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 6fc00596237c324488ce9c2652743ca5, type: 3}
     - target: {fileID: -8545914525214816564, guid: da68ecc51b4288c428d089196c237e06, type: 3}
+      propertyPath: m_AudioSource
+      value: 
+      objectReference: {fileID: 1417310112}
+    - target: {fileID: -8545914525214816564, guid: da68ecc51b4288c428d089196c237e06, type: 3}
       propertyPath: audioClips.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8545914525214816564, guid: da68ecc51b4288c428d089196c237e06, type: 3}
+      propertyPath: m_AudioClips.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -8545914525214816564, guid: da68ecc51b4288c428d089196c237e06, type: 3}
@@ -152,6 +160,14 @@ PrefabInstance:
       objectReference: {fileID: 8300000, guid: ccc83ebb169cd074ead702dc5880a0c6, type: 3}
     - target: {fileID: -8545914525214816564, guid: da68ecc51b4288c428d089196c237e06, type: 3}
       propertyPath: audioClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1f32f074ccd0f5a4bb6491847bc28923, type: 3}
+    - target: {fileID: -8545914525214816564, guid: da68ecc51b4288c428d089196c237e06, type: 3}
+      propertyPath: m_AudioClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: ccc83ebb169cd074ead702dc5880a0c6, type: 3}
+    - target: {fileID: -8545914525214816564, guid: da68ecc51b4288c428d089196c237e06, type: 3}
+      propertyPath: m_AudioClips.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: 1f32f074ccd0f5a4bb6491847bc28923, type: 3}
     - target: {fileID: 5694706346665402857, guid: da68ecc51b4288c428d089196c237e06, type: 3}
@@ -880,6 +896,11 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!82 &1417310112 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5694706346665402856, guid: da68ecc51b4288c428d089196c237e06, type: 3}
+  m_PrefabInstance: {fileID: 90437184}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1492383588
 GameObject:
   m_ObjectHideFlags: 0
