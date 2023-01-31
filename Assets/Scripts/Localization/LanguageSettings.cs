@@ -32,7 +32,7 @@ public class LanguageSettings : MonoBehaviour
         DontDestroyOnLoad(this);
 
         // Store all the text here. 
-        m_LocalizationDictionary_French.Add("Clock In!", "Horloge d'entrée!");
+        m_LocalizationDictionary_French.Add("Clock In!", "Commence le travaille!");
         m_LocalizationDictionary_French.Add("Quit to Desktop", "Quitter sur le bureau");
         m_LocalizationDictionary_French.Add("Press 'F' to pickup the ", "Appuyez sur 'F' pour récupérer le ");
         m_LocalizationDictionary_French.Add("example", "exemple");
