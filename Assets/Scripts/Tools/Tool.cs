@@ -9,7 +9,7 @@ public class Tool : InteractableBase, IDropable
     [SerializeField] private float m_DespawnTime = 30.0f;
     [SerializeField] private ToolType m_ToolType;
     private Coroutine m_DespawnCoroutine;
-
+    private string m_GetText;
     void Awake()
     {
         StoreRef();
@@ -47,7 +47,9 @@ public class Tool : InteractableBase, IDropable
 
     public override string ReturnTextPrompt()
     {
-        return $"Press 'F' to pickup the {m_ToolType.ToString()}.";
+        m_GetText = LanguageSettings.s_Instance.GetLocalizedString("Press 'F' to pickup the ");
+        
+        return m_GetText + m_ToolType.ToString();
     }
 
     public void OnDrop(Player player)
