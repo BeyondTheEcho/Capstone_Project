@@ -40,7 +40,7 @@ public class OrderManager : MonoBehaviour
     {
         UpdateUI();
 
-        if (m_CurrentOrderSize == 0)
+        if (m_CurrentOrderSize == 0 && PauseFeature.m_InPause == false)
         {
             GenerateOrder();
         }
