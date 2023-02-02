@@ -5,7 +5,7 @@ using UnityEngine;
 public class PauseFeature : MonoBehaviour
 {
     public GameObject m_PauseCanvas;
-    private bool m_InPause=false;
+    public static bool m_InPause=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +21,7 @@ public class PauseFeature : MonoBehaviour
             {
                 m_InPause = true;
                 m_PauseCanvas.SetActive(true);
+                Time.timeScale = 0;
             }
 
         }
@@ -30,6 +31,7 @@ public class PauseFeature : MonoBehaviour
     {
         m_InPause = false;
         m_PauseCanvas.SetActive(false);
+        Time.timeScale = 1;
     }
 
     
