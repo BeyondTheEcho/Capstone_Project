@@ -36,6 +36,8 @@ public class LanguageSettings : MonoBehaviour
         m_LocalizationDictionary_French.Add("Quit to Desktop", "Quitter sur le bureau");
         m_LocalizationDictionary_French.Add("Press 'F' to pickup the ", "Appuyez sur 'F' pour récupérer le ");
         m_LocalizationDictionary_French.Add("example", "exemple");
+        m_LocalizationDictionary_French.Add("Continue", "Continue");
+        m_LocalizationDictionary_French.Add("Take a Break!", "Prendre une pause!");
     }
 
     // Update is called once per frame
