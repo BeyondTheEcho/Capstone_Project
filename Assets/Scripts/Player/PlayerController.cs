@@ -25,21 +25,21 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 velocity;
       
-        velocity.x = Input.GetAxisRaw("Horizontal");
-        velocity.y = Input.GetAxisRaw("Vertical");
+        velocity.x = Input.GetAxis("Horizontal");
+        velocity.y = Input.GetAxis("Vertical");
 
         if (playerNumber == PlayerNumber.PlayerOne)
         {
-            velocity.x = Input.GetAxisRaw("Horizontal");
-            velocity.y = Input.GetAxisRaw("Vertical");
+            velocity.x = Input.GetAxis("Horizontal");
+            velocity.y = Input.GetAxis("Vertical");
 
             m_Rigidbody.MovePosition(m_Rigidbody.position + velocity * m_Speed * Time.fixedDeltaTime);
         }
 
         if (playerNumber == PlayerNumber.PlayerTwo) 
         {
-            velocity.x = Input.GetAxisRaw("Horizontal2");
-            velocity.y = Input.GetAxisRaw("Vertical2");
+            velocity.x = Input.GetAxis("Horizontal2");
+            velocity.y = Input.GetAxis("Vertical2");
 
             m_Rigidbody.MovePosition(m_Rigidbody.position + velocity * m_Speed * Time.fixedDeltaTime);
         }
