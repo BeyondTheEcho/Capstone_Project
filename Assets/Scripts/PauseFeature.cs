@@ -1,15 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class PauseFeature : MonoBehaviour
 {
     public GameObject m_PauseCanvas;
     public static bool m_InPause=false;
+
+    [SerializeField] private TMPro.TMP_Text m_BackButtonText;
+    [SerializeField] private TMPro.TMP_Text m_TakeABreakText;
     // Start is called before the first frame update
     void Start()
     {
-        
+        m_BackButtonText.text = LanguageSettings.s_Instance.GetLocalizedString("Continue");
+        m_TakeABreakText.text = LanguageSettings.s_Instance.GetLocalizedString("Take a Break!");
     }
 
     // Update is called once per frame
