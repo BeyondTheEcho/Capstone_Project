@@ -636,6 +636,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8545914525214816564, guid: da68ecc51b4288c428d089196c237e06, type: 3}
+      propertyPath: Box
+      value: 
+      objectReference: {fileID: 8300000, guid: 3d6955b079f97d94ea4188e25127026d, type: 3}
+    - target: {fileID: -8545914525214816564, guid: da68ecc51b4288c428d089196c237e06, type: 3}
       propertyPath: Alarm
       value: 
       objectReference: {fileID: 8300000, guid: 7d1c355438a169646bfe08a1f3003107, type: 3}
@@ -651,6 +655,10 @@ PrefabInstance:
       propertyPath: m_Clamp
       value: 
       objectReference: {fileID: 8300000, guid: f514275817c1e3941a214b3c39e0ded7, type: 3}
+    - target: {fileID: -8545914525214816564, guid: da68ecc51b4288c428d089196c237e06, type: 3}
+      propertyPath: GameOver
+      value: 
+      objectReference: {fileID: 8300000, guid: 083aebd3692aba148a25b4d9c68d1d0c, type: 3}
     - target: {fileID: -8545914525214816564, guid: da68ecc51b4288c428d089196c237e06, type: 3}
       propertyPath: Heat_treating
       value: 
@@ -669,7 +677,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8545914525214816564, guid: da68ecc51b4288c428d089196c237e06, type: 3}
       propertyPath: m_AudioClips.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8545914525214816564, guid: da68ecc51b4288c428d089196c237e06, type: 3}
       propertyPath: audioClips.Array.data[0]
@@ -687,6 +695,14 @@ PrefabInstance:
       propertyPath: m_AudioClips.Array.data[1]
       value: 
       objectReference: {fileID: 8300000, guid: 1f32f074ccd0f5a4bb6491847bc28923, type: 3}
+    - target: {fileID: -8545914525214816564, guid: da68ecc51b4288c428d089196c237e06, type: 3}
+      propertyPath: m_AudioClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 67fca4977f758d9439740542a5a35bdf, type: 3}
+    - target: {fileID: -8545914525214816564, guid: da68ecc51b4288c428d089196c237e06, type: 3}
+      propertyPath: m_AudioClips.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 17bb1560cc28e0646a1f2dce55c19c7a, type: 3}
     - target: {fileID: 5694706346665402857, guid: da68ecc51b4288c428d089196c237e06, type: 3}
       propertyPath: m_RootOrder
       value: 10

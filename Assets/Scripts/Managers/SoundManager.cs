@@ -15,6 +15,9 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip m_Alarm;
     [SerializeField] private AudioClip m_Clamp;
     [SerializeField] private AudioClip m_Heat_treating;
+    [SerializeField] private AudioClip GameOver;
+    [SerializeField] private AudioClip Box;
+    private float soundTime;
 
     public static SoundManager s_Instance { get; private set; }
 
@@ -49,7 +52,52 @@ public class SoundManager : MonoBehaviour
             m_AudioSource.Play();
         }
     }
-    
+
+    void Update()
+    {
+        if (Input.GetKeyDown("i"))
+        {
+            PlayLow();
+        }
+        if (Input.GetKeyDown("k"))
+        {
+            PlayMid();
+        }
+        if (Input.GetKeyDown("l"))
+        {
+            PlayHigh();
+        }
+        if (Input.GetKeyDown("o"))
+        {
+            
+        }
+    }
+
+    public void PlayLow()
+    {
+        soundTime = m_AudioSource.time;
+        m_AudioSource.Stop();
+        m_AudioSource.clip = m_AudioClips[1];
+        m_AudioSource.time = soundTime;
+        m_AudioSource.Play();
+    }
+    public void PlayMid()
+    {
+        soundTime = m_AudioSource.time;
+        m_AudioSource.Stop();
+        m_AudioSource.clip = m_AudioClips[2];
+        m_AudioSource.time = soundTime;
+        m_AudioSource.Play();
+    }
+    public void PlayHigh()
+    {
+        soundTime = m_AudioSource.time;
+        m_AudioSource.Stop();
+        m_AudioSource.clip = m_AudioClips[3];
+        m_AudioSource.time = soundTime;
+        m_AudioSource.Play();
+    }
+
     public void PlayAlarm()
     {
         m_AudioSource.PlayOneShot(m_Alarm, 0.5f);
@@ -63,5 +111,15 @@ public class SoundManager : MonoBehaviour
     public void PlayHeatTreat()
     {
         m_AudioSource.PlayOneShot(m_Heat_treating, 0.5f);
+    }
+
+    public void PlayGameOver()
+    {
+        m_AudioSource.Stop();
+        m_AudioSource.PlayOneShot(GameOver, 0.5f);
+    }
+    public void PlayBox()
+    {
+        m_AudioSource.PlayOneShot(Box, 0.5f);
     }
 }
