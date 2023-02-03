@@ -57,7 +57,9 @@ public class LanguageSettings : MonoBehaviour
     {
         m_Language = Languages.French;
         m_PlayButtonText.text = GetLocalizedString("Clock In!");
+        m_PlayButtonText.fontSize = 15;
         m_QuitButtonText.text = GetLocalizedString("Quit to Desktop");
+        m_QuitButtonText.fontSize = 15;
     }
 
     public string GetLocalizedString(string sourceStr)
