@@ -9,16 +9,14 @@ public class SoundManager : MonoBehaviour
     string m_SceneName;
     [SerializeField] private AudioSource m_AudioSource;
     [SerializeField] private List<AudioClip> m_AudioClips = new List<AudioClip>();
-
     [Header("Sound Clips")]
-
     [SerializeField] private AudioClip m_Alarm;
     [SerializeField] private AudioClip m_Clamp;
     [SerializeField] private AudioClip m_Heat_treating;
     [SerializeField] private AudioClip GameOver;
     [SerializeField] private AudioClip Box;
+    [SerializeField] private AudioClip Bolt;
     private float soundTime;
-
     public static SoundManager s_Instance { get; private set; }
 
     private void Awake()
@@ -50,26 +48,6 @@ public class SoundManager : MonoBehaviour
             m_AudioSource.Stop();
             m_AudioSource.clip = m_AudioClips[1];
             m_AudioSource.Play();
-        }
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown("i"))
-        {
-            PlayLow();
-        }
-        if (Input.GetKeyDown("k"))
-        {
-            PlayMid();
-        }
-        if (Input.GetKeyDown("l"))
-        {
-            PlayHigh();
-        }
-        if (Input.GetKeyDown("o"))
-        {
-            
         }
     }
 
@@ -121,5 +99,9 @@ public class SoundManager : MonoBehaviour
     public void PlayBox()
     {
         m_AudioSource.PlayOneShot(Box, 0.5f);
+    }
+    public void PlayBolt()
+    {
+        m_AudioSource.PlayOneShot(Bolt, 0.5f);
     }
 }

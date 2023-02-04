@@ -640,6 +640,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 3d6955b079f97d94ea4188e25127026d, type: 3}
     - target: {fileID: -8545914525214816564, guid: da68ecc51b4288c428d089196c237e06, type: 3}
+      propertyPath: Bolt
+      value: 
+      objectReference: {fileID: 8300000, guid: b430365970935b844a099e7e6b5c3726, type: 3}
+    - target: {fileID: -8545914525214816564, guid: da68ecc51b4288c428d089196c237e06, type: 3}
       propertyPath: Alarm
       value: 
       objectReference: {fileID: 8300000, guid: 7d1c355438a169646bfe08a1f3003107, type: 3}
