@@ -55,7 +55,7 @@ public class LanguageSettings : MonoBehaviour
         for (int i = 0; i < Lines.Length; i++)
         {
             print("Line= " + Lines[i]);
-            var line = Lines[i].Split(splitKeyValue, System.StringSplitOptions.None);
+            string[] line = Lines[i].Split(splitKeyValue, System.StringSplitOptions.None);
             string key=line[0];
             string value=line[1];
             languageDictionary.Add(key, value);
