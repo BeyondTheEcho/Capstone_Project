@@ -14,8 +14,8 @@ public class PauseFeature : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_BackButtonText.text = LanguageSettings.s_Instance.GetLocalizedString("Continue");
-        m_TakeABreakText.text = LanguageSettings.s_Instance.GetLocalizedString("Take a Break!");
+        m_BackButtonText.text = LanguageSettings.s_Instance.GetLocalizedString("BACK");
+        m_TakeABreakText.text = LanguageSettings.s_Instance.GetLocalizedString("PAUSE");
     }
 
     // Update is called once per frame
