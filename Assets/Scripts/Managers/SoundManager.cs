@@ -5,6 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class SoundManager : MonoBehaviour
 {
+    public enum BGM
+    {
+        Low = 1,
+        Mid,
+        High,
+    }
+
     Scene m_Scene;
     string m_SceneName;
     [SerializeField] private AudioSource m_AudioSource;
@@ -51,6 +58,22 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown("i"))
+        {
+            PlayBGM((int)BGM.Low);
+        }
+        if (Input.GetKeyDown("k"))
+        {
+            PlayBGM((int)BGM.Mid);
+        }
+        if (Input.GetKeyDown("l"))
+        {
+            PlayBGM((int)BGM.High);
+        }
+    }
+
     public void PlayLow()
     {
         soundTime = m_AudioSource.time;
@@ -72,6 +95,15 @@ public class SoundManager : MonoBehaviour
         soundTime = m_AudioSource.time;
         m_AudioSource.Stop();
         m_AudioSource.clip = m_AudioClips[3];
+        m_AudioSource.time = soundTime;
+        m_AudioSource.Play();
+    }
+
+    public void PlayBGM(int clip)
+    {
+        soundTime = m_AudioSource.time;
+        m_AudioSource.Stop();
+        m_AudioSource.clip = m_AudioClips[clip];
         m_AudioSource.time = soundTime;
         m_AudioSource.Play();
     }
