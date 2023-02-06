@@ -1,0 +1,5 @@
+START, Commence le travaille!
+QUIT, Quitter sur le bureau
+PICK, Appuyez sur 'F' pour récupérer le 
+BACK, Continue
+PAUSE, Prendre une pause!

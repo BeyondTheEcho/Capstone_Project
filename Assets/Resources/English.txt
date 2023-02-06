@@ -1,0 +1,5 @@
+START, Clock In!
+QUIT, Quit to Desktop
+PICK, Press 'F' to pickup the  
+BACK, Continue
+PAUSE, Take a Break!

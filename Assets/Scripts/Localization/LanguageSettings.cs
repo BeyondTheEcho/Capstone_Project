@@ -4,16 +4,20 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
+using System.IO;
 
 public class LanguageSettings : MonoBehaviour
 {
     [SerializeField] private TMPro.TMP_Text m_PlayButtonText;
     [SerializeField] private TMPro.TMP_Text m_QuitButtonText;
     [SerializeField] private Languages m_Language;
+    [SerializeField] private TextAsset m_FrenchTXT;
+    [SerializeField] private TextAsset m_EnglishTXT;
 
     public static LanguageSettings s_Instance { get; private set; }
 
-    Dictionary<string, string> m_LocalizationDictionary_French = new Dictionary<string, string>(); 
+    readonly Dictionary<string, string> m_LocalizationDictionary_French = new Dictionary<string, string>();
+    readonly Dictionary<string, string> m_LocalizationDictionary_English = new Dictionary<string, string>(); 
 
     private void Awake()
     {
@@ -29,17 +33,65 @@ public class LanguageSettings : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        ReadFile(m_FrenchTXT, m_LocalizationDictionary_French);
+        ReadFile(m_EnglishTXT, m_LocalizationDictionary_English);
         DontDestroyOnLoad(this);
 
-        // Store all the text here. 
-        m_LocalizationDictionary_French.Add("Clock In!", "Commence le travaille!");
-        m_LocalizationDictionary_French.Add("Quit to Desktop", "Quitter sur le bureau");
-        m_LocalizationDictionary_French.Add("Press 'F' to pickup the ", "Appuyez sur 'F' pour récupérer le ");
-        m_LocalizationDictionary_French.Add("example", "exemple");
-        m_LocalizationDictionary_French.Add("Continue", "Continue");
-        m_LocalizationDictionary_French.Add("Take a Break!", "Prendre une pause!");
+
     }
 
+    void ReadFile(TextAsset txtFile, Dictionary<string, string> languageDictionary)
+    {
+        //end of the line, could be mac, pc, or linux
+        var m_SplitStringLine = new string[] { "\r\n", "\r", "\n" };
+
+        //split the key and value. ex. START, Clock In!
+        var m_SplitKeyValue = new char[] { ',' };
+
+        //store all the lines in the file
+        var m_Lines = txtFile.text.Split(m_SplitStringLine, System.StringSplitOptions.RemoveEmptyEntries);
+
+        for (int i = 0; i < m_Lines.Length; i++)
+        {
+            print("Line= " + m_Lines[i]);
+            var m_line = m_Lines[i].Split(m_SplitKeyValue, System.StringSplitOptions.None);
+            string key=m_line[0];
+            string value=m_line[1];
+            languageDictionary.Add(key, value);
+
+        }
+    
+    }
+
+    public string GetLocalizedString(string key)
+    {
+        switch (m_Language)
+        {
+            case Languages.English:
+                if (m_LocalizationDictionary_French.ContainsKey(key))
+                {
+                    return m_LocalizationDictionary_English[key];
+                }
+                else
+                {
+                    return "!!!MISSING!!!";
+                }
+                
+
+            case Languages.French:
+                if (m_LocalizationDictionary_French.ContainsKey(key))
+                {
+                    return m_LocalizationDictionary_French[key];
+                }
+                else
+                {
+                    return "!!!MISSING!!!";
+                }
+        }
+        return "";
+    }
+   
     // Update is called once per frame
     void Update()
     {
@@ -49,36 +101,18 @@ public class LanguageSettings : MonoBehaviour
     public void EnglishChosen()
     {
         m_Language = Languages.English;
-        m_PlayButtonText.text = "Clock In!";
-        m_QuitButtonText.text = "Quit to Desktop";
+        m_PlayButtonText.text = m_LocalizationDictionary_English["START"];
+        m_QuitButtonText.text = m_LocalizationDictionary_English["QUIT"];
     }
 
     public void FrenchChosen()
     {
         m_Language = Languages.French;
-        m_PlayButtonText.text = GetLocalizedString("Clock In!");
+        m_PlayButtonText.text = m_LocalizationDictionary_French["START"];
         m_PlayButtonText.fontSize = 15;
-        m_QuitButtonText.text = GetLocalizedString("Quit to Desktop");
+        m_QuitButtonText.text = m_LocalizationDictionary_French["QUIT"];
         m_QuitButtonText.fontSize = 15;
     }
 
-    public string GetLocalizedString(string sourceStr)
-    {
-        switch (m_Language)
-        {
-            case Languages.English:
-                return sourceStr;
-
-            case Languages.French:
-                if (m_LocalizationDictionary_French.ContainsKey(sourceStr))
-                {
-                    return m_LocalizationDictionary_French[sourceStr];
-                }
-                else
-                {
-                    return "!!!MISSING!!!";
-                }
-        }
-        return "";
-    }
+   
 }
