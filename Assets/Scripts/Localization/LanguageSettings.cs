@@ -44,20 +44,20 @@ public class LanguageSettings : MonoBehaviour
     void ReadFile(TextAsset txtFile, Dictionary<string, string> languageDictionary)
     {
         //end of the line, could be mac, pc, or linux
-        var m_SplitStringLine = new string[] { "\r\n", "\r", "\n" };
+        string[] splitStringLine = new string[] { "\r\n", "\r", "\n" };
 
         //split the key and value. ex. START, Clock In!
-        var m_SplitKeyValue = new char[] { ',' };
+        char[] splitKeyValue = new char[] { ',' };
 
         //store all the lines in the file
-        var m_Lines = txtFile.text.Split(m_SplitStringLine, System.StringSplitOptions.RemoveEmptyEntries);
+        string[] Lines = txtFile.text.Split(splitStringLine, System.StringSplitOptions.RemoveEmptyEntries);
 
-        for (int i = 0; i < m_Lines.Length; i++)
+        for (int i = 0; i < Lines.Length; i++)
         {
-            print("Line= " + m_Lines[i]);
-            var m_line = m_Lines[i].Split(m_SplitKeyValue, System.StringSplitOptions.None);
-            string key=m_line[0];
-            string value=m_line[1];
+            print("Line= " + Lines[i]);
+            var line = Lines[i].Split(splitKeyValue, System.StringSplitOptions.None);
+            string key=line[0];
+            string value=line[1];
             languageDictionary.Add(key, value);
 
         }
@@ -75,7 +75,7 @@ public class LanguageSettings : MonoBehaviour
                 }
                 else
                 {
-                    return "!!!MISSING!!!";
+                    return "!!!No key value pair found in dictionary!!!";
                 }
                 
 
@@ -86,7 +86,7 @@ public class LanguageSettings : MonoBehaviour
                 }
                 else
                 {
-                    return "!!!MISSING!!!";
+                    return "!!!No key value pair found in dictionary!!!";
                 }
         }
         return "";
