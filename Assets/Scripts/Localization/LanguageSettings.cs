@@ -47,7 +47,7 @@ public class LanguageSettings : MonoBehaviour
         string[] splitStringLine = new string[] { "\r\n", "\r", "\n" };
 
         //split the key and value. ex. START, Clock In!
-        char[] splitKeyValue = new char[] { ',' };
+        char[] splitKeyValue = new char[] { '^' };
 
         //store all the lines in the file
         string[] Lines = txtFile.text.Split(splitStringLine, System.StringSplitOptions.RemoveEmptyEntries);
