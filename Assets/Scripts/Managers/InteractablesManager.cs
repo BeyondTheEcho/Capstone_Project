@@ -7,10 +7,16 @@ using static UnityEditor.Progress;
 
 public class InteractablesManager : MonoBehaviour
 {
+    private float m_BeltItemRange = 1.0f;
+    private float m_BeltMoveSpeed = 0.5f;
+
     public static InteractablesManager s_Instance { get; private set; }
 
     public List<InteractableBase> m_InteractableObjects;
     public List<InteractableBase> m_TextPromptInteractables;
+
+    public List<Belts> m_ConveyorBelts;
+    public List<InteractableBase> m_ObjectOnConveyors;
 
     private void Awake()
     {
@@ -22,6 +28,11 @@ public class InteractablesManager : MonoBehaviour
         {
             s_Instance = this;
         }
+    }
+
+    void Update()
+    {
+        MoveAllItemsOnConveyorBelts();
     }
 
     /// <summary>
@@ -103,6 +114,37 @@ public class InteractablesManager : MonoBehaviour
         return closestObject;
     }
 
+    public void MoveAllItemsOnConveyorBelts()
+    {
+        //Guard
+        if (m_ObjectOnConveyors.Count == 0)
+        {
+            return;
+        }
+
+        foreach (var item in m_ObjectOnConveyors)
+        {
+            float distance = float.MaxValue;
+            Belts closestBelt = null;
+
+            foreach (var belt in m_ConveyorBelts)
+            {
+                float delta = (item.transform.position - belt.gameObject.transform.position).sqrMagnitude;
+
+                if (delta < distance)
+                {
+                    closestBelt = belt;
+                    distance = delta;
+                }
+            }
+
+            if (distance < m_BeltItemRange * m_BeltItemRange)
+            {
+                item.transform.position = Vector3.MoveTowards(item.transform.position, closestBelt.m_NextWaypoint.transform.position, m_BeltMoveSpeed * Time.deltaTime);
+            }
+        }
+    }
+
     public void AddInteractable(InteractableBase interactableObject)
     {
         m_InteractableObjects.Add(interactableObject);
@@ -111,6 +153,26 @@ public class InteractablesManager : MonoBehaviour
     public void RemoveInteractable(InteractableBase interactableObject)
     {
         m_InteractableObjects.Remove(interactableObject);
+    }
+
+    public void AddItemToBelt(InteractableBase interactableObject)
+    {
+        m_ObjectOnConveyors.Add(interactableObject);
+    }
+
+    public void RemoveItemFromBelt(InteractableBase interactableObject)
+    {
+        m_ObjectOnConveyors.Remove(interactableObject);
+    }
+
+    public void AddConveyorBelt(Belts belt)
+    {
+        m_ConveyorBelts.Add(belt);
+    }
+
+    public void RemoveConveyorBelt(Belts belt)
+    {
+        m_ConveyorBelts.Remove(belt);
     }
 
     public void AddPromptObject(Player player, InteractableBase promptObject)
