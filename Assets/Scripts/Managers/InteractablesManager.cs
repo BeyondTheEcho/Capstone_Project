@@ -9,6 +9,7 @@ public class InteractablesManager : MonoBehaviour
 {
     private float m_BeltItemRange = 1.0f;
     private float m_BeltMoveSpeed = 0.5f;
+    private float m_BeltItemDistancePadding = 1.0f;
 
     public static InteractablesManager s_Instance { get; private set; }
 
@@ -17,6 +18,7 @@ public class InteractablesManager : MonoBehaviour
 
     public List<Belts> m_ConveyorBelts;
     public List<InteractableBase> m_ObjectOnConveyors;
+    private List<InteractableBase> m_TempObjectsOnConveyors;
 
     private void Awake()
     {
@@ -122,11 +124,13 @@ public class InteractablesManager : MonoBehaviour
             return;
         }
 
+        //Iterates through each item that is on a conveyor belt
         foreach (var item in m_ObjectOnConveyors)
         {
             float distance = float.MaxValue;
             Belts closestBelt = null;
 
+            //Iterates through each conveyor belt object and checks the distance to find the closest belt to the item (ie the belt the item is on)
             foreach (var belt in m_ConveyorBelts)
             {
                 float delta = (item.transform.position - belt.gameObject.transform.position).sqrMagnitude;
@@ -138,10 +142,35 @@ public class InteractablesManager : MonoBehaviour
                 }
             }
 
-            if (distance < m_BeltItemRange * m_BeltItemRange)
+            //Copies the list of items on the conveyor belt and removes the current item in the current iteration of the foreach loop we are scope in
+            m_TempObjectsOnConveyors = m_ObjectOnConveyors.ToList();
+            m_TempObjectsOnConveyors.Remove(item);
+
+            float distanceBetweenObjectsOnBelt = float.MaxValue;
+
+            //Iterates through the list of all OTHER items on conveyors to find the closest one
+            foreach (var itemTwo in m_TempObjectsOnConveyors)
             {
-                item.transform.position = Vector3.MoveTowards(item.transform.position, closestBelt.m_NextWaypoint.transform.position, m_BeltMoveSpeed * Time.deltaTime);
+                float deltaBetweenObjectsOnBelt = (item.transform.position - itemTwo.gameObject.transform.position).sqrMagnitude;
+
+                if (deltaBetweenObjectsOnBelt < distanceBetweenObjectsOnBelt)
+                {
+                    distanceBetweenObjectsOnBelt = deltaBetweenObjectsOnBelt;
+                }
             }
+
+            //Checks first to see if the next closest item on the belt is not too close then moves the item to the next belt in the chain
+            if (distanceBetweenObjectsOnBelt > m_BeltItemDistancePadding * m_BeltItemDistancePadding)
+            {
+                //Checks that the distance between the item and the closest belt is not too far into the next belts range
+                if (distance < m_BeltItemRange * m_BeltItemRange)
+                {
+                    item.transform.position = Vector3.MoveTowards(item.transform.position, closestBelt.m_NextWaypoint.transform.position, m_BeltMoveSpeed * Time.deltaTime);
+                }
+            }
+
+            //Clears the list for the next iteration
+            m_TempObjectsOnConveyors.Clear();
         }
     }
 

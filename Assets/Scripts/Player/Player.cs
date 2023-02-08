@@ -43,6 +43,11 @@ public class Player : MonoBehaviour
 
                 if (item != null)
                 {
+                    if (InteractablesManager.s_Instance.m_ObjectOnConveyors.Contains(item))
+                    {
+                        InteractablesManager.s_Instance.m_ObjectOnConveyors.Remove(item);
+                    }
+
                     item.OnInteract(this);
                 }
             }

@@ -1319,7 +1319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590a464a9f41b3940a08b20212e39c27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NextWaypoint: {fileID: 1537116225}
+  m_NextWaypoint: {fileID: 2112981702}
 --- !u!61 &1537116228
 BoxCollider2D:
   m_ObjectHideFlags: 0
