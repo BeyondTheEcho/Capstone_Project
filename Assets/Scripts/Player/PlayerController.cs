@@ -24,14 +24,11 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Vector2 velocity;
-      
-        velocity.x = Input.GetAxis("Horizontal");
-        velocity.y = Input.GetAxis("Vertical");
 
         if (playerNumber == PlayerNumber.PlayerOne)
         {
-            velocity.x = Input.GetAxis("Horizontal");
-            velocity.y = Input.GetAxis("Vertical");
+            velocity.x = Input.GetAxisRaw("Horizontal");
+            velocity.y = Input.GetAxisRaw("Vertical");
 
             m_Rigidbody.MovePosition(m_Rigidbody.position + velocity * m_Speed * Time.fixedDeltaTime);
         }
