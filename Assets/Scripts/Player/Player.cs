@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("PickUp"))
         {
             InteractableBase item = null;
                 
