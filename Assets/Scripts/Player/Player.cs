@@ -53,22 +53,22 @@ public class Player : MonoBehaviour
             }
         }
 
-        if ((Input.GetKeyDown(KeyCode.G) || Input.GetButtonDown("Drop")) && m_HeldItem != null)
+        if ((Input.GetKeyDown(KeyCode.G) || Input.GetButtonDown("Drop")))
         {
-            InteractableBase item = null;
-
-            item = InteractablesManager.s_Instance.ReturnClosestInteractableInRange(this, m_InteractRange);
-
-            if (item != null)
+            if (m_HeldItem != null)
             {
-                if (item.TryGetComponent(out Belts belt))
+                InteractableBase item = null;
+
+                item = InteractablesManager.s_Instance.ReturnClosestBeltInRange(this, m_InteractRange);
+
+                if (item != null)
                 {
-                    belt.PlaceItemOnBelt(this);
+                    item.GetComponent<Belts>().PlaceItemOnBelt(this);
                 }
-            }
-            else
-            {
-                m_HeldItem.OnDrop(this);
+                else
+                {
+                    m_HeldItem.OnDrop(this);
+                }
             }
         }
     }
