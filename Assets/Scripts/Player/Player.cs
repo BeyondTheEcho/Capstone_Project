@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("PickUp"))
         {
             InteractableBase item = null;
                 
@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.G) && m_HeldItem != null)
+        if ((Input.GetKeyDown(KeyCode.G) || Input.GetButtonDown("Drop")) && m_HeldItem != null)
         {
             InteractableBase item = null;
 
