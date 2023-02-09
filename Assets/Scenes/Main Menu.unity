@@ -2036,6 +2036,8 @@ MonoBehaviour:
   m_PlayButtonText: {fileID: 817404771}
   m_QuitButtonText: {fileID: 1529472349}
   m_Language: 0
+  m_FrenchTXT: {fileID: 4900000, guid: 4330258c149074546bf880fbe3e3ed62, type: 3}
+  m_EnglishTXT: {fileID: 4900000, guid: fed5004f357f382469e406f83ff0f3a5, type: 3}
 --- !u!4 &1721928556
 Transform:
   m_ObjectHideFlags: 0
