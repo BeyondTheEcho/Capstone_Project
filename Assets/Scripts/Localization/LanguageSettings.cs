@@ -10,7 +10,7 @@ public class LanguageSettings : MonoBehaviour
 {
     [SerializeField] private TMPro.TMP_Text m_PlayButtonText;
     [SerializeField] private TMPro.TMP_Text m_QuitButtonText;
-    [SerializeField] private Languages m_Language;
+    [SerializeField] private Languages m_Language= Languages.English;
     [SerializeField] private TextAsset m_FrenchTXT;
     [SerializeField] private TextAsset m_EnglishTXT;
 
