@@ -48,7 +48,7 @@ public class Player : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.G) && m_HeldItem != null)
+        if ((Input.GetKeyDown(KeyCode.G) || Input.GetButtonDown("Drop")) && m_HeldItem != null)
         {
             InteractableBase item = null;
 
