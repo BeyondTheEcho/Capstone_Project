@@ -10,7 +10,9 @@ public class LanguageSettings : MonoBehaviour
 {
     [SerializeField] private TMPro.TMP_Text m_PlayButtonText;
     [SerializeField] private TMPro.TMP_Text m_QuitButtonText;
-    [SerializeField] private Languages m_Language= Languages.English;
+
+    //set default to English, so programmer can directly start from game scene
+    [SerializeField] private Languages m_Language = Languages.English;
     [SerializeField] private TextAsset m_FrenchTXT;
     [SerializeField] private TextAsset m_EnglishTXT;
 
@@ -33,12 +35,9 @@ public class LanguageSettings : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         ReadFile(m_FrenchTXT, m_LocalizationDictionary_French);
         ReadFile(m_EnglishTXT, m_LocalizationDictionary_English);
         DontDestroyOnLoad(this);
-
-
     }
 
     void ReadFile(TextAsset txtFile, Dictionary<string, string> languageDictionary)

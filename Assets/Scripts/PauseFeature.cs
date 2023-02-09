@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 using TMPro;
 using UnityEngine.UI;
+using static Unity.VisualScripting.Icons;
 
 public class PauseFeature : MonoBehaviour
 {
@@ -18,9 +19,7 @@ public class PauseFeature : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        m_BackButtonText.text = LanguageSettings.s_Instance.GetLocalizedString("BACK");
-        m_QuitButtonText.text = LanguageSettings.s_Instance.GetLocalizedString("QUIT");
-        m_TakeABreakText.text = LanguageSettings.s_Instance.GetLocalizedString("PAUSE");
+
 
     }
 
@@ -31,6 +30,9 @@ public class PauseFeature : MonoBehaviour
         {
             if (m_InPause == false)
             {
+                m_BackButtonText.text = LanguageSettings.s_Instance.GetLocalizedString("BACK");
+                m_QuitButtonText.text = LanguageSettings.s_Instance.GetLocalizedString("QUIT");
+                m_TakeABreakText.text = LanguageSettings.s_Instance.GetLocalizedString("PAUSE");
                 m_InPause = true;
                 m_QuitButtonText.fontSize = 14;
                 m_PauseCanvas.SetActive(true);
