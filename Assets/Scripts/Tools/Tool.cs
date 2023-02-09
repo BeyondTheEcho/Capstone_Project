@@ -47,9 +47,9 @@ public class Tool : InteractableBase, IDropable
 
     public override string ReturnTextPrompt()
     {
-        m_GetText = LanguageSettings.s_Instance.GetLocalizedString("Press 'F' to pickup the ");
+        m_GetText = string.Format(LanguageSettings.s_Instance.GetLocalizedString("PICK"), LanguageSettings.s_Instance.GetLocalizedString(m_ToolType.ToString())) ;
         
-        return m_GetText + m_ToolType.ToString();
+        return m_GetText;
     }
 
     public void OnDrop(Player player)
