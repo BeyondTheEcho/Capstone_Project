@@ -1,10 +1,10 @@
 START^ Commence le travaille!
 QUIT^ Quitter sur le bureau
-PICK^ Appuyez sur 'F' pour récupérer le {0}!!
+PICK^ Appuyez sur 'F' pour rÃ©cupÃ©rer le {0}!!
 BACK^ Continue
 PAUSE^ Prendre une pause!
 Hammer^ Marteau
 Screwdriver^ Tournevis
-Wrench^ Clé
+Wrench^ ClÃ©
 
 
