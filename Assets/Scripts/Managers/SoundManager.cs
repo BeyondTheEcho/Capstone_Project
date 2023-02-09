@@ -23,6 +23,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip GameOver;
     [SerializeField] private AudioClip Box;
     [SerializeField] private AudioClip Bolt;
+    [SerializeField] private AudioClip Walk;
     private float soundTime;
     public static SoundManager s_Instance { get; private set; }
 
@@ -58,46 +59,6 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        if (Input.GetKeyDown("i"))
-        {
-            PlayBGM((int)BGM.Low);
-        }
-        if (Input.GetKeyDown("k"))
-        {
-            PlayBGM((int)BGM.Mid);
-        }
-        if (Input.GetKeyDown("l"))
-        {
-            PlayBGM((int)BGM.High);
-        }
-    }
-
-    public void PlayLow()
-    {
-        soundTime = m_AudioSource.time;
-        m_AudioSource.Stop();
-        m_AudioSource.clip = m_AudioClips[1];
-        m_AudioSource.time = soundTime;
-        m_AudioSource.Play();
-    }
-    public void PlayMid()
-    {
-        soundTime = m_AudioSource.time;
-        m_AudioSource.Stop();
-        m_AudioSource.clip = m_AudioClips[2];
-        m_AudioSource.time = soundTime;
-        m_AudioSource.Play();
-    }
-    public void PlayHigh()
-    {
-        soundTime = m_AudioSource.time;
-        m_AudioSource.Stop();
-        m_AudioSource.clip = m_AudioClips[3];
-        m_AudioSource.time = soundTime;
-        m_AudioSource.Play();
-    }
 
     public void PlayBGM(int clip)
     {
@@ -135,5 +96,19 @@ public class SoundManager : MonoBehaviour
     public void PlayBolt()
     {
         m_AudioSource.PlayOneShot(Bolt, 0.5f);
+    }
+    public void PlayWalk()
+    {
+        m_AudioSource.PlayOneShot(Walk, 0.25f);
+    }
+    public void PauseMusic()
+    {
+        soundTime = m_AudioSource.time;
+        m_AudioSource.Stop();
+    }
+    public void PlayMusic()
+    {
+        m_AudioSource.time = soundTime;
+        m_AudioSource.Play();
     }
 }
