@@ -10,6 +10,7 @@ public class Belts : InteractableBase
     void Awake()
     {
         StoreRef();
+        InteractablesManager.s_Instance.AddConveyorBelt(this);
     }
 
     public void PlaceItemOnBelt(Player player)
@@ -20,6 +21,8 @@ public class Belts : InteractableBase
 
         if (mono.TryGetComponent(out Transform itemTransform))
         {
+            InteractablesManager.s_Instance.AddItemToBelt(interactable);
+
             itemTransform.parent = null;
 
             itemTransform.position = gameObject.transform.position;
@@ -45,5 +48,6 @@ public class Belts : InteractableBase
     private void OnDestroy()
     {
         DeleteRef();
+        InteractablesManager.s_Instance.RemoveConveyorBelt(this);
     }
 }
