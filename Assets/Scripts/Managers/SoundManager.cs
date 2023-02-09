@@ -24,7 +24,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip m_Box;
     [SerializeField] private AudioClip m_Bolt;
     [SerializeField] private AudioClip m_Walk;
-    private float m_soundTime;
+    private float m_SoundTime;
     public static SoundManager s_Instance { get; private set; }
 
     private void Awake()
