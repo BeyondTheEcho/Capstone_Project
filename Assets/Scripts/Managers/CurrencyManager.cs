@@ -23,11 +23,6 @@ public class CurrencyManager : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        m_CurrencyText.text = m_TotalCurrency.ToString();
-    }
-
     void Update()
     {
         if (Input.GetKeyDown("o"))
@@ -38,6 +33,8 @@ public class CurrencyManager : MonoBehaviour
         {
             RemoveCurrency(5);
         }
+
+        m_CurrencyText.text = $"Cash: {m_TotalCurrency.ToString()}";
     }
 
     private void AddCurrency(int amount)
