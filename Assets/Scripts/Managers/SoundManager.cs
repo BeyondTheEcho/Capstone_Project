@@ -20,10 +20,10 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip m_Alarm;
     [SerializeField] private AudioClip m_Clamp;
     [SerializeField] private AudioClip m_Heat_treating;
-    [SerializeField] private AudioClip GameOver;
-    [SerializeField] private AudioClip Box;
-    [SerializeField] private AudioClip Bolt;
-    [SerializeField] private AudioClip Walk;
+    [SerializeField] private AudioClip m_GameOver;
+    [SerializeField] private AudioClip m_Box;
+    [SerializeField] private AudioClip m_Bolt;
+    [SerializeField] private AudioClip m_Walk;
     private float soundTime;
     public static SoundManager s_Instance { get; private set; }
 
@@ -87,19 +87,19 @@ public class SoundManager : MonoBehaviour
     public void PlayGameOver()
     {
         m_AudioSource.Stop();
-        m_AudioSource.PlayOneShot(GameOver, 0.5f);
+        m_AudioSource.PlayOneShot(m_GameOver, 0.5f);
     }
     public void PlayBox()
     {
-        m_AudioSource.PlayOneShot(Box, 0.5f);
+        m_AudioSource.PlayOneShot(m_Box, 0.5f);
     }
     public void PlayBolt()
     {
-        m_AudioSource.PlayOneShot(Bolt, 0.5f);
+        m_AudioSource.PlayOneShot(m_Bolt, 0.5f);
     }
     public void PlayWalk()
     {
-        m_AudioSource.PlayOneShot(Walk, 0.25f);
+        m_AudioSource.PlayOneShot(m_Walk, 0.25f);
     }
     public void PauseMusic()
     {
