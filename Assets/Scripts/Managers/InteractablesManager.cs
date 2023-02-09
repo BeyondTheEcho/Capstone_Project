@@ -116,6 +116,35 @@ public class InteractablesManager : MonoBehaviour
         return closestObject;
     }
 
+    public Belts? ReturnClosestBeltInRange(Player player, float interactRange)
+    {
+        if (m_ConveyorBelts.Count == 0)
+        {
+            return null;
+        }
+
+        float distance = float.MaxValue;
+        Belts closestBelt = null;
+
+        foreach (var belt in m_ConveyorBelts)
+        {
+            float delta = (player.transform.position - belt.gameObject.transform.position).sqrMagnitude;
+
+            if (delta < distance)
+            {
+                closestBelt = belt;
+                distance = delta;
+            }
+        }
+
+        if (distance > interactRange * interactRange)
+        {
+            return null;
+        }
+
+        return closestBelt;
+    }
+
     public void MoveAllItemsOnConveyorBelts()
     {
         //Guard
