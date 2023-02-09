@@ -24,7 +24,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip m_Box;
     [SerializeField] private AudioClip m_Bolt;
     [SerializeField] private AudioClip m_Walk;
-    private float soundTime;
+    private float m_soundTime;
     public static SoundManager s_Instance { get; private set; }
 
     private void Awake()
@@ -62,10 +62,10 @@ public class SoundManager : MonoBehaviour
 
     public void PlayBGM(int clip)
     {
-        soundTime = m_AudioSource.time;
+        m_soundTime = m_AudioSource.time;
         m_AudioSource.Stop();
         m_AudioSource.clip = m_AudioClips[clip];
-        m_AudioSource.time = soundTime;
+        m_AudioSource.time = m_soundTime;
         m_AudioSource.Play();
     }
 
@@ -103,12 +103,12 @@ public class SoundManager : MonoBehaviour
     }
     public void PauseMusic()
     {
-        soundTime = m_AudioSource.time;
+        m_soundTime = m_AudioSource.time;
         m_AudioSource.Stop();
     }
     public void PlayMusic()
     {
-        m_AudioSource.time = soundTime;
+        m_AudioSource.time = m_soundTime;
         m_AudioSource.Play();
     }
 }
