@@ -12,12 +12,12 @@ public class OrderManager : MonoBehaviour
     //Order Vars
     [Header("Order Settings")]
     [SerializeField] private GameObject[] m_OrderItems;
-    [SerializeField] private Transform m_OrderSpawnLocation;
+    [SerializeField] private GameObject m_OrderSpawnBelt;
     private int m_BaseOrderSize = 10;
     private int m_CurrentOrderSize = 0;
     private int m_MaxOrderSize = 0;
     private int m_CurrentOrderItem;
-    private float m_OrderSpawnDelay = 1.5f;
+    private float m_OrderSpawnDelay = 3f;
 
     //Chaos Vars
     private float m_Chaos = 0.0f;
@@ -52,7 +52,9 @@ public class OrderManager : MonoBehaviour
         {
             yield return new WaitForSeconds(m_OrderSpawnDelay);
 
-            Instantiate(m_OrderItems[m_CurrentOrderItem], m_OrderSpawnLocation.position, Quaternion.identity);
+            GameObject item = Instantiate(m_OrderItems[m_CurrentOrderItem], m_OrderSpawnBelt.transform.position, Quaternion.identity);
+
+            m_OrderSpawnBelt.GetComponent<Belts>().PlaceItemOnBeltSystem(item);
         }
     }
 

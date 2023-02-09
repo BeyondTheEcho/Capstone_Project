@@ -7,7 +7,7 @@ public class Belts : InteractableBase
 {
     public Transform m_NextWaypoint;
 
-    void Awake()
+    void Start()
     {
         StoreRef();
         InteractablesManager.s_Instance.AddConveyorBelt(this);
@@ -33,6 +33,13 @@ public class Belts : InteractableBase
 
             interactable.StoreRef();
         }
+    }
+
+    public void PlaceItemOnBeltSystem(GameObject item)
+    {
+        InteractablesManager.s_Instance.AddItemToBelt(item.GetComponent<InteractableBase>());
+
+        item.transform.position = gameObject.transform.position;
     }
 
     public override void OnInteract(Player player)

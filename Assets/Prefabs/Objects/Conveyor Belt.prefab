@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1777441223593328998}
   - component: {fileID: 8842742302476896371}
   - component: {fileID: 4537493998782692808}
-  - component: {fileID: 1042419093}
   m_Layer: 8
   m_Name: Conveyor Belt
   m_TagString: Untagged
@@ -126,23 +125,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_NextWaypoint: {fileID: 0}
---- !u!249 &1042419093
-AreaEffector2D:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 263627698728819265}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 128
-  m_UseGlobalAngle: 1
-  m_ForceAngle: 0
-  m_ForceMagnitude: 0.2
-  m_ForceVariation: 0
-  m_ForceTarget: 0
-  m_Drag: 0
-  m_AngularDrag: 0
