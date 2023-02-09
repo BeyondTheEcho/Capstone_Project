@@ -10,13 +10,10 @@ public class Tool : InteractableBase, IDropable
     [SerializeField] private ToolType m_ToolType;
     private Coroutine m_DespawnCoroutine;
     private string m_GetText;
-    void Awake()
-    {
-        StoreRef();
-    }
 
     void Start()
     {
+        StoreRef();
         m_DespawnCoroutine = StartCoroutine(DespawnCountdown());
     }
 

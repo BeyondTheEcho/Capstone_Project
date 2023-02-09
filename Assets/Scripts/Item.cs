@@ -16,12 +16,12 @@ public class Item : InteractableBase, IDropable
 
     void Awake()
     {
-        StoreRef();
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Start()
     {
+        StoreRef();
         UpdateItem();
     }
 
