@@ -14,6 +14,7 @@ public class Tool : InteractableBase, IDropable
     void Start()
     {
         StoreRef();
+        AddDropableToList();
         m_DespawnCoroutine = StartCoroutine(DespawnCountdown());
     }
 
@@ -40,6 +41,7 @@ public class Tool : InteractableBase, IDropable
     private void OnDestroy()
     {
         DeleteRef();
+        RemoveDropableFromList();
     }
 
     public override string ReturnTextPrompt()
@@ -60,5 +62,15 @@ public class Tool : InteractableBase, IDropable
         StoreRef();
 
         m_DespawnCoroutine = StartCoroutine(DespawnCountdown());
+    }
+
+    public void AddDropableToList()
+    {
+        InteractablesManager.s_Instance.AddIDropable(this);
+    }
+
+    public void RemoveDropableFromList()
+    {
+        InteractablesManager.s_Instance.RemoveIDropable(this);
     }
 }

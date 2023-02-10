@@ -1,9 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
 using UnityEngine;
-using static UnityEditor.Progress;
 
 public class InteractablesManager : MonoBehaviour
 {
@@ -12,10 +12,9 @@ public class InteractablesManager : MonoBehaviour
     private float m_BeltItemDistancePadding = 1.0f;
 
     public static InteractablesManager s_Instance { get; private set; }
-
     public List<InteractableBase> m_InteractableObjects;
     public List<InteractableBase> m_TextPromptInteractables;
-
+    public List<InteractableBase> m_Dropables;
     public List<Belts> m_ConveyorBelts;
     public List<InteractableBase> m_ObjectOnConveyors;
     private List<InteractableBase> m_TempObjectsOnConveyors;
@@ -43,33 +42,14 @@ public class InteractablesManager : MonoBehaviour
     /// <param name="player">Instance of the player calling the method</param>
     /// <param name="pickupRange">Range the player can interact in</param>
     /// <returns></returns>
-    public InteractableBase? ReturnClosestInteractableInRange(Player player, float pickupRange)
+    public InteractableBase? GetClosestInteractableInRange(Player player, float interactRange)
     {
-        if (m_InteractableObjects.Count == 0)
-        {
-            return null;
-        }
+        return GetClosestFromCollection(player, interactRange, m_InteractableObjects);
+    }
 
-        float distance = float.MaxValue;
-        InteractableBase closestObject = null;
-
-        foreach (var interactable in m_InteractableObjects)
-        {
-            float delta = (player.transform.position - interactable.gameObject.transform.position).sqrMagnitude;
-
-            if (delta < distance)
-            {
-                closestObject = interactable;
-                distance = delta;
-            }
-        }
-
-        if (distance > pickupRange * pickupRange)
-        {
-            return null;
-        }
-
-        return closestObject;
+    public Belts? GetClosestBeltInRange(Player player, float interactRange)
+    {
+        return GetClosestFromCollection(player, interactRange, m_ConveyorBelts);
     }
 
     /// <summary>
@@ -78,71 +58,19 @@ public class InteractablesManager : MonoBehaviour
     /// <param name="player">Instance of the player calling the method</param>
     /// <param name="pickupRange">Range the player can interact in</param>
     /// <returns></returns>
-    public InteractableBase? ReturnClosestPickupableInRange(Player player, float pickupRange)
+    public InteractableBase? GetClosestPickupableInRange(Player player, float interactRange)
     {
-        if (m_InteractableObjects.Count == 0)
-        {
-            return null;
-        }
-
-        List<InteractableBase> pickupables = new List<InteractableBase>();
-        float distance = float.MaxValue;
-        InteractableBase closestObject = null;
-
-        foreach (var interactable in m_InteractableObjects)
-        {
-            if (!interactable.TryGetComponent(out Belts belts))
-            {
-                pickupables.Add(interactable);
-            }
-        }
-
-        foreach (var pickupable in pickupables)
-        {
-            float delta = (player.transform.position - pickupable.gameObject.transform.position).sqrMagnitude;
-
-            if (delta < distance)
-            {
-                closestObject = pickupable;
-                distance = delta;
-            }
-        }
-
-        if (distance > pickupRange * pickupRange)
-        {
-            return null;
-        }
-
-        return closestObject;
+        return GetClosestFromCollection(player, interactRange, m_Dropables);
     }
 
-    public Belts? ReturnClosestBeltInRange(Player player, float interactRange)
+    private T GetClosestFromCollection<T>(Player player, float interactRange, IEnumerable<T> myList) where T : MonoBehaviour
     {
-        if (m_ConveyorBelts.Count == 0)
-        {
-            return null;
-        }
-
-        float distance = float.MaxValue;
-        Belts closestBelt = null;
-
-        foreach (var belt in m_ConveyorBelts)
-        {
-            float delta = (player.transform.position - belt.gameObject.transform.position).sqrMagnitude;
-
-            if (delta < distance)
-            {
-                closestBelt = belt;
-                distance = delta;
-            }
-        }
-
-        if (distance > interactRange * interactRange)
-        {
-            return null;
-        }
-
-        return closestBelt;
+        return myList
+            .Select(belt => (belt, (player.transform.position - belt.gameObject.transform.position).sqrMagnitude))
+            .Where(tuple => tuple.sqrMagnitude < interactRange * interactRange)
+            .OrderBy(tuple => tuple.sqrMagnitude)
+            .Select(tuple => tuple.belt)
+            .FirstOrDefault();
     }
 
     public void MoveAllItemsOnConveyorBelts()
@@ -231,6 +159,16 @@ public class InteractablesManager : MonoBehaviour
     public void RemoveConveyorBelt(Belts belt)
     {
         m_ConveyorBelts.Remove(belt);
+    }
+
+    public void AddIDropable(InteractableBase drop)
+    {
+        m_Dropables.Add(drop);
+    }
+
+    public void RemoveIDropable(InteractableBase drop)
+    {
+        m_Dropables.Remove(drop);
     }
 
     public void AddPromptObject(Player player, InteractableBase promptObject)
