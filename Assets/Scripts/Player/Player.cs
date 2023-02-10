@@ -32,13 +32,13 @@ public class Player : MonoBehaviour
         {
             InteractableBase item = null;
                 
-            item = InteractablesManager.s_Instance.ReturnClosestInteractableInRange(this, m_InteractRange);
+            item = InteractablesManager.s_Instance.GetClosestInteractableInRange(this, m_InteractRange);
 
             if (item != null)
             {
                 if (item.TryGetComponent(out Belts belt))
                 {
-                    item = InteractablesManager.s_Instance.ReturnClosestPickupableInRange(this, m_InteractRange);
+                    item = InteractablesManager.s_Instance.GetClosestPickupableInRange(this, m_InteractRange);
                 }
 
                 if (item != null)
@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
             {
                 InteractableBase item = null;
 
-                item = InteractablesManager.s_Instance.ReturnClosestBeltInRange(this, m_InteractRange);
+                item = InteractablesManager.s_Instance.GetClosestBeltInRange(this, m_InteractRange);
 
                 if (item != null)
                 {
