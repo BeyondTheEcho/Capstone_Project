@@ -62,10 +62,10 @@ public class SoundManager : MonoBehaviour
 
     public void PlayBGM(int clip)
     {
-        m_soundTime = m_AudioSource.time;
+        m_SoundTime = m_AudioSource.time;
         m_AudioSource.Stop();
         m_AudioSource.clip = m_AudioClips[clip];
-        m_AudioSource.time = m_soundTime;
+        m_AudioSource.time = m_SoundTime;
         m_AudioSource.Play();
     }
 
@@ -103,12 +103,12 @@ public class SoundManager : MonoBehaviour
     }
     public void PauseMusic()
     {
-        m_soundTime = m_AudioSource.time;
+        m_SoundTime = m_AudioSource.time;
         m_AudioSource.Stop();
     }
     public void PlayMusic()
     {
-        m_AudioSource.time = m_soundTime;
+        m_AudioSource.time = m_SoundTime;
         m_AudioSource.Play();
     }
 }
