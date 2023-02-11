@@ -22,6 +22,7 @@ public class Item : InteractableBase, IDropable
     void Start()
     {
         StoreRef();
+        AddDropableToList();
         UpdateItem();
     }
 
@@ -72,8 +73,19 @@ public class Item : InteractableBase, IDropable
         gameObject.SetActive(true);
     }
 
+    public void AddDropableToList()
+    {
+        InteractablesManager.s_Instance.AddIDropable(this);
+    }
+
+    public void RemoveDropableFromList()
+    {
+        InteractablesManager.s_Instance.RemoveIDropable(this);
+    }
+
     private void OnDestroy()
     {
         DeleteRef();
+        RemoveDropableFromList();
     }
 }
