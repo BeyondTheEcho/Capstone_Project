@@ -93,17 +93,16 @@ public class OrderManager : MonoBehaviour
         m_CurrentOrderSize--;
     }
 
-    public Item GetCurrentOrderItem()
+    public ItemType GetCurrentOrderItemType()
     {
         m_OrderItems[m_CurrentOrderItem].TryGetComponent(out Item item);
-
-        return item;
+        return item.GetItemType();
     }
 
     private void UpdateUI()
     {
         m_ChaosText.text = $"Chaos: {m_Chaos}";
-        m_OrderText.text = $"Order Size: {m_MaxOrderSize}";
+        m_OrderText.text = $"Order Size: {m_CurrentOrderSize}";
     }
 
     IEnumerator IncrementChaos()
