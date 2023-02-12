@@ -9,6 +9,9 @@ public class OrderManager : MonoBehaviour
     //Difficulty (Defaulted until main menu branch is merged)
     private Difficulty m_Difficulty = Difficulty.medium;
 
+    //Static Instance
+    public static OrderManager s_Instance { get; private set; }
+
     //Order Vars
     [Header("Order Settings")]
     [SerializeField] private GameObject[] m_OrderItems;
@@ -29,6 +32,18 @@ public class OrderManager : MonoBehaviour
     [Header("UI Settings")]
     [SerializeField] private TMP_Text m_ChaosText;
     [SerializeField] private TMP_Text m_OrderText;
+
+    private void Awake()
+    {
+        if (s_Instance != null && s_Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            s_Instance = this;
+        }
+    }
 
 
     void Start()
@@ -71,6 +86,18 @@ public class OrderManager : MonoBehaviour
         m_CurrentOrderItem = Random.Range(0, orderItemMax);
 
         StartCoroutine(SpawnOrder(m_CurrentOrderSize));
+    }
+
+    public void SubtractOrderItem()
+    {
+        m_CurrentOrderSize--;
+    }
+
+    public Item GetCurrentOrderItem()
+    {
+        m_OrderItems[m_CurrentOrderItem].TryGetComponent(out Item item);
+
+        return item;
     }
 
     private void UpdateUI()
