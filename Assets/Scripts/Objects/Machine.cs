@@ -7,50 +7,20 @@ public class Machine : MonoBehaviour
 {
     [SerializeField] private Transform m_OutputBeltTransform;
     [SerializeField] private int m_MachineProcessingStage = 0;
-    private float m_BeltMoveSpeed = 0.5f;
     private float m_MachineProcessingDelay = 3.5f;
 
-    public void RunMachine(Collider2D col)
+    public void RunMachine(Item item, MachineInput input)
     {
-        StartCoroutine(ProcessOutputItem(col));
+        StartCoroutine(ProcessOutputItem(item, input));
     }
 
-    IEnumerator ProcessOutputItem(Collider2D col)
+    IEnumerator ProcessOutputItem(Item item, MachineInput input)
     {
-        if (col.gameObject.TryGetComponent(out Item item))
+        if (item.GetItemStage() == m_MachineProcessingStage)
         {
-            while (true)
-            {
-                if (item.transform.position == m_OutputBeltTransform.position)
-                {
-                    break;
-                }
-
-                if (item.GetItemStage() == m_MachineProcessingStage)
-                {
-                    yield return new WaitForSeconds(m_MachineProcessingDelay);
-
-                    item.ProgressItemStage();
-                }
-
-                item.transform.position = Vector3.MoveTowards(item.transform.position, m_OutputBeltTransform.position, m_BeltMoveSpeed * Time.deltaTime);
-
-                yield return new WaitForEndOfFrame();
-            }
-        }
-        else
-        {
-            while (true)
-            {
-                if (col.transform.position == m_OutputBeltTransform.position)
-                {
-                    break;
-                }
-
-                col.transform.position = Vector3.MoveTowards(col.transform.position, m_OutputBeltTransform.position, m_BeltMoveSpeed * Time.deltaTime);
-
-                yield return new WaitForEndOfFrame();
-            }
+            yield return new WaitForSeconds(m_MachineProcessingDelay);
+            item.ProgressItemStage();
+            input.ReturnItemToBelt(item.gameObject);
         }
     }
 }

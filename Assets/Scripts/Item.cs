@@ -59,11 +59,6 @@ public class Item : InteractableBase, IDropable
         return $"Press 'F' to pickup {m_ItemType.ToString()}.";
     }
 
-    private enum ItemType
-    {
-        IronPlate,
-    }
-
     public void OnDrop(Player player)
     {
         player.m_HeldItem = null;
@@ -78,6 +73,16 @@ public class Item : InteractableBase, IDropable
         return m_CurrentItemStage;
     }
 
+    public int GetItemMaxStage()
+    {
+        return m_MaxItemStage;
+    }
+
+    public ItemType GetItemType()
+    {
+        return m_ItemType;
+    }
+
     public void AddDropableToList()
     {
         InteractablesManager.s_Instance.AddIDropable(this);
@@ -90,6 +95,7 @@ public class Item : InteractableBase, IDropable
 
     private void OnDestroy()
     {
+        InteractablesManager.s_Instance.RemoveFromAllLists(this);
         DeleteRef();
         RemoveDropableFromList();
     }

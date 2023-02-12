@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class DropOffManager : MonoBehaviour
@@ -14,5 +15,31 @@ public class DropOffManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.TryGetComponent(out Item item))
+        {
+            if (item.GetItemType() == OrderManager.s_Instance.GetCurrentOrderItemType())
+            {
+                if (item.GetItemStage() == item.GetItemMaxStage())
+                {
+                    OrderManager.s_Instance.SubtractOrderItem();
+                }
+            }
+            
+            ClearItem(col.gameObject);
+        }
+        else
+        {
+            ClearItem(col.gameObject);
+        }
+    }
+
+    private void ClearItem(GameObject go)
+    {
+        InteractablesManager.s_Instance.RemoveItemFromBelt(go.GetComponent<InteractableBase>());
+        Destroy(go);
     }
 }
