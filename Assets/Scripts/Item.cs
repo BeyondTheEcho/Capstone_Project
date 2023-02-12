@@ -73,6 +73,11 @@ public class Item : InteractableBase, IDropable
         gameObject.SetActive(true);
     }
 
+    public int GetItemStage()
+    {
+        return m_CurrentItemStage;
+    }
+
     public void AddDropableToList()
     {
         InteractablesManager.s_Instance.AddIDropable(this);
