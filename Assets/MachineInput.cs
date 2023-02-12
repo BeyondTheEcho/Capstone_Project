@@ -18,12 +18,12 @@ public class MachineInput : MonoBehaviour
     }
     private void RemoveItemFromBelt(GameObject go)
     {
-        InteractablesManager.s_Instance.m_ObjectOnConveyors.Remove(go.GetComponent<InteractableBase>());
+        InteractablesManager.s_Instance.RemoveItemFromBelt(go.GetComponent<InteractableBase>());
     }
 
     public void ReturnItemToBelt(GameObject go)
     {
         go.transform.position = m_MidBelt.position;
-        InteractablesManager.s_Instance.m_ObjectOnConveyors.Add(go.GetComponent<InteractableBase>());
+        InteractablesManager.s_Instance.AddItemToBelt(go.GetComponent<InteractableBase>());
     }
 }

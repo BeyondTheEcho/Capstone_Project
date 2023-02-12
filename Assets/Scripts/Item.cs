@@ -51,6 +51,8 @@ public class Item : InteractableBase, IDropable
         gameObject.transform.position = player.transform.position;
         gameObject.transform.parent = player.transform;
 
+        DeleteRef();
+
         gameObject.SetActive(false);
     }
 
@@ -95,7 +97,6 @@ public class Item : InteractableBase, IDropable
 
     private void OnDestroy()
     {
-        InteractablesManager.s_Instance.RemoveFromAllLists(this);
         DeleteRef();
         RemoveDropableFromList();
     }
