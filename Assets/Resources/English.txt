@@ -1,5 +1,6 @@
 START^ Clock In!
 QUIT^ Quit to Desktop
+TOMenu^ Quit to menu
 PICK^ Press 'F' to pickup the {0}!! 
 BACK^ Continue
 PAUSE^ Take a Break!

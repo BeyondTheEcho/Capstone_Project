@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
+using static Unity.VisualScripting.Icons;
 
 public class PauseFeature : MonoBehaviour
 {
     public GameObject m_PauseCanvas;
-    public static bool m_InPause=false;
+    public static bool m_InPause;
 
     [SerializeField] private TMPro.TMP_Text m_BackButtonText;
     [SerializeField] private TMPro.TMP_Text m_QuitButtonText;
@@ -17,8 +18,9 @@ public class PauseFeature : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-
+        m_PauseCanvas.SetActive(false);
+        m_InPause = false;
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -29,7 +31,7 @@ public class PauseFeature : MonoBehaviour
             if (m_InPause == false)
             {
                 m_BackButtonText.text = LanguageSettings.s_Instance.GetLocalizedString("BACK");
-                m_QuitButtonText.text = LanguageSettings.s_Instance.GetLocalizedString("QUIT");
+                m_QuitButtonText.text = LanguageSettings.s_Instance.GetLocalizedString("TOMenu");
                 m_TakeABreakText.text = LanguageSettings.s_Instance.GetLocalizedString("PAUSE");
                 m_InPause = true;
                 m_QuitButtonText.fontSize = 14;
@@ -47,12 +49,10 @@ public class PauseFeature : MonoBehaviour
         Time.timeScale = 1;
     }
 
-    public void QuitGame()
+    public void QuitToMenu()
     {
-        #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-        #endif
-                Application.Quit();
+        LanguageSettings.s_Instance.Reset();
+        SceneManager.LoadScene(0);
     }
 
 
