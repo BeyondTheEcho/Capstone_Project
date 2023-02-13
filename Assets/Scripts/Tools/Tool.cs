@@ -21,7 +21,7 @@ public class Tool : InteractableBase, IDropable
     private IEnumerator DespawnCountdown()
     {
         yield return new WaitForSeconds(m_DespawnTime);
-        Destroy(this);
+        Destroy(gameObject);
     }
 
     public override void OnInteract(Player player)

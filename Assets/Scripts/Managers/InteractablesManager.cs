@@ -12,12 +12,15 @@ public class InteractablesManager : MonoBehaviour
     private float m_BeltItemDistancePadding = 1.0f;
 
     public static InteractablesManager s_Instance { get; private set; }
+
     public List<InteractableBase> m_InteractableObjects;
     public List<InteractableBase> m_TextPromptInteractables;
     public List<InteractableBase> m_Dropables;
-    public List<Belts> m_ConveyorBelts;
     public List<InteractableBase> m_ObjectOnConveyors;
+
     private List<InteractableBase> m_TempObjectsOnConveyors;
+
+    public List<Belts> m_ConveyorBelts;
 
     private void Awake()
     {
@@ -34,6 +37,14 @@ public class InteractablesManager : MonoBehaviour
     void Update()
     {
         MoveAllItemsOnConveyorBelts();
+    }
+
+    public void RemoveFromAllLists(InteractableBase item)
+    {
+        m_InteractableObjects.Remove(item);
+        m_TextPromptInteractables.Remove(item);
+        m_Dropables.Remove(item);
+        m_ObjectOnConveyors.Remove(item);
     }
 
     /// <summary>
