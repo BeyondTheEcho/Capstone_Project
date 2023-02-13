@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.UI;
 
 using System.IO;
+using static Unity.VisualScripting.Icons;
 
 public class LanguageSettings : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class LanguageSettings : MonoBehaviour
     [SerializeField] private TMPro.TMP_Text m_QuitButtonText;
 
     //set default to English, so programmer can directly start from game scene
-    [SerializeField] private Languages m_Language = Languages.English;
+    [SerializeField] public Languages m_Language;
     [SerializeField] private TextAsset m_FrenchTXT;
     [SerializeField] private TextAsset m_EnglishTXT;
 
@@ -113,5 +114,9 @@ public class LanguageSettings : MonoBehaviour
         m_QuitButtonText.fontSize = 15;
     }
 
-   
+    public void Reset()
+    {
+        m_Language = Languages.English;
+        Destroy(this);
+    }
 }
