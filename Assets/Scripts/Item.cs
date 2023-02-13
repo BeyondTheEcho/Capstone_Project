@@ -11,12 +11,14 @@ public class Item : InteractableBase, IDropable
     [SerializeField] private Sprite[] m_IronSprites;
 
     private int m_CurrentItemStage = 0;
-    private int m_MaxItemStage = 2;
+    private int m_MaxItemStage;
     private SpriteRenderer m_SpriteRenderer;
 
     void Awake()
     {
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
+
+        m_MaxItemStage = m_IronSprites.Length - 1;
     }
 
     void Start()

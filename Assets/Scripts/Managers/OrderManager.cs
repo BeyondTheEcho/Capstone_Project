@@ -79,8 +79,6 @@ public class OrderManager : MonoBehaviour
 
         m_CurrentOrderSize = Random.Range(1, m_MaxOrderSize);
 
-        Debug.Log(m_CurrentOrderSize.ToString());
-
         int orderItemMax = m_OrderItems.Length - 1;
 
         m_CurrentOrderItem = Random.Range(0, orderItemMax);

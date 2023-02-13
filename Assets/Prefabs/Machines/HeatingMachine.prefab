@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_OutputBeltTransform: {fileID: 1249034095930577425}
-  m_MachineProcessingStage: 1
+  m_MachineProcessingStage: 0
 --- !u!1001 &6320337906463527943
 PrefabInstance:
   m_ObjectHideFlags: 0
