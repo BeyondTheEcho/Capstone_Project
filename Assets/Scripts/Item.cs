@@ -11,12 +11,14 @@ public class Item : InteractableBase, IDropable
     [SerializeField] private Sprite[] m_IronSprites;
 
     private int m_CurrentItemStage = 0;
-    private int m_MaxItemStage = 2;
+    private int m_MaxItemStage;
     private SpriteRenderer m_SpriteRenderer;
 
     void Awake()
     {
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
+
+        m_MaxItemStage = m_IronSprites.Length - 1;
     }
 
     void Start()
@@ -51,17 +53,14 @@ public class Item : InteractableBase, IDropable
         gameObject.transform.position = player.transform.position;
         gameObject.transform.parent = player.transform;
 
+        DeleteRef();
+
         gameObject.SetActive(false);
     }
 
     public override string ReturnTextPrompt()
     {
         return $"Press 'F' to pickup {m_ItemType.ToString()}.";
-    }
-
-    private enum ItemType
-    {
-        IronPlate,
     }
 
     public void OnDrop(Player player)
@@ -71,6 +70,21 @@ public class Item : InteractableBase, IDropable
         gameObject.transform.parent = null;
 
         gameObject.SetActive(true);
+    }
+
+    public int GetItemStage()
+    {
+        return m_CurrentItemStage;
+    }
+
+    public int GetItemMaxStage()
+    {
+        return m_MaxItemStage;
+    }
+
+    public ItemType GetItemType()
+    {
+        return m_ItemType;
     }
 
     public void AddDropableToList()

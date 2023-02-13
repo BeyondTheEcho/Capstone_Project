@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4279141470657053550}
   - component: {fileID: 5550642112985615265}
   - component: {fileID: 7314942112439725987}
+  - component: {fileID: 5687759693879526251}
   m_Layer: 0
   m_Name: Wrench
   m_TagString: Untagged
@@ -116,3 +117,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_DespawnTime: 30
   m_ToolType: 2
+--- !u!50 &5687759693879526251
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4279141470657053551}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4223464676594869252}
   - component: {fileID: -6976935666951838743}
   - component: {fileID: 7199943462005991655}
+  - component: {fileID: -3858628324626756241}
   m_Layer: 7
   m_Name: Iron_Plate
   m_TagString: Untagged
@@ -74,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 381e907b0da6ab54c9b853c2d684e39d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -117,5 +118,27 @@ MonoBehaviour:
   m_ItemType: 0
   m_IronSprites:
   - {fileID: 21300000, guid: 381e907b0da6ab54c9b853c2d684e39d, type: 3}
+  - {fileID: 21300000, guid: 4aba5393fa343374d94c2f2937dc98d4, type: 3}
   - {fileID: 21300000, guid: e0b2b8839886dfc49bef6ac1e2d8bd70, type: 3}
   - {fileID: 21300000, guid: 190ceef145bc8914189b7843dd32a735, type: 3}
+--- !u!50 &-3858628324626756241
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4042891485099734702}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
