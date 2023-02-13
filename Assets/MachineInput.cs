@@ -12,10 +12,29 @@ public class MachineInput : MonoBehaviour
     {
         if (col.gameObject.TryGetComponent(out Item item))
         {
-            m_Machine.RunMachine(item, this);
             RemoveItemFromBelt(col.gameObject);
+            StartCoroutine(WaitForItem(item, col.gameObject));
         }
     }
+
+    IEnumerator WaitForItem(Item item, GameObject go)
+    {
+        while (true)
+        {
+            if (go.transform.position == m_MidBelt.transform.position)
+            {
+                m_Machine.RunMachine(item, this);
+                RemoveItemFromBelt(go);
+
+                yield break;
+            }
+
+            go.transform.position = Vector3.MoveTowards(go.transform.position, m_MidBelt.transform.position, 0.5f * Time.deltaTime);
+
+            yield return new WaitForEndOfFrame();
+        }
+    }
+
     private void RemoveItemFromBelt(GameObject go)
     {
         InteractablesManager.s_Instance.RemoveItemFromBelt(go.GetComponent<InteractableBase>());
