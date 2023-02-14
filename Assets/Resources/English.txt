@@ -8,3 +8,5 @@ Hammer^ Hammer
 Screwdriver^ Screwdriver
 Wrench^ Wrench
 SETTINGS^ Settings
+HINTJOINLOBBY^ Press 'A' to join the game.
+HINTLEAVELOBBY^ Or press 'B' to leave the game.
