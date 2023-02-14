@@ -7,5 +7,6 @@ PAUSE^ Prendre une pause!
 Hammer^ Marteau
 Screwdriver^ Tournevis
 Wrench^ Clé
+SETTINGS^ Paramètres
 
 
