@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject[] m_Players;
-    private int m_PlayersCount;
+    public static int m_PlayersCount;
     // Start is called before the first frame update
     void Start()
     {
