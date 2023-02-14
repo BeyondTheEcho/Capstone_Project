@@ -7,3 +7,4 @@ PAUSE^ Take a Break!
 Hammer^ Hammer
 Screwdriver^ Screwdriver
 Wrench^ Wrench
+SETTINGS^ Settings
