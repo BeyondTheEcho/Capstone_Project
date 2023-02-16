@@ -6,9 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     //Serialized Vars
     [SerializeField] private float m_Speed = 10.0f;
-    public PlayerNumber playerNumber;
+    public PlayerNumber m_PlayerNumber;
     
-
     //Refs
     private Rigidbody2D m_Rigidbody;
 
@@ -26,7 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 velocity;
 
-        if (playerNumber == PlayerNumber.PlayerOne)
+        if (m_PlayerNumber == PlayerNumber.PlayerOne)
         {
             velocity.x = Input.GetAxisRaw("Horizontal");
             velocity.y = Input.GetAxisRaw("Vertical");
@@ -35,7 +34,7 @@ public class PlayerController : MonoBehaviour
            
         }
 
-        if (playerNumber == PlayerNumber.PlayerTwo) 
+        if (m_PlayerNumber == PlayerNumber.PlayerTwo) 
         {
             velocity.x = Input.GetAxis("Horizontal2");
             velocity.y = Input.GetAxis("Vertical2");
@@ -43,13 +42,5 @@ public class PlayerController : MonoBehaviour
             m_Rigidbody.MovePosition(m_Rigidbody.position + velocity * m_Speed * Time.fixedDeltaTime);
         }
         
-    }
-
-    public enum PlayerNumber
-    {
-        PlayerOne,
-        PlayerTwo,
-        PlayerThree,
-        PlayerFour
     }
 }

@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     //Private Vars
     private ToolManager m_ToolManager;
     private TMP_Text m_ToolPrompt;
+    private PlayerNumber m_PlayerNumber;
 
     void Awake()
     {
@@ -28,8 +29,28 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        InputManager.s_Instance.Player_1_Interact += PlayerInteract;
-        InputManager.s_Instance.Player_1_Drop += PlayerDrop;
+        m_PlayerNumber = gameObject.GetComponent<PlayerController>().m_PlayerNumber;
+
+        if(m_PlayerNumber == PlayerNumber.PlayerOne)
+        {
+            InputManager.s_Instance.Player_1_Interact += PlayerInteract;
+            InputManager.s_Instance.Player_1_Drop += PlayerDrop;
+        }
+        else if(m_PlayerNumber == PlayerNumber.PlayerTwo)
+        {
+            InputManager.s_Instance.Player_2_Interact += PlayerInteract;
+            InputManager.s_Instance.Player_2_Drop += PlayerDrop;
+        }
+        else if (m_PlayerNumber == PlayerNumber.PlayerThree)
+        {
+            InputManager.s_Instance.Player_3_Interact += PlayerInteract;
+            InputManager.s_Instance.Player_3_Drop += PlayerDrop;
+        }
+        else if (m_PlayerNumber == PlayerNumber.PlayerFour)
+        {
+            InputManager.s_Instance.Player_4_Interact += PlayerInteract;
+            InputManager.s_Instance.Player_4_Drop += PlayerDrop;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)
