@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Grid_Layer_Bottom
+  - Press
+  - Heat
+  - Bolt
   layers:
   - Default
   - TransparentFX

@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     //Serialized Vars
     [SerializeField] private float m_Speed = 10.0f;
     public PlayerNumber playerNumber;
-    
+    Vector2 velocity;
 
     //Refs
     private Rigidbody2D m_Rigidbody;
@@ -19,12 +19,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-
+        if(velocity.x > 0 || velocity.y > 0)
+        {
+            SoundManager.s_Instance.PlayWalk();
+        }
     }
 
     void FixedUpdate()
     {
-        Vector2 velocity;
+        
 
         if (playerNumber == PlayerNumber.PlayerOne)
         {
