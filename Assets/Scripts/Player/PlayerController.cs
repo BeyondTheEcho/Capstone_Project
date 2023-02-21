@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if(velocity.x > 0 || velocity.y > 0)
+        if(velocity.x != 0 || velocity.y != 0)
         {
             SoundManager.s_Instance.PlayWalk();
         }
