@@ -10,6 +10,7 @@ public class InputManager : MonoBehaviour
     //Player events for player 1
     public event Action Player_1_Interact;
     public event Action Player_1_Drop;
+    public event Action Player_1_Move;
 
     //Player events for player 2
     public event Action Player_2_Interact;
@@ -44,6 +45,8 @@ public class InputManager : MonoBehaviour
     {
         if (Input.GetAxis("Joy_1_Interact") > 0) Player_1_Interact?.Invoke();
         if (Input.GetAxis("Joy_1_Interact") < 0) Player_1_Drop?.Invoke();
+        if (Input.GetAxis("Horizontal1") > 0) Player_1_Move?.Invoke();
+        if (Input.GetAxis("Vertical1") < 0) Player_1_Move?.Invoke();
 
         if (Input.GetAxis("Joy_2_Interact") > 0) Player_2_Interact?.Invoke();
         if (Input.GetAxis("Joy_2_Interact") < 0) Player_2_Drop?.Invoke();

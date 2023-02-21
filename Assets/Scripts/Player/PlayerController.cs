@@ -27,11 +27,11 @@ public class PlayerController : MonoBehaviour
 
         if (m_PlayerNumber == PlayerNumber.PlayerOne)
         {
-            velocity.x = Input.GetAxisRaw("Horizontal");
-            velocity.y = Input.GetAxisRaw("Vertical");
+            velocity.x = Input.GetAxisRaw("Horizontal1");
+            velocity.y = Input.GetAxisRaw("Vertical1");
 
             m_Rigidbody.MovePosition(m_Rigidbody.position + velocity * m_Speed * Time.fixedDeltaTime);
-           
+
         }
 
         if (m_PlayerNumber == PlayerNumber.PlayerTwo) 
