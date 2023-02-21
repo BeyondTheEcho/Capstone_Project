@@ -10,7 +10,14 @@ public class MenuButtons : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
     }
-
+    public void GoToLobby()
+    {
+        SceneManager.LoadScene("Lobby");
+    }
+    public void GoToMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
     public void QuitGame() //For not built version (https://gamedevbeginner.com/how-to-quit-the-game-in-unity/)
     {
         #if UNITY_EDITOR
