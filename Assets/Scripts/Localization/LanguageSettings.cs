@@ -4,8 +4,8 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-using System.IO;
-using static Unity.VisualScripting.Icons;
+//using System.IO;
+//using static Unity.VisualScripting.Icons;
 
 public class LanguageSettings : MonoBehaviour
 {
