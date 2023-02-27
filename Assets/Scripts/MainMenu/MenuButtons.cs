@@ -10,6 +10,10 @@ public class MenuButtons : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
     }
+    public void Train()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
 
     public void QuitGame() //For not built version (https://gamedevbeginner.com/how-to-quit-the-game-in-unity/)
     {

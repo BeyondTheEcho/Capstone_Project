@@ -98,13 +98,19 @@ public class SoundManager : MonoBehaviour
     {
         m_AudioSource.PlayOneShot(m_Bolt, 0.5f);
     }
+
     public void PlayWalk()
     {
         if (m_PlayerAudioSource.isPlaying == false)
         {
-            m_PlayerAudioSource.PlayOneShot(m_Walk, 0.25f);
+            m_PlayerAudioSource.PlayOneShot(m_Walk, 0.5f);
         }
     }
+    public void StopWalk()
+    {
+        m_PlayerAudioSource.Stop();
+    }
+
     public void PauseMusic()
     {
         m_SoundTime = m_AudioSource.time;

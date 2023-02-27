@@ -23,6 +23,10 @@ public class PlayerController : MonoBehaviour
         {
             SoundManager.s_Instance.PlayWalk();
         }
+        else
+        {
+            SoundManager.s_Instance.StopWalk();
+        }
     }
 
     void FixedUpdate()
