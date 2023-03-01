@@ -21,6 +21,7 @@ public class OrderManager : MonoBehaviour
     private int m_MaxOrderSize = 0;
     private int m_CurrentOrderItem;
     private float m_OrderSpawnDelay = 3f;
+    private int m_TotalOrderSize = 0;
 
     //Chaos Vars
     private float m_Chaos = 0.0f;
@@ -32,6 +33,7 @@ public class OrderManager : MonoBehaviour
     [Header("UI Settings")]
     [SerializeField] private TMP_Text m_ChaosText;
     [SerializeField] private TMP_Text m_OrderText;
+    [SerializeField] private TMP_Text m_OrderPopupText;
 
     private void Awake()
     {
@@ -83,6 +85,8 @@ public class OrderManager : MonoBehaviour
 
         m_CurrentOrderItem = Random.Range(0, orderItemMax);
 
+        m_TotalOrderSize = m_CurrentOrderSize;
+
         StartCoroutine(SpawnOrder(m_CurrentOrderSize));
     }
 
@@ -101,6 +105,7 @@ public class OrderManager : MonoBehaviour
     {
         m_ChaosText.text = $"Chaos: {m_Chaos}";
         m_OrderText.text = $"Order Size: {m_CurrentOrderSize}";
+        m_OrderPopupText.text = $"Order: Make {GetCurrentOrderItemType()} x{m_TotalOrderSize}";
     }
 
     IEnumerator IncrementChaos()
