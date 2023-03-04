@@ -9,9 +9,15 @@ public class Content : MonoBehaviour
     public string[] lines;
     public float textSpeed;
 
-    public GameObject quitButton;
     public static bool conversationOver = false;
     private int index;
+
+    public GameObject[] m_storyTeller;
+
+    public Animator[] m_storyTellerMouth;
+
+    private int m_talkerIndex=0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -52,7 +58,6 @@ public class Content : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
             conversationOver = true;
         }
     }
@@ -73,10 +78,52 @@ public class Content : MonoBehaviour
             }
         }
 
-        if (conversationOver)
+        if (index == 4) //introduce the manager
         {
-            quitButton.SetActive(true);
+            m_talkerIndex = 1;
         }
+
+        if (index == 7) //introduce the manager
+        {
+            m_talkerIndex = 0;
+        }
+
+        if (index == 8) //introduce the manager
+        {
+            m_talkerIndex = 1;
+        }
+
+        StartTalker(m_talkerIndex);
+        for (int i = 0; i < 2; i++)
+        {
+            if (i != m_talkerIndex || textComponent.text == lines[index]) 
+            { //if you are not the talker or the lines are finished
+                StopTalker(i); 
+            }
+        }
+    }
+
+
+
+    public void StartTalker(int m_talkerIndex)
+    {
+        StartTalking(m_storyTellerMouth[m_talkerIndex]);
+        m_storyTeller[m_talkerIndex].SetActive(true);
+    }
+
+    public void StopTalker(int m_talkerIndex)
+    {
+        StopTalking(m_storyTellerMouth[m_talkerIndex]);
+
+    }
+
+    public void StartTalking(Animator animator)
+    {
+        animator.SetBool("stillTalking", true);
+    }
+    public void StopTalking(Animator animator)
+    {
+        animator.SetBool("stillTalking", false);
     }
 }
 
