@@ -6,7 +6,9 @@ using TMPro;
 public class Content : MonoBehaviour
 {
     public TextMeshProUGUI textComponent; //reference tmpro to text component
-    public string[] lines;
+    const int TALKERNUM = 2;
+    const int LINESNUM = 9;
+    private string[] lines=new string[LINESNUM];
     public float textSpeed;
 
     public static bool conversationOver = false;
@@ -23,6 +25,7 @@ public class Content : MonoBehaviour
     {
         conversationOver = false;
         textComponent.text = string.Empty;
+        LinesContent();
         StartDialogue();
     }
 
@@ -32,6 +35,18 @@ public class Content : MonoBehaviour
         SentenceBehaviour();
     }
 
+    void LinesContent()
+    {
+        lines[0] = LanguageSettings.s_Instance.GetLocalizedString("PICK");
+        lines[1] = LanguageSettings.s_Instance.GetLocalizedString("BRIEF");
+        lines[2] = LanguageSettings.s_Instance.GetLocalizedString("BRIEF2");
+        lines[3] = LanguageSettings.s_Instance.GetLocalizedString("IntroduceOther");
+        lines[4] = LanguageSettings.s_Instance.GetLocalizedString("OTHER");
+        lines[5] = LanguageSettings.s_Instance.GetLocalizedString("PICK");
+        lines[6] = LanguageSettings.s_Instance.GetLocalizedString("BRIEF");
+        lines[7] = LanguageSettings.s_Instance.GetLocalizedString("BRIEF2");
+        lines[8] = LanguageSettings.s_Instance.GetLocalizedString("IntroduceOther");
+    }
     void StartDialogue()
     {
         index = 0;
@@ -78,6 +93,7 @@ public class Content : MonoBehaviour
             }
         }
 
+        //These are to check which one is the talker
         if (index == 4) //introduce the manager
         {
             m_talkerIndex = 1;
@@ -93,8 +109,12 @@ public class Content : MonoBehaviour
             m_talkerIndex = 1;
         }
 
+
+        //The talker starts talking
         StartTalker(m_talkerIndex);
-        for (int i = 0; i < 2; i++)
+
+        //Make the character in the scene who is not talking stop the mouth talking animation
+        for (int i = 0; i < TALKERNUM; i++)
         {
             if (i != m_talkerIndex || textComponent.text == lines[index]) 
             { //if you are not the talker or the lines are finished
@@ -105,6 +125,7 @@ public class Content : MonoBehaviour
 
 
 
+    //These 4 functions below are for talkers' and their mouths' animation
     public void StartTalker(int m_talkerIndex)
     {
         StartTalking(m_storyTellerMouth[m_talkerIndex]);
