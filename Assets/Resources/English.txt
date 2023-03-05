@@ -1,12 +1,27 @@
 START^ Clock In!
 QUIT^ Quit to Desktop
 TOMenu^ Quit to menu
+SETTINGS^ Settings
+
 PICK^ Press 'F' to pickup the {0}!! 
+
 BACK^ Continue
 PAUSE^ Take a Break!
+
+
 Hammer^ Hammer
 Screwdriver^ Screwdriver
 Wrench^ Wrench
-SETTINGS^ Settings
+
+
 HINTJOINLOBBY^ Press 'A' to join the game.
 HINTLEAVELOBBY^ Or press 'B' to leave the game.
+
+
+INTRODUCE^ Hello, I am Li! Let me tell you a story about the railway in Cornwall Ontario! 
+BRIEF^ The Grand Trunk Railway (CN Railway) built an east-west line through Cornwall in 1856.
+BRIEF2^ At this time, workers in an iron foundry beside the St. Lawrence River were busy repairing a large number of equipment damaged during the construction of the railway.
+IntroduceOther^ Let me introduce Joshua, who was the manager there from 1855 to 1881!!
+OTHER^ Hello! I am Joshua!
+
+

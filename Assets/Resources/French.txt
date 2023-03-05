@@ -2,12 +2,26 @@ START^ Commence le travaille!
 QUIT^ Quitter sur le bureau
 TOMenu^ Quitter au menu
 PICK^ Appuyez sur 'F' pour récupérer le {0}!!
+SETTINGS^ Paramètres
+
 BACK^ Continue
 PAUSE^ Prendre une pause!
+
+
 Hammer^ Marteau
 Screwdriver^ Tournevis
 Wrench^ Clé
-SETTINGS^ Paramètres
+
+
+
+
 HINTJOINLOBBY^ Appuyez 'A' pour joindre le jeux.
 HINTLEAVELOBBY^ Ou appuyez 'B' Pour quitter le jeux.
+
+
+INTRODUCE^ Hello, I am Li! Let me tell you a story about the railway in Cornwall Ontario! 
+BRIEF^ The Grand Trunk Railway (CN Railway) built an east-west line through Cornwall in 1856.
+BRIEF2^ At this time, workers in an iron foundry beside the St. Lawrence River were busy repairing a large number of equipment damaged during the construction of the railway.
+IntroduceOther^ Let me introduce Joshua, who was the manager there from 1855 to 1881!!
+OTHER^ Hello! I am Joshua!
 
