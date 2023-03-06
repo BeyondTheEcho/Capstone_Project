@@ -32,6 +32,7 @@ public class OrderManager : MonoBehaviour
     [Header("UI Settings")]
     [SerializeField] private TMP_Text m_ChaosText;
     [SerializeField] private TMP_Text m_OrderText;
+    [SerializeField] private TMP_Text m_ItemText;
 
     private void Awake()
     {
@@ -101,6 +102,7 @@ public class OrderManager : MonoBehaviour
     {
         m_ChaosText.text = $"Chaos: {m_Chaos}";
         m_OrderText.text = $"Order Size: {m_CurrentOrderSize}";
+        m_ItemText.text = $"X{m_CurrentOrderSize}";
     }
 
     IEnumerator IncrementChaos()
