@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     //Private Vars
     private ToolManager m_ToolManager;
     private TMP_Text m_ToolPrompt;
+    private PlayerNumber m_PlayerNumber;
 
     void Awake()
     {
@@ -26,50 +27,29 @@ public class Player : MonoBehaviour
         m_ToolManager = FindObjectOfType<ToolManager>();
     }
 
-    void Update()
+    void Start()
     {
-        if (Input.GetKeyDown(KeyCode.F) || Input.GetButtonDown("PickUp"))
+        m_PlayerNumber = gameObject.GetComponent<PlayerController>().m_PlayerNumber;
+
+        if(m_PlayerNumber == PlayerNumber.PlayerOne)
         {
-            InteractableBase item = null;
-                
-            item = InteractablesManager.s_Instance.GetClosestInteractableInRange(this, m_InteractRange);
-
-            if (item != null)
-            {
-                if (item.TryGetComponent(out Belts belt))
-                {
-                    item = InteractablesManager.s_Instance.GetClosestPickupableInRange(this, m_InteractRange);
-                }
-
-                if (item != null)
-                {
-                    if (InteractablesManager.s_Instance.m_ObjectOnConveyors.Contains(item))
-                    {
-                        InteractablesManager.s_Instance.m_ObjectOnConveyors.Remove(item);
-                    }
-
-                    item.OnInteract(this);
-                }
-            }
+            InputManager.s_Instance.Player_1_Interact += PlayerInteract;
+            InputManager.s_Instance.Player_1_Drop += PlayerDrop;
         }
-
-        if ((Input.GetKeyDown(KeyCode.G) || Input.GetButtonDown("Drop")))
+        else if(m_PlayerNumber == PlayerNumber.PlayerTwo)
         {
-            if (m_HeldItem != null)
-            {
-                InteractableBase item = null;
-
-                item = InteractablesManager.s_Instance.GetClosestBeltInRange(this, m_InteractRange);
-
-                if (item != null)
-                {
-                    item.GetComponent<Belts>().PlaceItemOnBelt(this);
-                }
-                else
-                {
-                    m_HeldItem.OnDrop(this);
-                }
-            }
+            InputManager.s_Instance.Player_2_Interact += PlayerInteract;
+            InputManager.s_Instance.Player_2_Drop += PlayerDrop;
+        }
+        else if (m_PlayerNumber == PlayerNumber.PlayerThree)
+        {
+            InputManager.s_Instance.Player_3_Interact += PlayerInteract;
+            InputManager.s_Instance.Player_3_Drop += PlayerDrop;
+        }
+        else if (m_PlayerNumber == PlayerNumber.PlayerFour)
+        {
+            InputManager.s_Instance.Player_4_Interact += PlayerInteract;
+            InputManager.s_Instance.Player_4_Drop += PlayerDrop;
         }
     }
 
@@ -94,4 +74,47 @@ public class Player : MonoBehaviour
         m_ToolPrompt.text = prompt;
     }
 
+    public void PlayerInteract()
+    {
+        InteractableBase item = null;
+
+        item = InteractablesManager.s_Instance.GetClosestInteractableInRange(this, m_InteractRange);
+
+        if (item != null)
+        {
+            if (item.TryGetComponent(out Belts belt))
+            {
+                item = InteractablesManager.s_Instance.GetClosestPickupableInRange(this, m_InteractRange);
+            }
+
+            if (item != null)
+            {
+                if (InteractablesManager.s_Instance.m_ObjectOnConveyors.Contains(item))
+                {
+                    InteractablesManager.s_Instance.m_ObjectOnConveyors.Remove(item);
+                }
+
+                item.OnInteract(this);
+            }
+        }
+    }
+
+    public void PlayerDrop()
+    {
+        if (m_HeldItem != null)
+        {
+            InteractableBase item = null;
+
+            item = InteractablesManager.s_Instance.GetClosestBeltInRange(this, m_InteractRange);
+
+            if (item != null)
+            {
+                item.GetComponent<Belts>().PlaceItemOnBelt(this);
+            }
+            else
+            {
+                m_HeldItem.OnDrop(this);
+            }
+        }
+    }
 }

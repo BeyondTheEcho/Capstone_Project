@@ -7,5 +7,7 @@ PAUSE^ Prendre une pause!
 Hammer^ Marteau
 Screwdriver^ Tournevis
 Wrench^ Clé
-
+SETTINGS^ Paramètres
+HINTJOINLOBBY^ Appuyez 'A' pour joindre le jeux.
+HINTLEAVELOBBY^ Ou appuyez 'B' Pour quitter le jeux.
 
