@@ -17,11 +17,15 @@ Wrench^ Wrench
 HINTJOINLOBBY^ Press 'A' to join the game.
 HINTLEAVELOBBY^ Or press 'B' to leave the game.
 
-
-INTRODUCE^ Hello, I am Li! Let me tell you a story about the railway in Cornwall Ontario! 
-BRIEF^ The Grand Trunk Railway (CN Railway) built an east-west line through Cornwall in 1856.
-BRIEF2^ At this time, workers in an iron foundry beside the St. Lawrence River were busy repairing a large number of equipment damaged during the construction of the railway.
-IntroduceOther^ Let me introduce Joshua, who was the manager there from 1855 to 1881!!
-OTHER^ Hello! I am Joshua!
+Hi^ Wake up! Buddy!!
+INTRODUCE^ Hello, I am Li! I have something really important to tell you! 
+BRIEF^ I am from the year 2158. We have a huge population crisis, and we need your help!!
+BRIEF2^ The population then is going to reach 500 billion! The Earth will not to have this huge amount of population on her! We need a way to fix it!!
+IntroduceOther^ Let me introduce Joshua, who is our super talented scientist here to introduce his plan to save the planet!
+OTHER^ Hello! I am Joshua! My team has found the secret formula to make potions to make humans tiny so they won't need too much resource to survive on the Earth! 
+OTHER2^ Your job is to follow the instruction to make the portion!
+OTHER3^ You need to do it fast, or there will ba a huge disaster ahead!
+GoodLuck^ Good luck! The world needs you!!
+GoGoGo^ GOOOOOOO!!!
 
 

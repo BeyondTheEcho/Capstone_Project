@@ -18,10 +18,14 @@ Wrench^ Clé
 HINTJOINLOBBY^ Appuyez 'A' pour joindre le jeux.
 HINTLEAVELOBBY^ Ou appuyez 'B' Pour quitter le jeux.
 
-
-INTRODUCE^ Hello, I am Li! Let me tell you a story about the railway in Cornwall Ontario! 
-BRIEF^ The Grand Trunk Railway (CN Railway) built an east-west line through Cornwall in 1856.
-BRIEF2^ At this time, workers in an iron foundry beside the St. Lawrence River were busy repairing a large number of equipment damaged during the construction of the railway.
-IntroduceOther^ Let me introduce Joshua, who was the manager there from 1855 to 1881!!
-OTHER^ Hello! I am Joshua!
+Hi^Réveillez-vous! Copain!!
+INTRODUCE^ Bonjour, je suis Li ! J'ai quelque chose de vraiment important à vous dire !
+BRIEF^ Je suis de l'année 2158. Nous avons une énorme crise démographique, et nous avons besoin de votre aide !!
+BRIEF2^ La population va alors atteindre 500 milliards ! La Terre n'aura pas cette énorme quantité de population sur elle ! Nous avons besoin d'un moyen de le réparer !!
+IntroduceOther^ Permettez-moi de vous présenter Joshua, qui est notre scientifique super talentueux ici pour présenter son plan pour sauver la planète !
+OTHER^ Bonjour! Je suis Josué ! Mon équipe a trouvé la formule secrète pour faire des potions pour rendre les humains minuscules afin qu'ils n'aient pas besoin de trop de ressources pour survivre sur Terre ! 
+OTHER2^ Votre travail consiste à suivre les instructions pour préparer la portion !
+OTHER3^ Vous devez le faire rapidement, ou il y aura un énorme désastre à venir !
+GoodLuck^ Bonne chance! Le monde a besoin de vous !!
+GoGoGo^ GOOOOOOO!!!
 
