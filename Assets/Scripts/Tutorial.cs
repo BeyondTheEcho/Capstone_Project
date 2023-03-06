@@ -6,20 +6,20 @@ public class Tutorial : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    [SerializeField] private GameObject t_tutorialText;
+    [SerializeField] private GameObject s_tutorialText;
 
     void Start()
     {
-        t_tutorialText.SetActive(false);
+        s_tutorialText.SetActive(false);
     }
 
     void OnTriggerEnter2D()
     {
-        t_tutorialText.SetActive(true);
+        s_tutorialText.SetActive(true);
     }
     void OnTriggerExit2D()
     {
-        t_tutorialText.SetActive(false);
+        s_tutorialText.SetActive(false);
     }
 
 }
