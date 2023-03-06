@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Content : MonoBehaviour
 {
@@ -37,15 +38,15 @@ public class Content : MonoBehaviour
 
     void LinesContent()
     {
-        lines[0] = LanguageSettings.s_Instance.GetLocalizedString("PICK");
+        lines[0] = LanguageSettings.s_Instance.GetLocalizedString("Hi");
         lines[1] = LanguageSettings.s_Instance.GetLocalizedString("BRIEF");
         lines[2] = LanguageSettings.s_Instance.GetLocalizedString("BRIEF2");
         lines[3] = LanguageSettings.s_Instance.GetLocalizedString("IntroduceOther");
         lines[4] = LanguageSettings.s_Instance.GetLocalizedString("OTHER");
-        lines[5] = LanguageSettings.s_Instance.GetLocalizedString("PICK");
-        lines[6] = LanguageSettings.s_Instance.GetLocalizedString("BRIEF");
-        lines[7] = LanguageSettings.s_Instance.GetLocalizedString("BRIEF2");
-        lines[8] = LanguageSettings.s_Instance.GetLocalizedString("IntroduceOther");
+        lines[5] = LanguageSettings.s_Instance.GetLocalizedString("OTHER2");
+        lines[6] = LanguageSettings.s_Instance.GetLocalizedString("OTHER3");
+        lines[7] = LanguageSettings.s_Instance.GetLocalizedString("GoodLuck");
+        lines[8] = LanguageSettings.s_Instance.GetLocalizedString("GoGoGo");
     }
     void StartDialogue()
     {
@@ -109,7 +110,10 @@ public class Content : MonoBehaviour
             m_talkerIndex = 1;
         }
 
-
+        if (conversationOver || Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Lobby");
+        }
         //The talker starts talking
         StartTalker(m_talkerIndex);
 
