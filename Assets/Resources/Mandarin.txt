@@ -1,0 +1,31 @@
+START^ 開始!
+QUIT^ 結束遊戲
+TOMenu^ 回主選單
+PICK^ 按下F鍵撿起 {0}!!
+SETTINGS^ 設定
+
+BACK^ 繼續
+PAUSE^ 休息一下!
+
+
+Hammer^ 槌子
+Screwdriver^ 螺絲起子
+Wrench^ 鐵鍬
+
+
+
+
+HINTJOINLOBBY^ 按A加入遊戲.
+HINTLEAVELOBBY^ 按B離開遊戲.
+
+Hi^加入遊戲!!
+INTRODUCE^ Bonjour, je suis Li ! J'ai quelque chose de vraiment important à vous dire !
+BRIEF^ Je suis de l'année 2158. Nous avons une énorme crise démographique, et nous avons besoin de votre aide !!
+BRIEF2^ La population va alors atteindre 500 milliards ! La Terre n'aura pas cette énorme quantité de population sur elle ! Nous avons besoin d'un moyen de le réparer !!
+IntroduceOther^ Permettez-moi de vous présenter Joshua, qui est notre scientifique super talentueux ici pour présenter son plan pour sauver la planète !
+OTHER^ Bonjour! Je suis Josué ! Mon équipe a trouvé la formule secrète pour faire des potions pour rendre les humains minuscules afin qu'ils n'aient pas besoin de trop de ressources pour survivre sur Terre ! 
+OTHER2^ Votre travail consiste à suivre les instructions pour préparer la portion !
+OTHER3^ Vous devez le faire rapidement, ou il y aura un énorme désastre à venir !
+GoodLuck^ Bonne chance! Le monde a besoin de vous !!
+GoGoGo^ GOOOOOOO!!!
+
