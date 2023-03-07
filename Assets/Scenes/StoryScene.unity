@@ -586,7 +586,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1824414185}
-  lines: []
   textSpeed: 0.01
   m_storyTeller:
   - {fileID: 539557076}
@@ -1274,7 +1273,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1721928555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1293,6 +1292,9 @@ MonoBehaviour:
   m_Language: 0
   m_FrenchTXT: {fileID: 4900000, guid: 4330258c149074546bf880fbe3e3ed62, type: 3}
   m_EnglishTXT: {fileID: 4900000, guid: fed5004f357f382469e406f83ff0f3a5, type: 3}
+  m_MandarinTXT: {fileID: 4900000, guid: fd7352074e1535940b8ee4278dc335d8, type: 3}
+  m_MandarinFont: {fileID: 0}
+  m_DefaultFont: {fileID: 0}
 --- !u!4 &1721928556
 Transform:
   m_ObjectHideFlags: 0
