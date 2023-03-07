@@ -13,6 +13,7 @@ public class Tool : InteractableBase, IDropable
 
     void Start()
     {
+        LanguageSettings.ChangeFont(LanguageSettings.m_FinalFont);
         StoreRef();
         AddDropableToList();
         m_DespawnCoroutine = StartCoroutine(DespawnCountdown());

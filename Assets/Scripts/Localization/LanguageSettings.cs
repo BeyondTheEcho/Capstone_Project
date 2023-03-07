@@ -42,6 +42,7 @@ public class LanguageSettings : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_FinalFont = m_DefaultFont;
         ReadFile(m_FrenchTXT, m_LocalizationDictionary_French);
         ReadFile(m_EnglishTXT, m_LocalizationDictionary_English);
         ReadFile(m_MandarinTXT, m_LocalizationDictionary_Mandarin);
