@@ -24,6 +24,7 @@ public class Content : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        LanguageSettings.ChangeFont(LanguageSettings.m_FinalFont);
         conversationOver = false;
         textComponent.text = string.Empty;
         LinesContent();
