@@ -51,8 +51,9 @@ public class PauseFeature : MonoBehaviour
 
     public void QuitToMenu()
     {
+        Time.timeScale = 1;
         LanguageSettings.s_Instance.Reset();
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("Main Menu");
     }
 
 

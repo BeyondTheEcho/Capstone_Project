@@ -170,6 +170,7 @@ public class LanguageSettings : MonoBehaviour
             t[i].font = font;
         }
     }
+
     public void Reset()
     {
         m_Language = Languages.English;
