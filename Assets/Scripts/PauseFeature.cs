@@ -15,6 +15,7 @@ public class PauseFeature : MonoBehaviour
     [SerializeField] private TMPro.TMP_Text m_QuitButtonText;
 
     [SerializeField] private TMPro.TMP_Text m_TakeABreakText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +56,5 @@ public class PauseFeature : MonoBehaviour
         LanguageSettings.s_Instance.Reset();
         SceneManager.LoadScene("Main Menu");
     }
-
 
 }

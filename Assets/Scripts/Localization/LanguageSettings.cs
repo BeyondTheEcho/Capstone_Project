@@ -74,6 +74,8 @@ public class LanguageSettings : MonoBehaviour
 
     public string GetLocalizedString(string key)
     {
+        ChangeFont(m_FinalFont);
+
         switch (m_Language)
         {
             case Languages.English:
@@ -169,6 +171,7 @@ public class LanguageSettings : MonoBehaviour
         {
             t[i].font = font;
         }
+        print("changefontwork");
     }
 
     public void Reset()

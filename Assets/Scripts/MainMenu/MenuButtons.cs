@@ -17,6 +17,7 @@ public class MenuButtons : MonoBehaviour
     }
     public void GoToMenu()
     {
+        LanguageSettings.s_Instance.Reset();
         SceneManager.LoadScene("Main Menu");
     }
     public void GoToStory()
