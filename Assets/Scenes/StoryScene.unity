@@ -584,8 +584,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee59a946981b059438281a6954ce72c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textComponent: {fileID: 1824414185}
-  textSpeed: 0.01
+  m_textComponent: {fileID: 1824414185}
+  m_textSpeed: 0.03
   m_storyTeller:
   - {fileID: 539557076}
   - {fileID: 618216780}
