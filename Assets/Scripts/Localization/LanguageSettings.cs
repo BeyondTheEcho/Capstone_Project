@@ -42,6 +42,7 @@ public class LanguageSettings : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        m_FinalFont = m_DefaultFont;
         ReadFile(m_FrenchTXT, m_LocalizationDictionary_French);
         ReadFile(m_EnglishTXT, m_LocalizationDictionary_English);
         ReadFile(m_MandarinTXT, m_LocalizationDictionary_Mandarin);
@@ -73,6 +74,8 @@ public class LanguageSettings : MonoBehaviour
 
     public string GetLocalizedString(string key)
     {
+        ChangeFont(m_FinalFont);
+
         switch (m_Language)
         {
             case Languages.English:
@@ -168,7 +171,9 @@ public class LanguageSettings : MonoBehaviour
         {
             t[i].font = font;
         }
+        print("changefontwork");
     }
+
     public void Reset()
     {
         m_Language = Languages.English;

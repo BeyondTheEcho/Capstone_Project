@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class Content : MonoBehaviour
 {
-    public TextMeshProUGUI textComponent; //reference tmpro to text component
+    public TextMeshProUGUI m_textComponent; //reference tmpro to text component
     const int TALKERNUM = 2;
     const int LINESNUM = 9;
-    private string[] lines=new string[LINESNUM];
-    public float textSpeed;
+    private string[] m_lines=new string[LINESNUM];
+    public float m_textSpeed;
 
-    public static bool conversationOver = false;
-    private int index;
+    public static bool m_conversationOver = false;
+    private int m_index;
 
     public GameObject[] m_storyTeller;
 
@@ -25,8 +25,8 @@ public class Content : MonoBehaviour
     void Start()
     {
         LanguageSettings.ChangeFont(LanguageSettings.m_FinalFont);
-        conversationOver = false;
-        textComponent.text = string.Empty;
+        m_conversationOver = false;
+        m_textComponent.text = string.Empty;
         LinesContent();
         StartDialogue();
     }
@@ -39,43 +39,43 @@ public class Content : MonoBehaviour
 
     void LinesContent()
     {
-        lines[0] = LanguageSettings.s_Instance.GetLocalizedString("Hi");
-        lines[1] = LanguageSettings.s_Instance.GetLocalizedString("BRIEF");
-        lines[2] = LanguageSettings.s_Instance.GetLocalizedString("BRIEF2");
-        lines[3] = LanguageSettings.s_Instance.GetLocalizedString("IntroduceOther");
-        lines[4] = LanguageSettings.s_Instance.GetLocalizedString("OTHER");
-        lines[5] = LanguageSettings.s_Instance.GetLocalizedString("OTHER2");
-        lines[6] = LanguageSettings.s_Instance.GetLocalizedString("OTHER3");
-        lines[7] = LanguageSettings.s_Instance.GetLocalizedString("GoodLuck");
-        lines[8] = LanguageSettings.s_Instance.GetLocalizedString("GoGoGo");
+        m_lines[0] = LanguageSettings.s_Instance.GetLocalizedString("Hi");
+        m_lines[1] = LanguageSettings.s_Instance.GetLocalizedString("BRIEF");
+        m_lines[2] = LanguageSettings.s_Instance.GetLocalizedString("BRIEF2");
+        m_lines[3] = LanguageSettings.s_Instance.GetLocalizedString("IntroduceOther");
+        m_lines[4] = LanguageSettings.s_Instance.GetLocalizedString("OTHER");
+        m_lines[5] = LanguageSettings.s_Instance.GetLocalizedString("OTHER2");
+        m_lines[6] = LanguageSettings.s_Instance.GetLocalizedString("OTHER3");
+        m_lines[7] = LanguageSettings.s_Instance.GetLocalizedString("GoodLuck");
+        m_lines[8] = LanguageSettings.s_Instance.GetLocalizedString("GoGoGo");
     }
     void StartDialogue()
     {
-        index = 0;
+        m_index = 0;
         StartCoroutine(TypeLine());
     }
 
     IEnumerator TypeLine()
     {
-        foreach (char c in lines[index].ToCharArray())
+        foreach (char c in m_lines[m_index].ToCharArray())
         {
-            textComponent.text += c;
-            yield return new WaitForSeconds(textSpeed);
+            m_textComponent.text += c;
+            yield return new WaitForSeconds(m_textSpeed);
         }
     }
 
     void NextLine()
     {
-        if (index < lines.Length - 1)
+        if (m_index < m_lines.Length - 1)
         {
-            index++;
-            textComponent.text = string.Empty;
+            m_index++;
+            m_textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
 
         }
         else
         {
-            conversationOver = true;
+            m_conversationOver = true;
         }
     }
 
@@ -84,34 +84,34 @@ public class Content : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
 
-            if (textComponent.text == lines[index]) //means this sentense has been run completely
+            if (m_textComponent.text == m_lines[m_index]) //means this sentense has been run completely
             {
                 NextLine();
             }
             else
             {
                 StopAllCoroutines();
-                textComponent.text = lines[index]; //instantly fill out the words in the sentense
+                m_textComponent.text = m_lines[m_index]; //instantly fill out the words in the sentense
             }
         }
 
         //These are to check which one is the talker
-        if (index == 4) //introduce the manager
+        if (m_index == 4) //introduce the manager
         {
             m_talkerIndex = 1;
         }
 
-        if (index == 7) //introduce the manager
+        if (m_index == 7) //introduce the manager
         {
             m_talkerIndex = 0;
         }
 
-        if (index == 8) //introduce the manager
+        if (m_index == 8) //introduce the manager
         {
             m_talkerIndex = 1;
         }
 
-        if (conversationOver || Input.GetKeyDown(KeyCode.Escape))
+        if (m_conversationOver || Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene("Lobby");
         }
@@ -121,7 +121,7 @@ public class Content : MonoBehaviour
         //Make the character in the scene who is not talking stop the mouth talking animation
         for (int i = 0; i < TALKERNUM; i++)
         {
-            if (i != m_talkerIndex || textComponent.text == lines[index]) 
+            if (i != m_talkerIndex || m_textComponent.text == m_lines[m_index]) 
             { //if you are not the talker or the lines are finished
                 StopTalker(i); 
             }
