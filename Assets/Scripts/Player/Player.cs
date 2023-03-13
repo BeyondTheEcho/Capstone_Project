@@ -11,7 +11,7 @@ using System;
 public class Player : MonoBehaviour
 {
     //Public Vars
-    public IDropable m_HeldItem;
+    [SerializeField] public IDropable m_HeldItem = null;
 
     //Private Serialized Vars
     [SerializeField] private float m_InteractRange = 1.7f; //Default Value lines up with colliders
