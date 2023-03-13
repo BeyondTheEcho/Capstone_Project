@@ -1,4 +1,4 @@
-START^ Clock In!a
+START^ Clock In!aasdasd
 QUIT^ Quit to Desktop
 TOMenu^ Quit to menu
 PICK^ Press 'F' to pickup the {0}!! 
