@@ -1,11 +1,47 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using UnityEngine;
 
 public class Vials : InteractableBase, IDropable
 {
-    public VialStage m_VialStage = VialStage.Empty;
-    public VialColor m_VialColor = VialColor.Uncolored;
+    public VialColor m_VialColor 
+    {
+        get 
+        { 
+            return m_BackingVialColor; 
+        }
+        set 
+        { 
+            m_BackingVialColor = value;
+
+            m_Renderer.sprite = m_BackingVialColor switch
+            {
+                VialColor.Empty => m_VialEmpty,
+                VialColor.Filled => m_VialFilled,
+                VialColor.Red => m_VialFilledRed,
+                VialColor.Green => m_VialFilledGreen,
+                VialColor.Blue => m_VialFilledBlue,
+                _ => throw new InvalidOperationException($"Unknown VialColor {value}")
+            };
+        }  
+    }
+
+    private VialColor m_BackingVialColor = VialColor.Empty;
+
+    public Sprite m_VialEmpty;
+    public Sprite m_VialFilled;
+    public Sprite m_VialFilledRed;
+    public Sprite m_VialFilledGreen;
+    public Sprite m_VialFilledBlue;
+
+    private SpriteRenderer m_Renderer;
+
+    private void Awake()
+    {
+        m_Renderer = gameObject.GetComponent<SpriteRenderer>();
+    }
 
     public void OnDrop(Player player)
     {
@@ -40,12 +76,6 @@ public class Vials : InteractableBase, IDropable
     {
         StoreRef();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     
     public void AttachItemToPlayer(Player player)
     {
@@ -70,16 +100,10 @@ public class Vials : InteractableBase, IDropable
 
     public enum VialColor
     {
-        Uncolored,
+        Empty,
+        Filled,
         Red,
         Green,
         Blue
-    }
-
-    public enum VialStage
-    {
-        Empty,
-        Filled,
-        Colored
     }
 }

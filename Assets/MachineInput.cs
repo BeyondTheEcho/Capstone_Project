@@ -22,7 +22,7 @@ public class MachineInput : MonoBehaviour
         {
             if (go.transform.position == m_MidBelt.transform.position)
             {
-                m_Machine.RunMachine(item, this);
+                //m_Machine.RunMachine(item, this);
                 RemoveItemFromBelt(go);
 
                 yield break;

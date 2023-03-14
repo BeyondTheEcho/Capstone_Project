@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2845321753616749726}
   - component: {fileID: -216842893551632093}
   m_Layer: 0
-  m_Name: Empty_Vial_1
+  m_Name: Potion_Vial
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -97,3 +97,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3771617942e25144b69c3922991cbe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_VialEmpty: {fileID: 1103640267, guid: f65716d728c82b1489692376f5c04f05, type: 3}
+  m_VialFilled: {fileID: 236590689, guid: f65716d728c82b1489692376f5c04f05, type: 3}
+  m_VialFilledRed: {fileID: 1470104819, guid: f65716d728c82b1489692376f5c04f05, type: 3}
+  m_VialFilledGreen: {fileID: -1359897825, guid: f65716d728c82b1489692376f5c04f05, type: 3}
+  m_VialFilledBlue: {fileID: 928624353, guid: f65716d728c82b1489692376f5c04f05, type: 3}
