@@ -3,6 +3,8 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using Random = UnityEngine.Random;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class OrderManager : MonoBehaviour
 {
@@ -33,6 +35,10 @@ public class OrderManager : MonoBehaviour
     [SerializeField] private TMP_Text m_ChaosText;
     [SerializeField] private TMP_Text m_OrderText;
     [SerializeField] private TMP_Text m_ItemText;
+
+    //Order Popup Vars
+    [Header("Order Popup Settings")]
+    [SerializeField] Image m_PopupOrder;
 
     private void Awake()
     {
@@ -102,6 +108,7 @@ public class OrderManager : MonoBehaviour
     {
         m_ChaosText.text = $"Chaos: {m_Chaos}";
         m_OrderText.text = $"Order Size: {m_CurrentOrderSize}";
+        m_PopupOrder.sprite = m_OrderItems[0].GetComponent<SpriteRenderer>().sprite;
         m_ItemText.text = $"X{m_CurrentOrderSize}";
     }
 
@@ -115,7 +122,7 @@ public class OrderManager : MonoBehaviour
         }
     }
 
-    public void CalculateMaxOrderSize()
+    public void CalculateMaxOrderSize() //NEEDS MODIFICATION
     {
         m_MaxOrderSize = (int)((m_BaseOrderSize * (int) m_Difficulty) * m_Chaos);
     }
