@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     private ToolManager m_ToolManager;
     private TMP_Text m_ToolPrompt;
     private PlayerNumber m_PlayerNumber;
+    private float m_InteractDelay = 0.5f;
+    private Coroutine m_InteractDelayCoroutine;
 
     void Awake()
     {
@@ -74,15 +76,27 @@ public class Player : MonoBehaviour
         m_ToolPrompt.text = prompt;
     }
 
+    private IEnumerator InteractDelay()
+    {
+        yield return new WaitForSeconds(m_InteractDelay);
+
+        m_InteractDelayCoroutine = null;
+    }
+
     public void PlayerInteract()
     {
-        InteractableBase item = null;
-
-        item = InteractablesManager.s_Instance.GetClosestInteractableInRange(this, m_InteractRange);
-
-        if (item != null)
+        if (m_InteractDelayCoroutine == null)
         {
-            item.OnInteract(this);
+            m_InteractDelayCoroutine = StartCoroutine(InteractDelay());
+
+            InteractableBase item = null;
+
+            item = InteractablesManager.s_Instance.GetClosestInteractableInRange(this, m_InteractRange);
+
+            if (item != null)
+            {
+                item.OnInteract(this);
+            }
         }
     }
 

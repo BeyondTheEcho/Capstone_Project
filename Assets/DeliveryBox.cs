@@ -18,12 +18,15 @@ public class DeliveryBox : InteractableBase
 
     public override void OnInteract(Player player)
     {
+        if (player.m_HeldItem == null) { return; }
+
         if (player.m_HeldItem.gameObject.TryGetComponent<Vials>(out Vials vial)) 
         {
             if (vial.GetVialSprite() == OrderManager.s_Instance.GetCurrentOrderSprite())
             {
                 OrderManager.s_Instance.SubtractOrderItem();
                 Destroy(vial);
+                player.m_HeldItem = null;
             }
         }
     }
