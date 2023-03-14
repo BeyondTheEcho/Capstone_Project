@@ -14,7 +14,7 @@ public class OrderManager : MonoBehaviour
 
     //Order Vars
     [Header("Order Settings")]
-    [SerializeField] private GameObject[] m_OrderItems;
+    [SerializeField] private Sprite[] m_OrderItems;
     [SerializeField] private GameObject m_OrderSpawnBelt;
     private int m_BaseOrderSize = 10;
     private int m_CurrentOrderSize = 0;
@@ -77,10 +77,9 @@ public class OrderManager : MonoBehaviour
         m_CurrentOrderSize--;
     }
 
-    public ItemType GetCurrentOrderItemType()
+    public Sprite GetCurrentOrderSprite()
     {
-        m_OrderItems[m_CurrentOrderItem].TryGetComponent(out Item item);
-        return item.GetItemType();
+        return m_OrderItems[m_CurrentOrderItem];
     }
 
     private void UpdateUI()
