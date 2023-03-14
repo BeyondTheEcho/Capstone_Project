@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Vials : InteractableBase, IDropable
 {
+    public VialStage m_VialStage = VialStage.Empty;
+    public VialColor m_VialColor = VialColor.Uncolored;
+
     public void OnDrop(Player player)
     {
         player.m_HeldItem = null;
@@ -63,5 +66,20 @@ public class Vials : InteractableBase, IDropable
     public void AddDropableToList()
     {
         InteractablesManager.s_Instance.AddIDropable(this);
+    }
+
+    public enum VialColor
+    {
+        Uncolored,
+        Red,
+        Green,
+        Blue
+    }
+
+    public enum VialStage
+    {
+        Empty,
+        Filled,
+        Colored
     }
 }

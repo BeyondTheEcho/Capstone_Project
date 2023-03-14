@@ -2,24 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Machine : MonoBehaviour
+public class Machine : InteractableBase
 {
-    [SerializeField] private Transform m_OutputBeltTransform;
-    [SerializeField] private int m_MachineProcessingStage = 0;
     private float m_MachineProcessingDelay = 3.5f;
 
-    public void RunMachine(Item item, MachineInput input)
+    IEnumerator FillVial(Vials vial)
     {
-        StartCoroutine(ProcessOutputItem(item, input));
+        yield return new WaitForSeconds(m_MachineProcessingDelay);
     }
 
-    IEnumerator ProcessOutputItem(Item item, MachineInput input)
+    public override void OnInteract(Player player)
     {
-        if (item.GetItemStage() == m_MachineProcessingStage)
+        if (player.m_HeldItem == null) { return; }
+
+        if (player.m_HeldItem.gameObject.TryGetComponent<Vials>(out Vials vial))
         {
-            yield return new WaitForSeconds(m_MachineProcessingDelay);
-            item.ProgressItemStage();
-            input.ReturnItemToBelt(item.gameObject);
+            if (vial.m_VialStage != Vials.VialStage.Empty) { return; }
+
+            StartCoroutine(FillVial(vial));
         }
+
+        return;
+    }
+
+    public override string ReturnTextPrompt()
+    {
+        throw new System.NotImplementedException();
     }
 }
