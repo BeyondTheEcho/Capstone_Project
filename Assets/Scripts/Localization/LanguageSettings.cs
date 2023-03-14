@@ -5,14 +5,16 @@ using TMPro;
 using UnityEngine.UI;
 
 using System.IO;
+using static Unity.VisualScripting.Icons;
 
 public class LanguageSettings : MonoBehaviour
 {
     [SerializeField] private TMPro.TMP_Text m_PlayButtonText;
     [SerializeField] private TMPro.TMP_Text m_QuitButtonText;
+    [SerializeField] private TMPro.TMP_Text m_SettingsButtonText;
 
     //set default to English, so programmer can directly start from game scene
-    [SerializeField] private Languages m_Language = Languages.English;
+    [SerializeField] public Languages m_Language;
     [SerializeField] private TextAsset m_FrenchTXT;
     [SerializeField] private TextAsset m_EnglishTXT;
 
@@ -101,7 +103,14 @@ public class LanguageSettings : MonoBehaviour
     {
         m_Language = Languages.English;
         m_PlayButtonText.text = m_LocalizationDictionary_English["START"];
+        m_PlayButtonText.fontSize = 24;
+
         m_QuitButtonText.text = m_LocalizationDictionary_English["QUIT"];
+        m_QuitButtonText.fontSize = 24;
+
+        m_SettingsButtonText.text = m_LocalizationDictionary_English["SETTINGS"];
+        m_SettingsButtonText.fontSize = 24;
+
     }
 
     public void FrenchChosen()
@@ -111,7 +120,13 @@ public class LanguageSettings : MonoBehaviour
         m_PlayButtonText.fontSize = 15;
         m_QuitButtonText.text = m_LocalizationDictionary_French["QUIT"];
         m_QuitButtonText.fontSize = 15;
+        m_SettingsButtonText.text = m_LocalizationDictionary_French["SETTINGS"];
+        m_SettingsButtonText.fontSize = 15;
     }
 
-   
+    public void Reset()
+    {
+        m_Language = Languages.English;
+        Destroy(this);
+    }
 }
