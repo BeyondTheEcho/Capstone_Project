@@ -11,7 +11,7 @@ using System;
 public class Player : MonoBehaviour
 {
     //Public Vars
-    public IDropable m_HeldItem;
+    [SerializeField] public IDropable m_HeldItem = null;
 
     //Private Serialized Vars
     [SerializeField] private float m_InteractRange = 1.7f; //Default Value lines up with colliders
@@ -82,20 +82,7 @@ public class Player : MonoBehaviour
 
         if (item != null)
         {
-            if (item.TryGetComponent(out Belts belt))
-            {
-                item = InteractablesManager.s_Instance.GetClosestPickupableInRange(this, m_InteractRange);
-            }
-
-            if (item != null)
-            {
-                if (InteractablesManager.s_Instance.m_ObjectOnConveyors.Contains(item))
-                {
-                    InteractablesManager.s_Instance.m_ObjectOnConveyors.Remove(item);
-                }
-
-                item.OnInteract(this);
-            }
+            item.OnInteract(this);
         }
     }
 

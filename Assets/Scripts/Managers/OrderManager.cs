@@ -69,18 +69,6 @@ public class OrderManager : MonoBehaviour
         }
     }
 
-    private IEnumerator SpawnOrder(int items)
-    {
-        for (int i = items; i != 0; i--)
-        {
-            yield return new WaitForSeconds(m_OrderSpawnDelay);
-
-            GameObject item = Instantiate(m_OrderItems[m_CurrentOrderItem], m_OrderSpawnBelt.transform.position, Quaternion.identity);
-
-            m_OrderSpawnBelt.GetComponent<Belts>().PlaceItemOnBeltSystem(item);
-        }
-    }
-
     private void GenerateOrder()
     {
         CalculateMaxOrderSize();

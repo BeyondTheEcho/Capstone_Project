@@ -1,7 +1,8 @@
 public enum Languages
 {
     English,
-    French
+    French,
+    Mandarin
 }
 
 
