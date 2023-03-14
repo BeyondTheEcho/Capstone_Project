@@ -6,12 +6,25 @@ public class Vials : InteractableBase, IDropable
 {
     public void OnDrop(Player player)
     {
-        throw new System.NotImplementedException();
+        player.m_HeldItem = null;
+
+        gameObject.transform.parent = null;
+
+        gameObject.SetActive(true);
+
+        StoreRef();
     }
 
     public override void OnInteract(Player player)
     {
-        throw new System.NotImplementedException();
+        player.m_HeldItem = this;
+
+        transform.position = player.transform.position;
+        transform.parent = player.transform;
+
+        DeleteRef();
+
+        gameObject.SetActive(false);
     }
 
     public override string ReturnTextPrompt()
@@ -34,7 +47,6 @@ public class Vials : InteractableBase, IDropable
     public void AttachItemToPlayer(Player player)
     {
         player.m_HeldItem = this;
-        Debug.Log(player.m_HeldItem);
     }
 
     private void OnDestroy()

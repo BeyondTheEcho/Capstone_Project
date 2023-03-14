@@ -20,17 +20,11 @@ public class StorageBin : InteractableBase
 
     public override void OnInteract(Player player)
     {
-        Debug.Log(player.m_HeldItem);
-
         if (player.m_HeldItem == null)
         {
             var vial = Instantiate(m_OutputItem);
 
-            vial.transform.position = player.transform.position;
-            vial.transform.parent = player.transform;
-
-            vial.GetComponent<Vials>().AttachItemToPlayer(player);
-
+            vial.GetComponent<Vials>().OnInteract(player);
         }
     }
 
