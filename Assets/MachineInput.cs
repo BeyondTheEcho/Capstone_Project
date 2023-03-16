@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MachineInput : MonoBehaviour
 {
-    [SerializeField] private Machine m_Machine;
+    [SerializeField] private Sink m_Machine;
     [SerializeField] private Transform m_MidBelt;
 
     private void OnTriggerEnter2D(Collider2D col)

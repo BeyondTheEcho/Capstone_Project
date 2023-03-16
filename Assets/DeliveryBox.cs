@@ -33,7 +33,7 @@ public class DeliveryBox : InteractableBase
 
     public override string ReturnTextPrompt()
     {
-        throw new System.NotImplementedException();
+        return "Press F to deliver vial";
     }
 
     private void OnDestroy()
