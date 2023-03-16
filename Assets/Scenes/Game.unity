@@ -212,6 +212,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8119f34d9949c694b8bd7321c23e389e, type: 3}
+--- !u!1 &213164143 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8403206737940284277, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
+  m_PrefabInstance: {fileID: 666455640899562240}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &257123230 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6530949422528132823, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
+  m_PrefabInstance: {fileID: 666455640899562240}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &276508659 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 217144291650507226, guid: 6d725170c31900346b10d3e18ab92cd4, type: 3}
@@ -1168,6 +1178,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6297712611327154701, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
+      propertyPath: m_ItemPop
+      value: 
+      objectReference: {fileID: 213164143}
+    - target: {fileID: 6297712611327154701, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
+      propertyPath: m_ItemPopup
+      value: 
+      objectReference: {fileID: 213164143}
+    - target: {fileID: 6297712611327154701, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
+      propertyPath: m_PopupSpriteRenderer
+      value: 
+      objectReference: {fileID: 257123230}
     - target: {fileID: 6961676306496167072, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
       propertyPath: m_fontSize
       value: 7
@@ -1176,7 +1198,13 @@ PrefabInstance:
       propertyPath: m_fontSizeBase
       value: 7
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8766374295800262494, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8766374295800262494, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
+    - {fileID: 8120856082539309911, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
 --- !u!1001 &1029110165399453475
 PrefabInstance:
