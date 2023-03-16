@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -9,6 +10,11 @@ public class Machine : InteractableBase
     private float m_MachineProcessingDelay = 3.5f;
     private bool m_VialIsReady = false;
     private Vials m_Vial = null;
+    public string m_VialProcessing;
+
+    //UI Vars
+    [Header("UI Settings")]
+    [SerializeField] private TMP_Text m_ProcessingText;
 
     private void Start()
     {
@@ -51,6 +57,8 @@ public class Machine : InteractableBase
             player.m_HeldItem = null;
 
             StartCoroutine(FillVial(vial));
+
+            m_VialProcessing = "Vial is Processing";
         }
 
         return;
@@ -67,11 +75,18 @@ public class Machine : InteractableBase
 
         m_Vial = null;
         m_VialIsReady = false;
+
+        m_VialProcessing = "Vial is Filled";
     }
 
     public override string ReturnTextPrompt()
     {
         throw new System.NotImplementedException();
+    }
+
+    private void UpdateUI()
+    {
+        m_ProcessingText.text = $"{m_VialProcessing}"; 
     }
 
     private void OnDestroy()
