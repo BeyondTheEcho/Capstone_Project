@@ -11,7 +11,7 @@ using System;
 public class Player : MonoBehaviour
 {
     //Public Vars
-    public IDropable m_HeldItem;
+    [SerializeField] public IDropable m_HeldItem = null;
 
     //Private Serialized Vars
     [SerializeField] private float m_InteractRange = 1.7f; //Default Value lines up with colliders
@@ -20,6 +20,8 @@ public class Player : MonoBehaviour
     private ToolManager m_ToolManager;
     private TMP_Text m_ToolPrompt;
     private PlayerNumber m_PlayerNumber;
+    private float m_InteractDelay = 0.5f;
+    private Coroutine m_InteractDelayCoroutine;
 
     void Awake()
     {
@@ -74,26 +76,25 @@ public class Player : MonoBehaviour
         m_ToolPrompt.text = prompt;
     }
 
+    private IEnumerator InteractDelay()
+    {
+        yield return new WaitForSeconds(m_InteractDelay);
+
+        m_InteractDelayCoroutine = null;
+    }
+
     public void PlayerInteract()
     {
-        InteractableBase item = null;
-
-        item = InteractablesManager.s_Instance.GetClosestInteractableInRange(this, m_InteractRange);
-
-        if (item != null)
+        if (m_InteractDelayCoroutine == null)
         {
-            if (item.TryGetComponent(out Belts belt))
-            {
-                item = InteractablesManager.s_Instance.GetClosestPickupableInRange(this, m_InteractRange);
-            }
+            m_InteractDelayCoroutine = StartCoroutine(InteractDelay());
+
+            InteractableBase item = null;
+
+            item = InteractablesManager.s_Instance.GetClosestInteractableInRange(this, m_InteractRange);
 
             if (item != null)
             {
-                if (InteractablesManager.s_Instance.m_ObjectOnConveyors.Contains(item))
-                {
-                    InteractablesManager.s_Instance.m_ObjectOnConveyors.Remove(item);
-                }
-
                 item.OnInteract(this);
             }
         }

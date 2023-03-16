@@ -1,40 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class Machine : MonoBehaviour
-{ 
-    
-    [SerializeField] private Transform m_OutputBeltTransform;
-    [SerializeField] private int m_MachineProcessingStage = 0;
+public class Machine : InteractableBase
+{
     private float m_MachineProcessingDelay = 3.5f;
+    private bool m_VialIsReady = false;
+    private Vials m_Vial = null;
 
-    public void RunMachine(Item item, MachineInput input)
+    private void Start()
     {
-        StartCoroutine(ProcessOutputItem(item, input));
+        StoreRef();
     }
 
-    IEnumerator ProcessOutputItem(Item item, MachineInput input)
+    IEnumerator FillVial(Vials vial)
     {
-        if (item.GetItemStage() == m_MachineProcessingStage)
+        vial.transform.position = transform.position;
+        vial.transform.SetParent(transform);
+
+        yield return new WaitForSeconds(m_MachineProcessingDelay);
+
+        vial.m_VialColor = Vials.VialColor.Filled;
+
+        m_Vial = vial;
+        m_VialIsReady = true;
+    }
+
+    public override void OnInteract(Player player)
+    {
+        if (m_VialIsReady == false)
         {
-            if (gameObject.tag == "Press")
-            {
-                SoundManager.s_Instance.PlayClamp();
-            }
-            if (gameObject.tag == "Heat")
-            {
-                SoundManager.s_Instance.PlayHeatTreat();
-            }
-            if (gameObject.tag == "Bolt")
-            {
-                SoundManager.s_Instance.PlayBolt();
-            }
-            yield return new WaitForSeconds(m_MachineProcessingDelay);
-            item.ProgressItemStage();
-            input.ReturnItemToBelt(item.gameObject);
-            
-            
+            InputVial(player);
+        }
+        else
+        {
+            OutputVial(player);
         }
         else
         {
@@ -42,5 +44,44 @@ public class Machine : MonoBehaviour
         }
 
         
+    }
+
+    private void InputVial(Player player)
+    {
+        if (player.m_HeldItem == null) { return; }
+
+        if (player.m_HeldItem.gameObject.TryGetComponent<Vials>(out Vials vial))
+        {
+            if (vial.m_VialColor != Vials.VialColor.Empty) { return; }
+
+            player.m_HeldItem = null;
+
+            StartCoroutine(FillVial(vial));
+        }
+
+        return;
+    }
+
+    private void OutputVial(Player player)
+    {
+        if (player.m_HeldItem != null) { return; }
+
+        player.m_HeldItem = m_Vial;
+
+        m_Vial.transform.position = player.transform.position;
+        m_Vial.transform.parent = player.transform;
+
+        m_Vial = null;
+        m_VialIsReady = false;
+    }
+
+    public override string ReturnTextPrompt()
+    {
+        throw new System.NotImplementedException();
+    }
+
+    private void OnDestroy()
+    {
+        DeleteRef();
     }
 }

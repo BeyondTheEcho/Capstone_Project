@@ -11,6 +11,7 @@ public class LanguageLobby : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        LanguageSettings.ChangeFont(LanguageSettings.m_FinalFont);
         m_HintJoinText.text= LanguageSettings.s_Instance.GetLocalizedString("HINTJOINLOBBY");
         m_HintLeaveText.text= LanguageSettings.s_Instance.GetLocalizedString("HINTLEAVELOBBY");
         m_PlayButtonText.text= LanguageSettings.s_Instance.GetLocalizedString("START");

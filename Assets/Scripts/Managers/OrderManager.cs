@@ -3,6 +3,8 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using Random = UnityEngine.Random;
+using UnityEngine.UI;
+using DG.Tweening;
 
 public class OrderManager : MonoBehaviour
 {
@@ -14,13 +16,12 @@ public class OrderManager : MonoBehaviour
 
     //Order Vars
     [Header("Order Settings")]
-    [SerializeField] private GameObject[] m_OrderItems;
-    [SerializeField] private GameObject m_OrderSpawnBelt;
+    [SerializeField] private Sprite[] m_OrderItems;
     private int m_BaseOrderSize = 10;
     private int m_CurrentOrderSize = 0;
     private int m_MaxOrderSize = 0;
     private int m_CurrentOrderItem;
-    private float m_OrderSpawnDelay = 3f;
+    private int m_TotalOrderSize = 0;
 
     //Chaos Vars
     private float m_Chaos = 0.0f;
@@ -32,6 +33,11 @@ public class OrderManager : MonoBehaviour
     [Header("UI Settings")]
     [SerializeField] private TMP_Text m_ChaosText;
     [SerializeField] private TMP_Text m_OrderText;
+    [SerializeField] private TMP_Text m_ItemText;
+
+    //Order Popup Vars
+    [Header("Order Popup Settings")]
+    [SerializeField] Image m_PopupOrder;
 
     private void Awake()
     {
@@ -44,7 +50,6 @@ public class OrderManager : MonoBehaviour
             s_Instance = this;
         }
     }
-
 
     void Start()
     {
@@ -61,18 +66,6 @@ public class OrderManager : MonoBehaviour
         }
     }
 
-    private IEnumerator SpawnOrder(int items)
-    {
-        for (int i = items; i != 0; i--)
-        {
-            yield return new WaitForSeconds(m_OrderSpawnDelay);
-
-            GameObject item = Instantiate(m_OrderItems[m_CurrentOrderItem], m_OrderSpawnBelt.transform.position, Quaternion.identity);
-
-            m_OrderSpawnBelt.GetComponent<Belts>().PlaceItemOnBeltSystem(item);
-        }
-    }
-
     private void GenerateOrder()
     {
         CalculateMaxOrderSize();
@@ -83,7 +76,7 @@ public class OrderManager : MonoBehaviour
 
         m_CurrentOrderItem = Random.Range(0, orderItemMax);
 
-        StartCoroutine(SpawnOrder(m_CurrentOrderSize));
+        m_TotalOrderSize = m_CurrentOrderSize;
     }
 
     public void SubtractOrderItem()
@@ -91,16 +84,17 @@ public class OrderManager : MonoBehaviour
         m_CurrentOrderSize--;
     }
 
-    public ItemType GetCurrentOrderItemType()
+    public Sprite GetCurrentOrderSprite()
     {
-        m_OrderItems[m_CurrentOrderItem].TryGetComponent(out Item item);
-        return item.GetItemType();
+        return m_OrderItems[m_CurrentOrderItem];
     }
 
     private void UpdateUI()
     {
         m_ChaosText.text = $"Chaos: {m_Chaos}";
         m_OrderText.text = $"Order Size: {m_CurrentOrderSize}";
+        m_PopupOrder.sprite = m_OrderItems[m_CurrentOrderItem];
+        m_ItemText.text = $"X{m_CurrentOrderSize}";
     }
 
     IEnumerator IncrementChaos()
@@ -113,7 +107,7 @@ public class OrderManager : MonoBehaviour
         }
     }
 
-    public void CalculateMaxOrderSize()
+    public void CalculateMaxOrderSize() //NEEDS MODIFICATION
     {
         m_MaxOrderSize = (int)((m_BaseOrderSize * (int) m_Difficulty) * m_Chaos);
     }
