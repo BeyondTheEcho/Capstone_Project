@@ -28,6 +28,7 @@ public class LanguageSettings : MonoBehaviour
     public TMP_FontAsset m_MandarinFont;
     public TMP_FontAsset m_DefaultFont;
     public static TMP_FontAsset m_FinalFont;
+
     private void Awake()
     {
         if (s_Instance != null && s_Instance != this)
@@ -171,7 +172,6 @@ public class LanguageSettings : MonoBehaviour
         {
             t[i].font = font;
         }
-        print("changefontwork");
     }
 
     public void Reset()

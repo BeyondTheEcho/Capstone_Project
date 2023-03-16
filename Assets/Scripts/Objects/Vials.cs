@@ -43,6 +43,11 @@ public class Vials : InteractableBase, IDropable
         m_Renderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
+    public Sprite GetVialSprite()
+    {
+        return m_Renderer.sprite;
+    }
+
     public void OnDrop(Player player)
     {
         player.m_HeldItem = null;

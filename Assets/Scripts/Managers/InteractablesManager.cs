@@ -53,12 +53,12 @@ public class InteractablesManager : MonoBehaviour
     /// <param name="player">Instance of the player calling the method</param>
     /// <param name="pickupRange">Range the player can interact in</param>
     /// <returns></returns>
-    public InteractableBase? GetClosestInteractableInRange(Player player, float interactRange)
+    public InteractableBase GetClosestInteractableInRange(Player player, float interactRange)
     {
         return GetClosestFromCollection(player, interactRange, m_InteractableObjects);
     }
 
-    public Belts? GetClosestBeltInRange(Player player, float interactRange)
+    public Belts GetClosestBeltInRange(Player player, float interactRange)
     {
         return GetClosestFromCollection(player, interactRange, m_ConveyorBelts);
     }
@@ -69,7 +69,7 @@ public class InteractablesManager : MonoBehaviour
     /// <param name="player">Instance of the player calling the method</param>
     /// <param name="pickupRange">Range the player can interact in</param>
     /// <returns></returns>
-    public InteractableBase? GetClosestPickupableInRange(Player player, float interactRange)
+    public InteractableBase GetClosestPickupableInRange(Player player, float interactRange)
     {
         return GetClosestFromCollection(player, interactRange, m_Dropables);
     }

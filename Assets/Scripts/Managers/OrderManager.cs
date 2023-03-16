@@ -16,13 +16,11 @@ public class OrderManager : MonoBehaviour
 
     //Order Vars
     [Header("Order Settings")]
-    [SerializeField] private GameObject[] m_OrderItems;
-    [SerializeField] private GameObject m_OrderSpawnBelt;
+    [SerializeField] private Sprite[] m_OrderItems;
     private int m_BaseOrderSize = 10;
     private int m_CurrentOrderSize = 0;
     private int m_MaxOrderSize = 0;
     private int m_CurrentOrderItem;
-    private float m_OrderSpawnDelay = 3f;
     private int m_TotalOrderSize = 0;
 
     //Chaos Vars
@@ -53,7 +51,6 @@ public class OrderManager : MonoBehaviour
         }
     }
 
-
     void Start()
     {
         m_ChaosCoroutine = StartCoroutine(IncrementChaos());
@@ -80,8 +77,6 @@ public class OrderManager : MonoBehaviour
         m_CurrentOrderItem = Random.Range(0, orderItemMax);
 
         m_TotalOrderSize = m_CurrentOrderSize;
-
-        StartCoroutine(SpawnOrder(m_CurrentOrderSize));
     }
 
     public void SubtractOrderItem()
@@ -89,17 +84,16 @@ public class OrderManager : MonoBehaviour
         m_CurrentOrderSize--;
     }
 
-    public ItemType GetCurrentOrderItemType()
+    public Sprite GetCurrentOrderSprite()
     {
-        m_OrderItems[m_CurrentOrderItem].TryGetComponent(out Item item);
-        return item.GetItemType();
+        return m_OrderItems[m_CurrentOrderItem];
     }
 
     private void UpdateUI()
     {
         m_ChaosText.text = $"Chaos: {m_Chaos}";
         m_OrderText.text = $"Order Size: {m_CurrentOrderSize}";
-        m_PopupOrder.sprite = m_OrderItems[0].GetComponent<SpriteRenderer>().sprite;
+        m_PopupOrder.sprite = m_OrderItems[m_CurrentOrderItem];
         m_ItemText.text = $"X{m_CurrentOrderSize}";
     }
 
