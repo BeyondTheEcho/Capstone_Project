@@ -8,7 +8,7 @@ public class MousPops : MonoBehaviour
     public static bool m_mouseInScene = false;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class MousPops : MonoBehaviour
 
     void GenMouse()
     {
-        if (!m_mouseInScene)
+        if (!m_mouseInScene && PopWait.waitingOver)
         {
             Vector3 mousePos = new Vector3(Random.Range(20, -20.2f), Random.Range(7, -8.5f), 0);
             Instantiate(m_mouse, mousePos, Quaternion.Euler(Random.Range(0, 30), 0, 0));
@@ -29,12 +29,5 @@ public class MousPops : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Player")
-        {
-            m_mouseInScene = false;
-            Destroy(m_mouse);
-        }
-    }
+
 }

@@ -21,6 +21,7 @@ public class mouse : MonoBehaviour
         if (collision.tag == "Player")
         {
             MousPops.m_mouseInScene=false;
+            PopWait.waitingOver=false;
             Destroy(gameObject);
         }
     }
