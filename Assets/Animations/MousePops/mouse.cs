@@ -21,6 +21,8 @@ public class mouse : MonoBehaviour
         if (collision.tag == "Player")
         {
             MousPops.m_mouseInScene=false;
+            MousPops.pusnishmentCountDown = 0;
+            MousPops.startPunishmentCount = false;
             Destroy(gameObject);
         }
     }
