@@ -15,6 +15,8 @@ public class Player : MonoBehaviour
 
     //Private Serialized Vars
     [SerializeField] private float m_InteractRange = 1.7f; //Default Value lines up with colliders
+    [SerializeField] private SpriteRenderer m_PopupSpriteRenderer;
+    [SerializeField] private GameObject m_ItemPopup;
 
     //Private Vars
     private ToolManager m_ToolManager;
@@ -52,6 +54,21 @@ public class Player : MonoBehaviour
         {
             InputManager.s_Instance.Player_4_Interact += PlayerInteract;
             InputManager.s_Instance.Player_4_Drop += PlayerDrop;
+        }
+    }
+
+    void Update()
+    {
+        if (m_HeldItem != null)
+        {
+            m_ItemPopup.gameObject.SetActive(true);
+            m_PopupSpriteRenderer.gameObject.SetActive(true);
+            m_PopupSpriteRenderer.sprite = m_HeldItem.gameObject.GetComponent<SpriteRenderer>().sprite;
+        }
+        else
+        {
+            m_ItemPopup.gameObject.SetActive(false);
+            m_PopupSpriteRenderer.gameObject.SetActive(false);
         }
     }
 
