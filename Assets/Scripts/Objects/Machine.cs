@@ -4,13 +4,15 @@ using System.Runtime.CompilerServices;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Machine : InteractableBase
 {
     private float m_MachineProcessingDelay = 3.5f;
-    private bool m_VialIsReady = false;
+    private VialStates m_VialStates = VialStates.Empty;
     private Vials m_Vial = null;
-    public string m_VialProcessing;
+    private string[] m_VialFillStates = {"Filling", "Full"};
+    private string m_VialProcessing = "Vial is ";
 
     //UI Vars
     [Header("UI Settings")]
@@ -21,8 +23,15 @@ public class Machine : InteractableBase
         StoreRef();
     }
 
+    private void Update()
+    {
+        UpdateUI();
+    }
+
     IEnumerator FillVial(Vials vial)
     {
+        m_VialStates = VialStates.Filling;
+        
         vial.transform.position = transform.position;
         vial.transform.SetParent(transform);
 
@@ -31,16 +40,16 @@ public class Machine : InteractableBase
         vial.m_VialColor = Vials.VialColor.Filled;
 
         m_Vial = vial;
-        m_VialIsReady = true;
+        m_VialStates = VialStates.Full;
     }
 
     public override void OnInteract(Player player)
     {
-        if (m_VialIsReady == false)
+        if (m_VialStates == VialStates.Empty)
         {
             InputVial(player);
         }
-        else
+        else if (m_VialStates == VialStates.Full)
         {
             OutputVial(player);
         }
@@ -57,8 +66,6 @@ public class Machine : InteractableBase
             player.m_HeldItem = null;
 
             StartCoroutine(FillVial(vial));
-
-            m_VialProcessing = "Vial is Processing";
         }
 
         return;
@@ -74,9 +81,7 @@ public class Machine : InteractableBase
         m_Vial.transform.parent = player.transform;
 
         m_Vial = null;
-        m_VialIsReady = false;
-
-        m_VialProcessing = "Vial is Filled";
+        m_VialStates = VialStates.Empty;
     }
 
     public override string ReturnTextPrompt()
@@ -85,12 +90,32 @@ public class Machine : InteractableBase
     }
 
     private void UpdateUI()
-    {
-        m_ProcessingText.text = $"{m_VialProcessing}"; 
+    {   
+        if (m_VialStates == VialStates.Filling)
+        {
+            m_ProcessingText.text = $"{m_VialProcessing}{m_VialFillStates[0]}";
+        }
+        else if (m_VialStates == VialStates.Full)
+        {
+            m_ProcessingText.text = $"{m_VialProcessing}{m_VialFillStates[1]}";
+        }
+        else
+        {
+            m_ProcessingText.text = "";
+        }
     }
 
     private void OnDestroy()
     {
         DeleteRef();
+    }
+
+    private enum VialStates
+    {
+        Empty = 0,
+        Filling,
+        Full,
+
+        NUM_STATES
     }
 }
