@@ -12,12 +12,6 @@ public class StorageBin : InteractableBase
         StoreRef();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public override void OnInteract(Player player)
     {
         if (player.m_HeldItem == null)
@@ -30,7 +24,7 @@ public class StorageBin : InteractableBase
 
     public override string ReturnTextPrompt()
     {
-        throw new System.NotImplementedException();
+        return "Press F to retrieve";
     }
 
     private void OnDestroy()

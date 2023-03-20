@@ -44,3 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c78335c28c3b5db4187cf0047f0f6db8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Tools:
+  - {fileID: 2065571615264289523, guid: 1bb5418194eab8a4d8b498e60a98bf3e, type: 3}
+  - {fileID: 833255034699710959, guid: 2e9586b9f7cf27449b40b62cf6d1edf6, type: 3}
+  - {fileID: 4279141470657053551, guid: ecae33cf499de334288b612b1c616857, type: 3}
+  m_ToolSpawns:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
