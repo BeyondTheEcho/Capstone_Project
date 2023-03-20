@@ -31,8 +31,6 @@ public class MousPops : MonoBehaviour
         {
             StartCoroutine(NextMousePops());
             m_mouseInScene = true;
-
-
         }
     }
 
@@ -44,12 +42,10 @@ public class MousPops : MonoBehaviour
         startPunishmentCount=true;
         Vector3 mousePos = new Vector3(Random.Range(20, -20.2f), Random.Range(7, -8.5f), 0);
         Instantiate(m_mouse, mousePos, Quaternion.Euler(Random.Range(0, 30), 0, 0));
-
     }
 
     void CheckPunishment()
     {
-
         if (pusnishmentCountDown >= 5)
         {
             m_AnnoyingCanvas.SetActive(true);
@@ -57,16 +53,12 @@ public class MousPops : MonoBehaviour
         else 
         {
             m_AnnoyingCanvas.SetActive(false);
-
         }
 
         if (startPunishmentCount)
         {
-
             pusnishmentCountDown += Time.deltaTime;
         }
-
-
     }
 
 
