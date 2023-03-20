@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 
 using UnityEngine;
+using System.Threading;
+using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
+    [SerializeField] GameObject m_BackToMenuScene;
     public static float timeNum;
     public GameObject[] timeUI;
     public Sprite[] spriteTexture;
@@ -16,7 +19,7 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeNum = 120;
+        timeNum = 10;
     }
 
     // Update is called once per frame
@@ -57,6 +60,9 @@ public class Timer : MonoBehaviour
             timeUI[2].SetActive(true);
         }
 
-
+        if (timeNum < 0 )
+        {
+            SceneManager.LoadScene("TimeUP");
+        }
     }
 }
