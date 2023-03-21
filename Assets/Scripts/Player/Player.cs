@@ -34,8 +34,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         m_PlayerNumber = gameObject.GetComponent<PlayerController>().m_PlayerNumber;
-
-        if(m_PlayerNumber == PlayerNumber.PlayerOne)
+        
+        if (m_PlayerNumber == PlayerNumber.PlayerOne)
         {
             InputManager.s_Instance.Player_1_Interact += PlayerInteract;
             InputManager.s_Instance.Player_1_Drop += PlayerDrop;

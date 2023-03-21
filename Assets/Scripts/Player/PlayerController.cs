@@ -31,7 +31,6 @@ public class PlayerController : MonoBehaviour
             velocity.y = Input.GetAxisRaw("Vertical1");
 
             m_Rigidbody.MovePosition(m_Rigidbody.position + velocity * m_Speed * Time.fixedDeltaTime);
-
         }
 
         if (m_PlayerNumber == PlayerNumber.PlayerTwo) 
@@ -41,6 +40,22 @@ public class PlayerController : MonoBehaviour
 
             m_Rigidbody.MovePosition(m_Rigidbody.position + velocity * m_Speed * Time.fixedDeltaTime);
         }
-        
+
+        if (m_PlayerNumber == PlayerNumber.PlayerThree)
+        {
+            velocity.x = Input.GetAxis("Horizontal3");
+            velocity.y = Input.GetAxis("Vertical3");
+
+            m_Rigidbody.MovePosition(m_Rigidbody.position + velocity * m_Speed * Time.fixedDeltaTime);
+        }
+
+        if (m_PlayerNumber == PlayerNumber.PlayerFour)
+        {
+            velocity.x = Input.GetAxis("Horizontal4");
+            velocity.y = Input.GetAxis("Vertical4");
+
+            m_Rigidbody.MovePosition(m_Rigidbody.position + velocity * m_Speed * Time.fixedDeltaTime);
+        }
+
     }
 }

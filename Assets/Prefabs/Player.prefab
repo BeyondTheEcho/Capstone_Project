@@ -726,5 +726,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractRange: 1.7
-  m_PopupSpriteRenderer: {fileID: 0}
-  m_ItemPopup: {fileID: 0}
+  m_PopupSpriteRenderer: {fileID: 2951490673976694829}
+  m_ItemPopup: {fileID: 489039430608170383}

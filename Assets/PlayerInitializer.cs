@@ -8,9 +8,9 @@ public class PlayerInitializer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < GameManager.m_PlayersCount; i++)
+        for (int i = 0; i < GameManager.m_PlayersAdded.Length; i++)
         {
-            m_PlayerObjects[i].SetActive(true);
+            m_PlayerObjects[i].SetActive(GameManager.m_PlayersAdded[i]);
         }
     }
 
