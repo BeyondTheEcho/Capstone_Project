@@ -177,7 +177,7 @@ InputManager:
     dead: 0.05
     sensitivity: 0.5
     snap: 1
-    invert: 0
+    invert: 1
     type: 2
     axis: 1
     joyNum: 3
@@ -209,7 +209,7 @@ InputManager:
     dead: 0.05
     sensitivity: 0.5
     snap: 1
-    invert: 0
+    invert: 1
     type: 2
     axis: 0
     joyNum: 4
@@ -299,8 +299,8 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: g
     positiveButton: f
-    altNegativeButton: joystick button 1
-    altPositiveButton: joystick button 2
+    altNegativeButton: joystick 1 button 1
+    altPositiveButton: joystick 1 button 2
     gravity: 1000
     dead: 0.1
     sensitivity: 1000
@@ -313,8 +313,8 @@ InputManager:
     m_Name: Joy_2_Interact
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: joystick button 1
-    positiveButton: joystick button 2
+    negativeButton: joystick 2 button 1
+    positiveButton: joystick 2 button 2
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -329,8 +329,8 @@ InputManager:
     m_Name: Joy_3_Interact
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: joystick button 1
-    positiveButton: joystick button 2
+    negativeButton: joystick 3 button 1
+    positiveButton: joystick 3 button 2
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
@@ -345,8 +345,8 @@ InputManager:
     m_Name: Joy_4_Interact
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: joystick button 1
-    positiveButton: joystick button 2
+    negativeButton: joystick 4 button 1
+    positiveButton: joystick 4 button 2
     altNegativeButton: 
     altPositiveButton: 
     gravity: 1000
