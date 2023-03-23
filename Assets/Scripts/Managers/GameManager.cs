@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject[] m_Players;
     public static bool[] m_PlayersAdded = new bool[4];
+
     // Start is called before the first frame update
     void Start()
     {
