@@ -20,7 +20,7 @@ public class OrderManager : MonoBehaviour
     private int m_MinOrderSize = 1;
     private float m_OrderOffsetPosition = 5.0f;
     private Vector3 m_InitialOrderPosition = new Vector3(-20.0f, 10.5f, 0.0f);
-    private int m_OrderSpawnDelay = 5;
+    private int m_OrderSpawnDelay = 15;
 
     private void Awake()
     {
@@ -81,5 +81,30 @@ public class OrderManager : MonoBehaviour
         order.SetOrderSprite(m_OrderSprites[(int)Random.Range(0, m_OrderSprites.Length)]);
 
         order.SetOrderQuantity((int)Random.Range(m_MinOrderSize, m_MaxOrderSize));
+    }
+
+    public bool TryDeliverVial(Sprite sprite)
+    {
+        for (int i = m_Orders.Length - 1; i >= 0; i--) 
+        {
+            if (m_Orders[i]  != null)
+            {
+                if (m_Orders[i].TryDeliverVial(sprite)) { return true; }
+            }
+        }
+
+        return false;
+    }
+
+    public void RemoveOrder(Order order)
+    {
+        foreach (var item in m_Orders)
+        {
+            if (item == order)
+            {
+                Destroy(item.gameObject);
+                return;
+            }
+        }
     }
 }

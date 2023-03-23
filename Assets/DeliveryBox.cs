@@ -22,12 +22,13 @@ public class DeliveryBox : InteractableBase
 
         if (player.m_HeldItem.gameObject.TryGetComponent<Vials>(out Vials vial)) 
         {
-            //if (vial.GetVialSprite() == OrderManager.s_Instance.GetCurrentOrderSprite())
-            //{
-            //    OrderManager.s_Instance.SubtractOrderItem();
-            //    Destroy(vial);
-            //    player.m_HeldItem = null;
-            //}
+            Sprite sprite = vial.GetVialSprite();
+
+            if (OrderManager.s_Instance.TryDeliverVial(sprite))
+            {
+                Destroy(vial);
+                player.m_HeldItem = null;
+            }
         }
     }
 

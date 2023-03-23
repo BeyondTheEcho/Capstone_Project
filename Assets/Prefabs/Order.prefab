@@ -287,7 +287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TimerBar: {fileID: 6391479463644040454}
-  m_OrderItemSprite: {fileID: 1810551549013496937}
+  m_SpriteRenderer: {fileID: 1810551549013496937}
   m_OrderQuantityText: {fileID: 8550995372195307306}
 --- !u!1 &4403333412809476328
 GameObject:
