@@ -40,11 +40,6 @@ public class OrderManager : MonoBehaviour
         StartCoroutine(OrderGeneration());
     }
 
-    void Update()
-    { 
-        
-    }
-
     IEnumerator OrderGeneration()
     {
         while (true)

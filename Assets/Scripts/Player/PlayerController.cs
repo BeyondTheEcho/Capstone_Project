@@ -23,14 +23,16 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if(velocity.x != 0 || velocity.y != 0)
-        {
-            SoundManager.s_Instance.PlayWalk();
-        }
-        else
-        {
-            SoundManager.s_Instance.StopWalk();
-        }
+        //Commented out because Sound Manager values not populated. Throwing thousands of errors.
+
+        //if(velocity.x != 0 || velocity.y != 0)
+        //{
+        //    SoundManager.s_Instance.PlayWalk();
+        //}
+        //else
+        //{
+        //    SoundManager.s_Instance.StopWalk();
+        //}
     }
 
     void FixedUpdate()
