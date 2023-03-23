@@ -13,12 +13,14 @@ public class OrderManager : MonoBehaviour
 
     //Order Vars
     [Header("Order Settings")]
-    [SerializeField] private Sprite[] m_OrderItems;
+    [SerializeField] private Sprite[] m_OrderSprites;
     [SerializeField] private Order[] m_Orders;
     [SerializeField] private GameObject m_OrderPrefab;
     private int m_MaxOrderSize = 5;
-
-    private int m_OrderSpawnDelay = 30;
+    private int m_MinOrderSize = 1;
+    private float m_OrderOffsetPosition = 5.0f;
+    private Vector3 m_InitialOrderPosition = new Vector3(-20.0f, 10.5f, 0.0f);
+    private int m_OrderSpawnDelay = 5;
 
     private void Awake()
     {
@@ -47,14 +49,37 @@ public class OrderManager : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(m_OrderSpawnDelay);
-
             AddOrder();
+
+            yield return new WaitForSeconds(m_OrderSpawnDelay);
         }
     }
 
     private void AddOrder()
     {
+        for (int i = 0;  i < m_Orders.Length; i++)
+        {
+            if (m_Orders[i] == null)
+            {
+                Vector3 pos = m_InitialOrderPosition;
 
+                pos.x += m_OrderOffsetPosition * i;
+
+                var obj = Instantiate(m_OrderPrefab, pos, Quaternion.identity);
+
+                m_Orders[i] = obj.GetComponent<Order>();
+
+                InitializeOrder(m_Orders[i]);
+
+                break;
+            }
+        }
+    }
+
+    private void InitializeOrder(Order order)
+    {
+        order.SetOrderSprite(m_OrderSprites[(int)Random.Range(0, m_OrderSprites.Length)]);
+
+        order.SetOrderQuantity((int)Random.Range(m_MinOrderSize, m_MaxOrderSize));
     }
 }
