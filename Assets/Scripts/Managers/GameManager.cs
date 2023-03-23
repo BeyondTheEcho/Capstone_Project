@@ -13,8 +13,9 @@ public class GameManager : MonoBehaviour
         {
             m_PlayersAdded[i] = false;
         }
-        
+
         InputManager.s_Instance.AddPlayerFunc = AddPlayer;
+        InputManager.s_Instance.RemovePlayerFunc = RemovePlayer;
     }
 
     public void AddPlayer(int playerNumber)
@@ -25,16 +26,18 @@ public class GameManager : MonoBehaviour
             m_Players[playerNumber].SetActive(true);
         }
     }
+
+    public void RemovePlayer(int playerNumberR) 
+    {
+        if (m_PlayersAdded[playerNumberR])
+        {
+            m_PlayersAdded[playerNumberR] = false;
+            m_Players[playerNumberR].SetActive(false);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.B))
-        //{
-        //    if (m_PlayersCount >= 1)
-        //    {
-        //        m_PlayersCount--;
-        //        m_Players[m_PlayersCount].SetActive(false);
-        //    }
-        //}
+      
     }
 }

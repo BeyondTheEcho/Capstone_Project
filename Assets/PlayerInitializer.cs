@@ -12,6 +12,11 @@ public class PlayerInitializer : MonoBehaviour
         {
             m_PlayerObjects[i].SetActive(GameManager.m_PlayersAdded[i]);
         }
+
+        //for (int i = 0; i < GameManager.m_PlayersRemoved.Length; i++)
+        //{
+        //    m_PlayerObjects[i].SetActive(GameManager.m_PlayersRemoved[i]);
+        //}
     }
 
     // Update is called once per frame
