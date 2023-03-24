@@ -1,29 +1,61 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MouseControl : MonoBehaviour
 {
-    public Vector3 originalPosition;
-    private Vector3 startPos;
-    private Transform thisTransform;
-    public float sensitivity = 0.2f;
+    Vector3 m_InputDirection = new Vector3();
+    Vector3 m_Position = new Vector3();
+
+    //singleton
+    public static MouseControl Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
 
     void Start()
     {
-        thisTransform = transform;
-        this.transform.position = originalPosition;
+        
     }
 
     void Update()
     {
-        Vector3 inputDirection = Vector3.zero * sensitivity;
-        inputDirection.x = Input.GetAxis("MouseX") * 0.1f;
-        inputDirection.y = Input.GetAxis("MouseY") * 0.1f;
-        thisTransform.position = startPos + inputDirection * sensitivity;
-        startPos = thisTransform.position;
+        Debug.Log(Input.GetAxis("MouseX"));
+        m_InputDirection.x = Input.GetAxis("MouseX");
+        m_InputDirection.y = Input.GetAxis("MouseY");
 
-        this.transform.position = new Vector3(Mathf.Clamp(transform.position.x, -1f, 1f), Mathf.Clamp(transform.position.y, -2f, 2f), transform.position.z);
+        if (SceneManager.GetActiveScene().name == "GameSceneFinal")
+        {
+            m_Position.x = transform.position.x + m_InputDirection.x * 10.0f * Time.deltaTime;
+            m_Position.y = transform.position.y + m_InputDirection.y * 10.0f * Time.deltaTime;
+        }
+        else
+        {
+            m_Position.x = transform.position.x + m_InputDirection.x * 1000.0f * Time.deltaTime;
+            m_Position.y = transform.position.y + m_InputDirection.y * 1000.0f * Time.deltaTime;
+        }
+
+        transform.position = m_Position;
+
+        Ray ray = Camera.main.ScreenPointToRay(gameObject.transform.position);
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, 1000))
+        {
+            Debug.Log(hit.collider.gameObject.name);
+        }
     }
 }
