@@ -141,5 +141,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 284bc30f4be08a643a3084ac76e470b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioSource: {fileID: 5694706346665402856}
-  audioClips: []
+  m_AudioSource: {fileID: 5694706346665402856}
+  m_PlayerAudioSource: {fileID: -6362588305167606157, guid: e5b8f862be8e5c2469c007e8b80cfc59, type: 3}
+  m_AudioClips:
+  - {fileID: 8300000, guid: ccc83ebb169cd074ead702dc5880a0c6, type: 3}
+  - {fileID: 8300000, guid: b9a6a908006696a479c5f4e53c652041, type: 3}
+  - {fileID: 8300000, guid: 10a1392762e3ba54b924d508f6c9be1d, type: 3}
+  - {fileID: 8300000, guid: b59125ad2d249ab40a1683a98229098b, type: 3}
+  m_Alarm: {fileID: 8300000, guid: 7d1c355438a169646bfe08a1f3003107, type: 3}
+  m_Clamp: {fileID: 8300000, guid: f514275817c1e3941a214b3c39e0ded7, type: 3}
+  m_Heat_treating: {fileID: 8300000, guid: 6fc00596237c324488ce9c2652743ca5, type: 3}
+  m_GameOver: {fileID: 8300000, guid: 083aebd3692aba148a25b4d9c68d1d0c, type: 3}
+  m_Box: {fileID: 8300000, guid: 3d6955b079f97d94ea4188e25127026d, type: 3}
+  m_Bolt: {fileID: 8300000, guid: b430365970935b844a099e7e6b5c3726, type: 3}
+  m_Walk: {fileID: 8300000, guid: fa134c48910fadc47ac10f14b6355ca8, type: 3}
