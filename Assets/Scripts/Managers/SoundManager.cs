@@ -52,7 +52,7 @@ public class SoundManager : MonoBehaviour
             m_AudioSource.clip = m_AudioClips[0];
             m_AudioSource.Play();
         }
-        else if (m_SceneName == "Game")
+        else if (m_SceneName == "GameSceneFinal")
         {
             m_AudioSource.Stop();
             m_AudioSource.clip = m_AudioClips[1];
