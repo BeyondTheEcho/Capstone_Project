@@ -314,7 +314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6900035467157849334, guid: 1e513625fc512df479267929f57336dc, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 203
+      value: 285
       objectReference: {fileID: 0}
     - target: {fileID: 6900035467157849334, guid: 1e513625fc512df479267929f57336dc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c03dfb337ca35794faf33b87fcaab45b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeNum: 30
+  timeNum: 500
   timeUI:
   - {fileID: 607116431}
   - {fileID: 607116430}

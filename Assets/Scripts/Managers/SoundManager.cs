@@ -58,10 +58,16 @@ public class SoundManager : MonoBehaviour
             m_AudioSource.clip = m_AudioClips[1];
             m_AudioSource.Play();
         }
+        DontDestroyOnLoad(this);
 
     }
-
-
+    void Update()
+    {
+        if (SceneManager.GetActiveScene().name == "GameSceneFinal")
+        {
+            m_AudioSource.Stop();
+        }
+    }
     public void PlayBGM(int clip)
     {
         m_SoundTime = m_AudioSource.time;
