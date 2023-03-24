@@ -30,3 +30,16 @@ GoodLuck^ Bonne chance! Le monde a besoin de vous !!
 GoGoGo^ GOOOOOOO!!!
 
 
+PickUp^ Appuyez sur F pour délivrer le flacon
+Retrieve^ Appuyez sur F pour récupérer
+Interact^ Appuyez sur F pour interagir
+Processing^ Traitement...
+Ready^ Le flacon {0} est prêt!!
+Red^ Rouge
+Green^ Verte
+Blue^ Bleue
+Filling^ Remplissage
+Full^ Complète
+VialProcessing^ Le flacon est
+
+TimeUp^Temps écoulé

@@ -11,7 +11,6 @@ public class LanguageSettings : MonoBehaviour
 {
     [SerializeField] private TMPro.TMP_Text m_PlayButtonText;
     [SerializeField] private TMPro.TMP_Text m_QuitButtonText;
-    [SerializeField] private TMPro.TMP_Text m_SettingsButtonText;
 
     //set default to English, so programmer can directly start from game scene
     [SerializeField] public Languages m_Language;
@@ -81,7 +80,7 @@ public class LanguageSettings : MonoBehaviour
         {
             case Languages.English:
                 
-                if (m_LocalizationDictionary_French.ContainsKey(key))
+                if (m_LocalizationDictionary_English.ContainsKey(key))
                 {
                     return m_LocalizationDictionary_English[key];
                 }
@@ -132,8 +131,6 @@ public class LanguageSettings : MonoBehaviour
         m_QuitButtonText.text = m_LocalizationDictionary_English["QUIT"];
         m_QuitButtonText.fontSize = 24;
 
-        m_SettingsButtonText.text = m_LocalizationDictionary_English["SETTINGS"];
-        m_SettingsButtonText.fontSize = 24;
 
     }
 
@@ -146,8 +143,7 @@ public class LanguageSettings : MonoBehaviour
         m_PlayButtonText.fontSize = 15;
         m_QuitButtonText.text = m_LocalizationDictionary_French["QUIT"];
         m_QuitButtonText.fontSize = 15;
-        m_SettingsButtonText.text = m_LocalizationDictionary_French["SETTINGS"];
-        m_SettingsButtonText.fontSize = 15;
+
     }
 
     public void MandarinChosen()
@@ -159,8 +155,7 @@ public class LanguageSettings : MonoBehaviour
         m_PlayButtonText.fontSize = 15;
         m_QuitButtonText.text = m_LocalizationDictionary_Mandarin["QUIT"];
         m_QuitButtonText.fontSize = 15;
-        m_SettingsButtonText.text = m_LocalizationDictionary_Mandarin["SETTINGS"];
-        m_SettingsButtonText.fontSize = 15;
+
     }
 
     public static void ChangeFont(TMP_FontAsset font)

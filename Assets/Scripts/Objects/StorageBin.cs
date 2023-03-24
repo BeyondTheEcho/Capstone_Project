@@ -24,7 +24,7 @@ public class StorageBin : InteractableBase
 
     public override string ReturnTextPrompt()
     {
-        return "Press F to retrieve";
+        return LanguageSettings.s_Instance.GetLocalizedString("Retrieve");
     }
 
     private void OnDestroy()

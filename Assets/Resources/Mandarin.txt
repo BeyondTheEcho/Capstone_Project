@@ -29,3 +29,16 @@ OTHER3^ 動作要快,否則世界將大禍臨頭!
 GoodLuck^ 祝一切順利 全世界就指望大家了!!
 GoGoGo^ 衝衝衝!!!
 
+PickUp^ 按 F 交出成果
+Retrieve^ 按 F 索取瓶子
+Interact^ 按 F 進行互動
+Processing^ 處理中...
+Ready^ {0} 藥水準備好了!!
+Red^ 紅
+Green^ 綠
+Blue^ 藍
+Filling ^ 裝水中
+Full^ 滿了
+VialProcessing^ 小瓶是
+
+TimeUp^時間到

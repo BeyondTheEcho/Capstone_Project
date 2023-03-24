@@ -12,8 +12,8 @@ public class Sink : InteractableBase
     private float m_MachineProcessingDelay = 3.5f;
     private VialStates m_VialStates = VialStates.Empty;
     private Vials m_Vial = null;
-    private string[] m_VialFillStates = {"Filling", "Full"};
-    private string m_VialProcessing = "Vial is ";
+    private string[] m_VialFillStates = { LanguageSettings.s_Instance.GetLocalizedString("Filling"), LanguageSettings.s_Instance.GetLocalizedString("Full") };
+    private string m_VialProcessing = LanguageSettings.s_Instance.GetLocalizedString("VialProcessing");
 
     //UI Vars
     [Header("UI Settings")]
@@ -87,7 +87,7 @@ public class Sink : InteractableBase
 
     public override string ReturnTextPrompt()
     {
-        return "Press F to Interact";
+        return LanguageSettings.s_Instance.GetLocalizedString("Interact");
     }
 
     private void UpdateUI()
