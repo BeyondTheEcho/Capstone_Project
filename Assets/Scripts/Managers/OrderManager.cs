@@ -8,36 +8,19 @@ using DG.Tweening;
 
 public class OrderManager : MonoBehaviour
 {
-    //Difficulty (Defaulted until main menu branch is merged)
-    private Difficulty m_Difficulty = Difficulty.medium;
-
     //Static Instance
     public static OrderManager s_Instance { get; private set; }
 
     //Order Vars
     [Header("Order Settings")]
-    [SerializeField] private Sprite[] m_OrderItems;
-    private int m_BaseOrderSize = 10;
-    private int m_CurrentOrderSize = 0;
-    private int m_MaxOrderSize = 0;
-    private int m_CurrentOrderItem;
-    private int m_TotalOrderSize = 0;
-
-    //Chaos Vars
-    private float m_Chaos = 0.0f;
-    private float m_ChaosIncrement = 0.01f;
-    private float m_ChaosIncrementRate = 3.0f;
-    Coroutine m_ChaosCoroutine;
-
-    //UI Vars
-    [Header("UI Settings")]
-    [SerializeField] private TMP_Text m_ChaosText;
-    [SerializeField] private TMP_Text m_OrderText;
-    [SerializeField] private TMP_Text m_ItemText;
-
-    //Order Popup Vars
-    [Header("Order Popup Settings")]
-    [SerializeField] Image m_PopupOrder;
+    [SerializeField] private Sprite[] m_OrderSprites;
+    [SerializeField] private Order[] m_Orders;
+    [SerializeField] private GameObject m_OrderPrefab;
+    private int m_MaxOrderSize = 5;
+    private int m_MinOrderSize = 1;
+    private float m_OrderOffsetPosition = 5.0f;
+    private Vector3 m_InitialOrderPosition = new Vector3(-20.0f, 10.5f, 0.0f);
+    private int m_OrderSpawnDelay = 15;
 
     private void Awake()
     {
@@ -53,69 +36,70 @@ public class OrderManager : MonoBehaviour
 
     void Start()
     {
-        m_ChaosCoroutine = StartCoroutine(IncrementChaos());
+        m_Orders = new Order[m_MaxOrderSize];
+        StartCoroutine(OrderGeneration());
     }
 
-    void Update()
-    {
-        UpdateUI();
-
-        if (m_CurrentOrderSize == 0 && PauseFeature.m_InPause == false)
-        {
-            GenerateOrder();
-        }
-    }
-
-    private void GenerateOrder()
-    {
-        CalculateMaxOrderSize();
-
-        m_CurrentOrderSize = Random.Range(1, m_MaxOrderSize);
-
-        int orderItemMax = m_OrderItems.Length - 1;
-
-        m_CurrentOrderItem = Random.Range(0, orderItemMax);
-
-        m_TotalOrderSize = m_CurrentOrderSize;
-    }
-
-    public void SubtractOrderItem()
-    {
-        m_CurrentOrderSize--;
-    }
-
-    public Sprite GetCurrentOrderSprite()
-    {
-        return m_OrderItems[m_CurrentOrderItem];
-    }
-
-    private void UpdateUI()
-    {
-        m_ChaosText.text = $"Chaos: {m_Chaos}";
-        m_OrderText.text = $"Order Size: {m_CurrentOrderSize}";
-        m_PopupOrder.sprite = m_OrderItems[m_CurrentOrderItem];
-        m_ItemText.text = $"X{m_CurrentOrderSize}";
-    }
-
-    IEnumerator IncrementChaos()
+    IEnumerator OrderGeneration()
     {
         while (true)
         {
-            yield return new WaitForSeconds(m_ChaosIncrementRate);
+            AddOrder();
 
-            m_Chaos += m_ChaosIncrement;
+            yield return new WaitForSeconds(m_OrderSpawnDelay);
         }
     }
 
-    public void CalculateMaxOrderSize() //NEEDS MODIFICATION
+    private void AddOrder()
     {
-        m_MaxOrderSize = (int)((m_BaseOrderSize * (int) m_Difficulty) * m_Chaos);
+        for (int i = 0;  i < m_Orders.Length; i++)
+        {
+            if (m_Orders[i] == null)
+            {
+                Vector3 pos = m_InitialOrderPosition;
+
+                pos.x += m_OrderOffsetPosition * i;
+
+                var obj = Instantiate(m_OrderPrefab, pos, Quaternion.identity);
+
+                m_Orders[i] = obj.GetComponent<Order>();
+
+                InitializeOrder(m_Orders[i]);
+
+                break;
+            }
+        }
     }
 
-    private enum Difficulty
+    private void InitializeOrder(Order order)
     {
-        easy = 1,
-        medium = 2,
-        hard = 3
+        order.SetOrderSprite(m_OrderSprites[(int)Random.Range(0, m_OrderSprites.Length)]);
+
+        order.SetOrderQuantity((int)Random.Range(m_MinOrderSize, m_MaxOrderSize));
+    }
+
+    public bool TryDeliverVial(Sprite sprite)
+    {
+        for (int i = m_Orders.Length - 1; i >= 0; i--) 
+        {
+            if (m_Orders[i]  != null)
+            {
+                if (m_Orders[i].TryDeliverVial(sprite)) { return true; }
+            }
+        }
+
+        return false;
+    }
+
+    public void RemoveOrder(Order order)
+    {
+        foreach (var item in m_Orders)
+        {
+            if (item == order)
+            {
+                Destroy(item.gameObject);
+                return;
+            }
+        }
     }
 }

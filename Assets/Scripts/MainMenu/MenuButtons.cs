@@ -9,8 +9,15 @@ public class MenuButtons : MonoBehaviour
     // Start is called before the first frame update
     public void StartGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("GameSceneFinal");
     }
+
+    public void Train()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
+
+
     public void GoToLobby()
     {
         SceneManager.LoadScene("Lobby");

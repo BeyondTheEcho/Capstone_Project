@@ -1,12 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DeliveryBox : InteractableBase
 {
+    private Animator m_Animator;
+
     // Start is called before the first frame update
     void Start()
     {
+        m_Animator = GetComponent<Animator>();
+        m_Animator.enabled = false;
         StoreRef();
     }
 
@@ -22,9 +27,10 @@ public class DeliveryBox : InteractableBase
 
         if (player.m_HeldItem.gameObject.TryGetComponent<Vials>(out Vials vial)) 
         {
-            if (vial.GetVialSprite() == OrderManager.s_Instance.GetCurrentOrderSprite())
+            Sprite sprite = vial.GetVialSprite();
+
+            if (OrderManager.s_Instance.TryDeliverVial(sprite))
             {
-                OrderManager.s_Instance.SubtractOrderItem();
                 Destroy(vial);
                 player.m_HeldItem = null;
             }
@@ -33,7 +39,18 @@ public class DeliveryBox : InteractableBase
 
     public override string ReturnTextPrompt()
     {
-        return "Press F to deliver vial";
+        return LanguageSettings.s_Instance.GetLocalizedString("PickUp");
+    }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        m_Animator.enabled = true;
+        m_Animator.Play("ChestOpen");
+    }
+
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        m_Animator.Play("ChestClose");
     }
 
     private void OnDestroy()

@@ -6,8 +6,13 @@ public class PlayerController : MonoBehaviour
 {
     //Serialized Vars
     [SerializeField] private float m_Speed = 10.0f;
+
+    Vector2 velocity;
+
+
     public PlayerNumber m_PlayerNumber;
     
+
     //Refs
     private Rigidbody2D m_Rigidbody;
 
@@ -18,12 +23,21 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        //Commented out because Sound Manager values not populated. Throwing thousands of errors.
 
+        if(velocity.x != 0 || velocity.y != 0)
+        {
+            SoundManager.s_Instance.PlayWalk();
+        }
+        else
+        {
+            SoundManager.s_Instance.StopWalk();
+        }
     }
 
     void FixedUpdate()
     {
-        Vector2 velocity;
+        
 
         if (m_PlayerNumber == PlayerNumber.PlayerOne)
         {

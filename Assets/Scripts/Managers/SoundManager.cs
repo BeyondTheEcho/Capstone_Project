@@ -15,6 +15,7 @@ public class SoundManager : MonoBehaviour
     Scene m_Scene;
     string m_SceneName;
     [SerializeField] private AudioSource m_AudioSource;
+    [SerializeField] private AudioSource m_PlayerAudioSource;
     [SerializeField] private List<AudioClip> m_AudioClips = new List<AudioClip>();
     [Header("Sound Clips")]
     [SerializeField] private AudioClip m_Alarm;
@@ -51,15 +52,22 @@ public class SoundManager : MonoBehaviour
             m_AudioSource.clip = m_AudioClips[0];
             m_AudioSource.Play();
         }
-        else if (m_SceneName == "Game")
+        else if (m_SceneName == "GameSceneFinal")
         {
             m_AudioSource.Stop();
             m_AudioSource.clip = m_AudioClips[1];
             m_AudioSource.Play();
         }
+        DontDestroyOnLoad(this);
+
     }
-
-
+    void Update()
+    {
+        if (SceneManager.GetActiveScene().name == "GameSceneFinal")
+        {
+            m_AudioSource.Stop();
+        }
+    }
     public void PlayBGM(int clip)
     {
         m_SoundTime = m_AudioSource.time;
@@ -97,10 +105,19 @@ public class SoundManager : MonoBehaviour
     {
         m_AudioSource.PlayOneShot(m_Bolt, 0.5f);
     }
+
     public void PlayWalk()
     {
-        m_AudioSource.PlayOneShot(m_Walk, 0.25f);
+        if (m_PlayerAudioSource.isPlaying == false)
+        {
+            m_PlayerAudioSource.PlayOneShot(m_Walk, 0.5f);
+        }
     }
+    public void StopWalk()
+    {
+        m_PlayerAudioSource.Stop();
+    }
+
     public void PauseMusic()
     {
         m_SoundTime = m_AudioSource.time;
