@@ -39,7 +39,7 @@ public class DeliveryBox : InteractableBase
 
     public override string ReturnTextPrompt()
     {
-        return "Press F to deliver vial";
+        return LanguageSettings.s_Instance.GetLocalizedString("PickUp");
     }
 
     void OnTriggerEnter2D(Collider2D collider)

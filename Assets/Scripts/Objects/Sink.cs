@@ -5,6 +5,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using static ColorChanger;
 
 public class Sink : InteractableBase
 {
@@ -12,7 +13,7 @@ public class Sink : InteractableBase
     private float m_MachineProcessingDelay = 3.5f;
     private VialStates m_VialStates = VialStates.Empty;
     private Vials m_Vial = null;
-    private string[] m_VialFillStates = {"Filling", "Full"};
+    private string[] m_VialFillStates = { "Filling", "Full" };
     private string m_VialProcessing = "Vial is ";
 
     //UI Vars
@@ -87,18 +88,19 @@ public class Sink : InteractableBase
 
     public override string ReturnTextPrompt()
     {
-        return "Press F to Interact";
+        return LanguageSettings.s_Instance.GetLocalizedString("Interact");
     }
 
     private void UpdateUI()
     {   
         if (m_VialStates == VialStates.Filling)
         {
-            m_ProcessingText.text = $"{m_VialProcessing}{m_VialFillStates[0]}";
+            //m_ProcessingText.text = $"{m_VialProcessing}{m_VialFillStates[0]}";
+            m_ProcessingText.text = string.Format(LanguageSettings.s_Instance.GetLocalizedString("ValStatus"), LanguageSettings.s_Instance.GetLocalizedString(m_VialFillStates[0].ToString()));
         }
         else if (m_VialStates == VialStates.Full)
         {
-            m_ProcessingText.text = $"{m_VialProcessing}{m_VialFillStates[1]}";
+            m_ProcessingText.text = string.Format(LanguageSettings.s_Instance.GetLocalizedString("ValStatus"), LanguageSettings.s_Instance.GetLocalizedString(m_VialFillStates[1].ToString()));
         }
         else
         {
