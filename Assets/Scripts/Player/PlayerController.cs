@@ -35,8 +35,6 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        
-
         if (m_PlayerNumber == PlayerNumber.PlayerOne)
         {
             velocity.x = Input.GetAxisRaw("Horizontal1");
@@ -45,14 +43,5 @@ public class PlayerController : MonoBehaviour
             m_Rigidbody.MovePosition(m_Rigidbody.position + velocity * m_Speed * Time.fixedDeltaTime);
 
         }
-
-        if (m_PlayerNumber == PlayerNumber.PlayerTwo) 
-        {
-            velocity.x = Input.GetAxis("Horizontal2");
-            velocity.y = Input.GetAxis("Vertical2");
-
-            m_Rigidbody.MovePosition(m_Rigidbody.position + velocity * m_Speed * Time.fixedDeltaTime);
-        }
-        
     }
 }
