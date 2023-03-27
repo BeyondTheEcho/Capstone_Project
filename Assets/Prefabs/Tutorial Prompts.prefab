@@ -44,10 +44,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5703652263495717927}
     m_Modifications:
+    - target: {fileID: 7247587584091295361, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.07
+      objectReference: {fileID: 0}
     - target: {fileID: 7247587584091295362, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_text
-      value: "This is where you fill the vials for orders, press \u2018G\u2019 to
-        drop the vial then grab it once it finishes, then head to the right"
+      value: "This is where you fill the vials for orders, press \u2018F\u2019 to
+        drop the vial then grab it once it finishes, then head to the colored blocks."
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_RootOrder
@@ -55,11 +59,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.5
+      value: 1.57
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: 6.58
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -111,17 +115,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5703652263495717927}
     m_Modifications:
+    - target: {fileID: 7247587584091295362, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_text
+      value: 'Welcome to your first day on the job!
+
+        Walk over to the spot
+        on the left to find out what to do!'
+      objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.5
+      value: -5.05
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 1.93
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -184,7 +195,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.5
+      value: 2.43
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -244,6 +255,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -1.25
       objectReference: {fileID: 0}
+    - target: {fileID: 7247587584091295361, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.26
+      objectReference: {fileID: 0}
     - target: {fileID: 7247587584091295362, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_text
       value: "Once you\u2019ve filled the vial correctly place it here to add it
@@ -255,7 +270,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.5
+      value: 7.56
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -311,10 +326,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5703652263495717927}
     m_Modifications:
+    - target: {fileID: 7247587584091295361, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587584091295361, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -4.18
+      objectReference: {fileID: 0}
     - target: {fileID: 7247587584091295362, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_text
       value: "These three stations are where you pour in your \u201Cingredients\u201D.
-        Once you have a filled vial, place it in one to change its color."
+        Once you have a filled vial, place it in one to change its color. Once that
+        finishes, bring it to the chest on the right."
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_RootOrder
@@ -322,7 +346,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.5
+      value: -3.36
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -378,10 +402,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5703652263495717927}
     m_Modifications:
+    - target: {fileID: 7247587584091295361, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -2.95
+      objectReference: {fileID: 0}
     - target: {fileID: 7247587584091295362, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_text
       value: "This is where you pick up the vials for your orders, grab one with
-        \u2018F\u2019"
+        \u2018F\u2019, then head to the fountain up top."
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_RootOrder
@@ -389,7 +417,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.5
+      value: -8.48
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.y
