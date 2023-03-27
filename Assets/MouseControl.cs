@@ -4,6 +4,8 @@ using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
+using Unity.PlasticSCM.Editor.WebApi;
 
 public class MouseControl : MonoBehaviour
 {
@@ -50,15 +52,22 @@ public class MouseControl : MonoBehaviour
         m_Position.y = Mathf.Clamp(m_Position.y, 46, 1049); //Clamp may cause issues in other scenes
         transform.position = m_Position;
 
-        Ray ray = Camera.main.ScreenPointToRay(gameObject.transform.position);
+        PointerEventData data = new PointerEventData(EventSystem.current);
+        data.position = m_Position;
 
-        RaycastHit hit;
+        List<RaycastResult> results = new List<RaycastResult>();
 
         if (Input.GetButtonDown("Add1"))
         {
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity))
+            EventSystem.current.RaycastAll(data, results);
+            if (results[0].gameObject != null)
             {
-               hit.collider.GetComponent<Button>().onClick.Invoke();
+               Button currentButton = results[0].gameObject.GetComponent<Button>();
+               if (currentButton != null)
+               {
+                    currentButton.onClick.Invoke();
+               }
+
             }
         }
     }
