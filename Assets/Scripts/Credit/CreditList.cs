@@ -19,11 +19,21 @@ public class CreditList : MonoBehaviour
 
     public IEnumerator Count()
     {
-        foreach (GameObject count in counts)
+        for (int i=0; i< counts.Length; i++)
         {
-            count.SetActive(true);
+            counts[i].SetActive(true);
             yield return new WaitForSeconds(timeBetween); // Waits for the time set in timeBetween, affected by timeScale.
-            count.SetActive(false);
+            if (i < counts.Length - 1)
+            {
+                counts[i].SetActive(false);
+
+            }
         }
+        //foreach (GameObject count in counts)
+        //{
+        //    count.SetActive(true);
+        //    yield return new WaitForSeconds(timeBetween); // Waits for the time set in timeBetween, affected by timeScale.
+        //    count.SetActive(false);
+        //}
     }
 }
