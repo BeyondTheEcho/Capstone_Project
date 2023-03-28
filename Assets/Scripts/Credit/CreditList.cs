@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class CreditList : MonoBehaviour
 {
-    public GameObject[] counts;
-    public float timeBetween = 3.5f; // Time in seconds
+    [SerializeField] GameObject[] counts;
+    [SerializeField] float timeBetween = 3.5f; // Time in seconds
 
     private void Start()
     {

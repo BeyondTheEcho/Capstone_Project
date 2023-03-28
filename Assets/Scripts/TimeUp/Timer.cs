@@ -63,4 +63,14 @@ public class Timer : MonoBehaviour
             SceneManager.LoadScene("TimeUP");
         }
     }
+
+    public void AddSec(int sec)
+    {
+        timeNum += sec;
+    }
+
+    public void ReduceSec(int sec)
+    {
+        timeNum -= sec;
+    }
 }

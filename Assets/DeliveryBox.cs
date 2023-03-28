@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class DeliveryBox : InteractableBase
 {
+    [SerializeField] GameObject TimerSet;
     private Animator m_Animator;
 
     // Start is called before the first frame update
@@ -44,6 +45,7 @@ public class DeliveryBox : InteractableBase
 
     void OnTriggerEnter2D(Collider2D collider)
     {
+        //TimerSet.GetComponent<Timer>().AddSec(15); timer setting example
         m_Animator.enabled = true;
         m_Animator.Play("ChestOpen");
     }
