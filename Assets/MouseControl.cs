@@ -67,7 +67,6 @@ public class MouseControl : MonoBehaviour
                {
                     currentButton.onClick.Invoke();
                }
-
             }
         }
     }
