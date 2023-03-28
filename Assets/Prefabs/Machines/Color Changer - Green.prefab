@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8724351577871536818}
   - component: {fileID: 3489565574281528607}
   - component: {fileID: 4723256925796230858}
+  - component: {fileID: 8003415113808647597}
+  - component: {fileID: 8003415113808647598}
   m_Layer: 0
   m_Name: Color Changer - Green
   m_TagString: Untagged
@@ -139,6 +141,40 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!50 &8003415113808647597
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4250129139901504257}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 5
+  m_LinearDrag: 2.5
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &8003415113808647598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4250129139901504257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a67e1dcd51814d04ea769bd37dc0d0ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SpeedMagnitude: 1000
 --- !u!1 &6554191762651758592
 GameObject:
   m_ObjectHideFlags: 0
