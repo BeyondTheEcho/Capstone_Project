@@ -37,8 +37,6 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        
-
         if (m_PlayerNumber == PlayerNumber.PlayerOne)
         {
             velocity.x = Input.GetAxisRaw("Horizontal1");
