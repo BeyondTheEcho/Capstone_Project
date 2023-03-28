@@ -16,7 +16,6 @@ public class MenuButtons : MonoBehaviour
         SceneManager.LoadScene("Tutorial");
     }
 
-
     public void GoToLobby()
     {
         SceneManager.LoadScene("Lobby");
