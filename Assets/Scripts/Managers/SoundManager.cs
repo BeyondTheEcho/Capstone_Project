@@ -58,15 +58,34 @@ public class SoundManager : MonoBehaviour
             m_AudioSource.clip = m_AudioClips[1];
             m_AudioSource.Play();
         }
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
         DontDestroyOnLoad(this);
 
     }
-    void Update()
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
     {
-        if (SceneManager.GetActiveScene().name == "GameSceneFinal")
+        m_Scene = scene;
+        m_SceneName = m_Scene.name;
+        if (m_SceneName == "Main Menu")
         {
             m_AudioSource.Stop();
+            m_AudioSource.clip = m_AudioClips[0];
+            m_AudioSource.Play();
         }
+        else if (m_SceneName == "GameSceneFinal")
+        {
+            Debug.Log("gamescene loaded");
+            m_AudioSource.Stop();
+            m_AudioSource.clip = m_AudioClips[1];
+            m_AudioSource.Play();
+        }
+    }
+
+        void Update()
+    {
+
     }
     public void PlayBGM(int clip)
     {
@@ -77,7 +96,9 @@ public class SoundManager : MonoBehaviour
         m_AudioSource.Play();
     }
 
-    public void PlayAlarm()
+
+
+public void PlayAlarm()
     {
         m_AudioSource.PlayOneShot(m_Alarm, 0.5f);
     }
