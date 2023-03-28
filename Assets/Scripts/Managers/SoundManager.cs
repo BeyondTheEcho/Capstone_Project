@@ -46,21 +46,28 @@ public class SoundManager : MonoBehaviour
 
         m_Scene = SceneManager.GetActiveScene();
         m_SceneName = m_Scene.name;
-        if (m_SceneName == "Main Menu" || m_SceneName == "Tutorial")
+        if (m_SceneName == "Main Menu")
         {
             m_AudioSource.Stop();
             m_AudioSource.clip = m_AudioClips[0];
             m_AudioSource.Play();
         }
-        else if (m_SceneName == "Game")
+        else if (m_SceneName == "GameSceneFinal")
         {
             m_AudioSource.Stop();
             m_AudioSource.clip = m_AudioClips[1];
             m_AudioSource.Play();
         }
+        DontDestroyOnLoad(this);
+
     }
-
-
+    void Update()
+    {
+        if (SceneManager.GetActiveScene().name == "GameSceneFinal")
+        {
+            m_AudioSource.Stop();
+        }
+    }
     public void PlayBGM(int clip)
     {
         m_SoundTime = m_AudioSource.time;

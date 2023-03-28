@@ -23,14 +23,16 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        //if(velocity.x != 0 || velocity.y != 0)
-        //{
-        //    SoundManager.s_Instance.PlayWalk();
-        //}
-        //else
-        //{
-        //    SoundManager.s_Instance.StopWalk();
-        //}
+        //Commented out because Sound Manager values not populated. Throwing thousands of errors.
+
+        if(velocity.x != 0 || velocity.y != 0)
+        {
+            SoundManager.s_Instance.PlayWalk();
+        }
+        else
+        {
+            SoundManager.s_Instance.StopWalk();
+        }
     }
 
     void FixedUpdate()
@@ -41,7 +43,31 @@ public class PlayerController : MonoBehaviour
             velocity.y = Input.GetAxisRaw("Vertical1");
 
             m_Rigidbody.MovePosition(m_Rigidbody.position + velocity * m_Speed * Time.fixedDeltaTime);
-
         }
+
+        if (m_PlayerNumber == PlayerNumber.PlayerTwo) 
+        {
+            velocity.x = Input.GetAxis("Horizontal2");
+            velocity.y = Input.GetAxis("Vertical2");
+
+            m_Rigidbody.MovePosition(m_Rigidbody.position + velocity * m_Speed * Time.fixedDeltaTime);
+        }
+
+        if (m_PlayerNumber == PlayerNumber.PlayerThree)
+        {
+            velocity.x = Input.GetAxis("Horizontal3");
+            velocity.y = Input.GetAxis("Vertical3");
+
+            m_Rigidbody.MovePosition(m_Rigidbody.position + velocity * m_Speed * Time.fixedDeltaTime);
+        }
+
+        if (m_PlayerNumber == PlayerNumber.PlayerFour)
+        {
+            velocity.x = Input.GetAxis("Horizontal4");
+            velocity.y = Input.GetAxis("Vertical4");
+
+            m_Rigidbody.MovePosition(m_Rigidbody.position + velocity * m_Speed * Time.fixedDeltaTime);
+        }
+
     }
 }
