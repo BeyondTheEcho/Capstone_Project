@@ -34,7 +34,6 @@ public class MouseControl : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("WORKING");
         m_InputDirection.x = Input.GetAxis("MouseX");
         m_InputDirection.y = Input.GetAxis("MouseY");
 
@@ -43,7 +42,7 @@ public class MouseControl : MonoBehaviour
         //Used for pause menu
         if (multiplier <= 0)
         {
-            multiplier = 0.5f;
+            multiplier = 0.25f;
         }
         
         if (SceneManager.GetActiveScene().name == "GameSceneFinal")
