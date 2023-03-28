@@ -27,7 +27,7 @@ public class PauseFeature : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (Input.GetKey(KeyCode.Escape) || Input.GetButtonDown("Pause1") || Input.GetButtonDown("Pause2") || Input.GetButtonDown("Pause3") || Input.GetButtonDown("Pause4"))
         {
             if (m_InPause == false)
             {
@@ -40,6 +40,10 @@ public class PauseFeature : MonoBehaviour
                 Time.timeScale = 0;
             }
 
+        }
+        else if (Input.GetButtonDown("UnPause1") || Input.GetButtonDown("UnPause2") || Input.GetButtonDown("UnPause3") || Input.GetButtonDown("UnPause4"))
+        {
+            BackToGame();
         }
     }
 
