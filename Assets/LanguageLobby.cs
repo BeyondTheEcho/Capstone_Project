@@ -12,9 +12,9 @@ public class LanguageLobby : MonoBehaviour
     void Start()
     {
         LanguageSettings.ChangeFont(LanguageSettings.m_FinalFont);
-        m_HintJoinText.text= LanguageSettings.s_Instance.GetLocalizedString("HINTJOINLOBBY");
-        m_HintLeaveText.text= LanguageSettings.s_Instance.GetLocalizedString("HINTLEAVELOBBY");
-        m_PlayButtonText.text= LanguageSettings.s_Instance.GetLocalizedString("START");
+        m_HintJoinText.text = LanguageSettings.s_Instance.GetLocalizedString("HINTJOINLOBBY");
+        m_HintLeaveText.text = LanguageSettings.s_Instance.GetLocalizedString("HINTLEAVELOBBY");
+        m_PlayButtonText.text = LanguageSettings.s_Instance.GetLocalizedString("START");
         m_PlayButtonText.fontSize = 18;
         m_BackButtonText.text= LanguageSettings.s_Instance.GetLocalizedString("TOMenu");
     }

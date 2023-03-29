@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using static Unity.VisualScripting.Icons;
 
 public class MenuButtons : MonoBehaviour
 {
@@ -16,7 +15,6 @@ public class MenuButtons : MonoBehaviour
     {
         SceneManager.LoadScene("Tutorial");
     }
-
 
     public void GoToLobby()
     {

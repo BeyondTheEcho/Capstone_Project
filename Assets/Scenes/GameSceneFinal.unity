@@ -1556,6 +1556,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 666455640164544147, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 666455640164544149, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1596,6 +1600,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: -3837784724128428589, guid: e762da96b9aef78409c322171151c9d2, type: 2}
+    - target: {fileID: 5711332952890038702, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
+      propertyPath: m_PlayerNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711332953044695509, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
+      propertyPath: m_PlayerNumber
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711332954677034992, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
+      propertyPath: m_PlayerNumber
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6297712611327154701, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
       propertyPath: m_ItemPop
       value: 
@@ -2160,6 +2176,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 2331a15db03878448af8d117876310b4, type: 2}
     - target: {fileID: 3301818265638024799, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301818265638024799, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 1104466339618364358, guid: 2331a15db03878448af8d117876310b4, type: 2}
@@ -2280,6 +2300,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 2331a15db03878448af8d117876310b4, type: 2}
     - target: {fileID: 3301818267335461785, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3301818267335461785, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 1104466339618364358, guid: 2331a15db03878448af8d117876310b4, type: 2}
@@ -2289,6 +2313,47 @@ PrefabInstance:
       objectReference: {fileID: 1296708827}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
+--- !u!1 &3301818265893507713 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3301818267619930650, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
+  m_PrefabInstance: {fileID: 3301818265893507712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &3301818265893507714
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3301818265893507713}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 160, y: 30, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &3301818265893507715 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3301818265820043538, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
+  m_PrefabInstance: {fileID: 3301818265893507712}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &3301818265893507716
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3301818265893507715}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 160, y: 30, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!224 &3301818265893507717 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3301818266172198818, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
+  m_PrefabInstance: {fileID: 3301818265893507712}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3664048861979622800
 PrefabInstance:
   m_ObjectHideFlags: 0

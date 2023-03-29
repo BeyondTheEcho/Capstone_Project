@@ -37,15 +37,23 @@ public class MouseControl : MonoBehaviour
         m_InputDirection.x = Input.GetAxis("MouseX");
         m_InputDirection.y = Input.GetAxis("MouseY");
 
+        float multiplier = Time.deltaTime;
+
+        //Used for pause menu
+        if (multiplier <= 0)
+        {
+            multiplier = 0.25f;
+        }
+        
         if (SceneManager.GetActiveScene().name == "GameSceneFinal")
         {
-            m_Position.x = transform.position.x + m_InputDirection.x * 10.0f * Time.deltaTime;
-            m_Position.y = transform.position.y + m_InputDirection.y * 10.0f * Time.deltaTime;
+            m_Position.x = transform.position.x + m_InputDirection.x * 10.0f * multiplier;
+            m_Position.y = transform.position.y + m_InputDirection.y * 10.0f * multiplier;
         }
         else
         {
-            m_Position.x = transform.position.x + m_InputDirection.x * 1000.0f * Time.deltaTime;
-            m_Position.y = transform.position.y + m_InputDirection.y * 1000.0f * Time.deltaTime;
+            m_Position.x = transform.position.x + m_InputDirection.x * 1000.0f * multiplier;
+            m_Position.y = transform.position.y + m_InputDirection.y * 1000.0f * multiplier;
         }
 
         m_Position.x = Mathf.Clamp(m_Position.x, 27, 1900);
@@ -67,7 +75,6 @@ public class MouseControl : MonoBehaviour
                {
                     currentButton.onClick.Invoke();
                }
-
             }
         }
     }
