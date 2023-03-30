@@ -2984,6 +2984,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2011263629}
     m_Modifications:
+    - target: {fileID: 1173141655757065773, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
+      propertyPath: m_Size.y
+      value: 1.2357649
+      objectReference: {fileID: 0}
+    - target: {fileID: 1173141655757065773, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.04922968
+      objectReference: {fileID: 0}
     - target: {fileID: 7894941516371037010, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
       propertyPath: m_fontSize
       value: 5
@@ -3043,6 +3051,22 @@ PrefabInstance:
     - target: {fileID: 8661183240719553989, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
       propertyPath: m_Name
       value: Vial Storage
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661183240719553991, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 39262898, guid: 9d2c4ae26d460e84f91c46956163c5a1, type: 3}
+    - target: {fileID: 8661183240719553991, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661183240719553991, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661183240719553991, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}

@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -70,7 +70,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -7545,8 +7545,8 @@ TextureImporter:
       sample_75: -2012807355
       sample_120: -2076913644
       sample_215: 1188539640
-      sample_112: -1205395668
       sample_348: -1200580307
+      sample_112: -1205395668
       sample_316: 1387002511
       sample_139: 2089049928
       sample_232: -1551360792
@@ -7564,8 +7564,8 @@ TextureImporter:
       sample_178: 1535103890
       sample_327: 1934131221
       sample_145: 713448678
-      sample_30: -1487774678
       sample_230: -1322188415
+      sample_30: -1487774678
       sample_71: 52284462
       sample_334: -1834150535
       sample_150: 1434972526
@@ -7653,12 +7653,12 @@ TextureImporter:
       sample_124: -1524784724
       sample_138: -2023805633
       sample_160: -1152545391
-      sample_164: 432015003
       sample_271: -549756653
+      sample_164: 432015003
+      sample_304: -1518073051
       sample_78: 789567224
       sample_211: 1313389984
       sample_96: 804805053
-      sample_304: -1518073051
       sample_11: -956313232
       sample_289: -1671521737
       sample_168: 1418368075
@@ -7705,11 +7705,11 @@ TextureImporter:
       sample_29: 36772976
       sample_269: -1074766038
       sample_234: -2105792556
+      sample_254: -99382648
       sample_119: 1193462049
       sample_277: -1077093635
       sample_338: -1632290488
       sample_4: -1176450970
-      sample_254: -99382648
       sample_311: -1520996278
       sample_125: 755824154
       sample_89: -1127269403
@@ -7806,8 +7806,8 @@ TextureImporter:
       sample_99: -348528806
       sample_179: 1575307555
       sample_7: 2000718418
-      sample_62: 431449564
       sample_41: -1296249052
+      sample_62: 431449564
       sample_94: -2006697261
       sample_28: 213321643
       sample_31: 443258172
