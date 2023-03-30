@@ -14,6 +14,7 @@ public class Order : MonoBehaviour
     private int m_OrderQuantity;
     private float m_MaxTime = 30.0f;
     private float m_TimeRemaining;
+    private float m_TimePerVial = 20.0f;
 
     private void Start()
     {
@@ -49,6 +50,7 @@ public class Order : MonoBehaviour
     public void SetOrderQuantity(int value) 
     {
         m_OrderQuantity = value;
+        m_MaxTime = m_TimePerVial * m_OrderQuantity;
     }
 
     public bool TryDeliverVial(Sprite sprite)
