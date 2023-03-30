@@ -1,33 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
     //Serialized Vars
     [SerializeField] private float m_Speed = 10.0f;
-
-    Vector2 velocity;
-
-
     public PlayerNumber m_PlayerNumber;
+    Vector2 velocity;
     
-
     //Refs
     private Rigidbody2D m_Rigidbody;
+    private AudioSource m_Source;
 
     void Awake()
     {
         m_Rigidbody = GetComponent<Rigidbody2D>();
+        m_Source = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        //Commented out because Sound Manager values not populated. Throwing thousands of errors.
-
         if(velocity.x != 0 || velocity.y != 0)
         {
-            SoundManager.s_Instance.PlayWalk();
+            SoundManager.s_Instance.PlayWalk(m_Source);
         }
         else
         {
