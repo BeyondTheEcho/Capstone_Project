@@ -14,7 +14,7 @@ public class Sink : InteractableBase
     private VialStates m_VialStates = VialStates.Empty;
     private Vials m_Vial = null;
     private string[] m_VialFillStates = { "Filling", "Full" };
-    private string m_VialProcessing = "Vial is ";
+    //private string m_VialProcessing = "Vial is ";
 
     //UI Vars
     [Header("UI Settings")]

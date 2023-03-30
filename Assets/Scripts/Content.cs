@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Security.Cryptography.X509Certificates;
 
 public class Content : MonoBehaviour
 {
@@ -133,19 +134,23 @@ public class Content : MonoBehaviour
     //These 4 functions below are for talkers' and their mouths' animation
     public void StartTalker(int m_talkerIndex)
     {
-        StartTalking(m_storyTellerMouth[m_talkerIndex]);
         m_storyTeller[m_talkerIndex].SetActive(true);
+
+        StartTalking(m_storyTellerMouth[m_talkerIndex]);
     }
 
     public void StopTalker(int m_talkerIndex)
     {
-        StopTalking(m_storyTellerMouth[m_talkerIndex]);
+        if (m_storyTellerMouth[m_talkerIndex].isActiveAndEnabled)
+        {
+            StopTalking(m_storyTellerMouth[m_talkerIndex]);
+        }
 
     }
 
     public void StartTalking(Animator animator)
     {
-        animator.SetBool("stillTalking", true);
+       animator.SetBool("stillTalking", true);
     }
     public void StopTalking(Animator animator)
     {

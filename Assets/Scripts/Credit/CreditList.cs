@@ -29,11 +29,5 @@ public class CreditList : MonoBehaviour
 
             }
         }
-        //foreach (GameObject count in counts)
-        //{
-        //    count.SetActive(true);
-        //    yield return new WaitForSeconds(timeBetween); // Waits for the time set in timeBetween, affected by timeScale.
-        //    count.SetActive(false);
-        //}
     }
 }
