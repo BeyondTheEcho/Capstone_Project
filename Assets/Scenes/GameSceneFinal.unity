@@ -2117,6 +2117,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 306892064}
     - target: {fileID: 2296676489596288150, guid: 3e935f62344b591419c3b73ca7973691, type: 3}
+      propertyPath: m_VialEmpty
+      value: 
+      objectReference: {fileID: 1103640267, guid: f65716d728c82b1489692376f5c04f05, type: 3}
+    - target: {fileID: 2296676489596288150, guid: 3e935f62344b591419c3b73ca7973691, type: 3}
       propertyPath: m_OrderImage
       value: 
       objectReference: {fileID: 0}
@@ -2125,9 +2129,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2296676489596288150, guid: 3e935f62344b591419c3b73ca7973691, type: 3}
+      propertyPath: m_VialFilled
+      value: 
+      objectReference: {fileID: -1737542236, guid: f65716d728c82b1489692376f5c04f05, type: 3}
+    - target: {fileID: 2296676489596288150, guid: 3e935f62344b591419c3b73ca7973691, type: 3}
+      propertyPath: m_VialFilledRed
+      value: 
+      objectReference: {fileID: 1470104819, guid: f65716d728c82b1489692376f5c04f05, type: 3}
+    - target: {fileID: 2296676489596288150, guid: 3e935f62344b591419c3b73ca7973691, type: 3}
       propertyPath: m_OrderSpawnBelt
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2296676489596288150, guid: 3e935f62344b591419c3b73ca7973691, type: 3}
+      propertyPath: m_VialFilledBlue
+      value: 
+      objectReference: {fileID: 928624353, guid: f65716d728c82b1489692376f5c04f05, type: 3}
+    - target: {fileID: 2296676489596288150, guid: 3e935f62344b591419c3b73ca7973691, type: 3}
+      propertyPath: m_VialFilledGreen
+      value: 
+      objectReference: {fileID: -1359897825, guid: f65716d728c82b1489692376f5c04f05, type: 3}
     - target: {fileID: 2296676489596288150, guid: 3e935f62344b591419c3b73ca7973691, type: 3}
       propertyPath: m_OrderSpawnLocation
       value: 
