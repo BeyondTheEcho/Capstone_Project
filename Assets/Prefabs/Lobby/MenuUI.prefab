@@ -136,7 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -223,6 +223,7 @@ GameObject:
   - component: {fileID: 6563240293933689408}
   - component: {fileID: 6563240293933689423}
   - component: {fileID: 6563240293933689422}
+  - component: {fileID: 919742973}
   m_Layer: 5
   m_Name: StartGame
   m_TagString: Untagged
@@ -357,6 +358,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!65 &919742973
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6563240293933689420}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 160, y: 30, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6563240294338445571
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,7 +851,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -1059,6 +1073,7 @@ GameObject:
   - component: {fileID: 6563240295265786701}
   - component: {fileID: 6563240295265786700}
   - component: {fileID: 6563240295265786699}
+  - component: {fileID: 919742975}
   m_Layer: 5
   m_Name: MenuGame
   m_TagString: Untagged
@@ -1181,6 +1196,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!65 &919742975
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6563240295265786697}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 174.2607, y: 32.627, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &6563240295284996710
 GameObject:
   m_ObjectHideFlags: 0

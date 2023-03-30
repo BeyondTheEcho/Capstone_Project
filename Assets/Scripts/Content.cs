@@ -81,7 +81,7 @@ public class Content : MonoBehaviour
 
     public void SentenceBehaviour()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Add1"))
         {
 
             if (m_textComponent.text == m_lines[m_index]) //means this sentense has been run completely
@@ -111,7 +111,7 @@ public class Content : MonoBehaviour
             m_talkerIndex = 1;
         }
 
-        if (m_conversationOver || Input.GetKeyDown(KeyCode.Escape))
+        if (m_conversationOver || Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Pause1"))
         {
             SceneManager.LoadScene("Lobby");
         }
@@ -140,7 +140,6 @@ public class Content : MonoBehaviour
     public void StopTalker(int m_talkerIndex)
     {
         StopTalking(m_storyTellerMouth[m_talkerIndex]);
-
     }
 
     public void StartTalking(Animator animator)
