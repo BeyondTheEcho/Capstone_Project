@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Security.Cryptography.X509Certificates;
 
 public class Content : MonoBehaviour
 {
     public TextMeshProUGUI m_textComponent; //reference tmpro to text component
     const int TALKERNUM = 2;
     const int LINESNUM = 9;
-    private string[] m_lines=new string[LINESNUM];
+    private string[] m_lines = new string[LINESNUM];
     public float m_textSpeed;
 
     public static bool m_conversationOver = false;
@@ -19,7 +20,7 @@ public class Content : MonoBehaviour
 
     public Animator[] m_storyTellerMouth;
 
-    private int m_talkerIndex=0;
+    private int m_talkerIndex = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -81,7 +82,7 @@ public class Content : MonoBehaviour
 
     public void SentenceBehaviour()
     {
-        if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Add1"))
+        if (Input.GetMouseButtonDown(0))
         {
 
             if (m_textComponent.text == m_lines[m_index]) //means this sentense has been run completely
@@ -111,7 +112,7 @@ public class Content : MonoBehaviour
             m_talkerIndex = 1;
         }
 
-        if (m_conversationOver || Input.GetKeyDown(KeyCode.Escape) || Input.GetButtonDown("Pause1"))
+        if (m_conversationOver || Input.GetKeyDown(KeyCode.Escape))
         {
             SceneManager.LoadScene("Lobby");
         }
@@ -121,9 +122,9 @@ public class Content : MonoBehaviour
         //Make the character in the scene who is not talking stop the mouth talking animation
         for (int i = 0; i < TALKERNUM; i++)
         {
-            if (i != m_talkerIndex || m_textComponent.text == m_lines[m_index]) 
+            if (i != m_talkerIndex || m_textComponent.text == m_lines[m_index])
             { //if you are not the talker or the lines are finished
-                StopTalker(i); 
+                StopTalker(i);
             }
         }
     }
@@ -133,13 +134,18 @@ public class Content : MonoBehaviour
     //These 4 functions below are for talkers' and their mouths' animation
     public void StartTalker(int m_talkerIndex)
     {
-        StartTalking(m_storyTellerMouth[m_talkerIndex]);
         m_storyTeller[m_talkerIndex].SetActive(true);
+
+        StartTalking(m_storyTellerMouth[m_talkerIndex]);
     }
 
     public void StopTalker(int m_talkerIndex)
     {
-        StopTalking(m_storyTellerMouth[m_talkerIndex]);
+        if (m_storyTellerMouth[m_talkerIndex].isActiveAndEnabled)
+        {
+            StopTalking(m_storyTellerMouth[m_talkerIndex]);
+        }
+
     }
 
     public void StartTalking(Animator animator)
