@@ -2302,37 +2302,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3301818265638024799, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 2331a15db03878448af8d117876310b4, type: 2}
-    - target: {fileID: 3301818265638024799, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3301818265638024799, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 1104466339618364358, guid: 2331a15db03878448af8d117876310b4, type: 2}
-    - target: {fileID: 3301818265638024799, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3301818265820043540, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1296708827}
-    - target: {fileID: 3301818265820043540, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: QuitToMenu
-      objectReference: {fileID: 0}
     - target: {fileID: 3301818266172198814, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
       propertyPath: m_Name
       value: PauseCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 3301818266172198814, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3301818266172198818, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
       propertyPath: m_Pivot.x
@@ -2418,68 +2394,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3301818266464744862, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 2331a15db03878448af8d117876310b4, type: 2}
-    - target: {fileID: 3301818266464744862, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 1104466339618364358, guid: 2331a15db03878448af8d117876310b4, type: 2}
-    - target: {fileID: 3301818267335461785, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 2331a15db03878448af8d117876310b4, type: 2}
-    - target: {fileID: 3301818267335461785, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3301818267335461785, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 1104466339618364358, guid: 2331a15db03878448af8d117876310b4, type: 2}
     - target: {fileID: 3301818267619930652, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1296708827}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
---- !u!1 &3301818265893507713 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3301818267619930650, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
-  m_PrefabInstance: {fileID: 3301818265893507712}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &3301818265893507714
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3301818265893507713}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 160, y: 30, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &3301818265893507715 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3301818265820043538, guid: e4e313e70a1316448a4cb191b2ff8b67, type: 3}
-  m_PrefabInstance: {fileID: 3301818265893507712}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &3301818265893507716
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3301818265893507715}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 160, y: 30, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &3664048861979622800
 PrefabInstance:
   m_ObjectHideFlags: 0
