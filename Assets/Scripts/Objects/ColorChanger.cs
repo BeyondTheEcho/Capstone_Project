@@ -90,11 +90,12 @@ public class ColorChanger : InteractableBase
     {
         if (m_VialStates == VialStates.Processing)
         {
-            m_ProcessingText.text = "Processing...";
+            m_ProcessingText.text = LanguageSettings.s_Instance.GetLocalizedString("Processing"); 
         }
         else if (m_VialStates == VialStates.Ready)
         {
-            m_ProcessingText.text = $"{m_MachineColor} Vial is Ready";
+            m_ProcessingText.text = string.Format(LanguageSettings.s_Instance.GetLocalizedString("Ready"), LanguageSettings.s_Instance.GetLocalizedString(m_MachineColor.ToString()));
+            //m_ProcessingText.text = $"{m_MachineColor} Vial is Ready";
         }
         else
         {
@@ -104,7 +105,7 @@ public class ColorChanger : InteractableBase
 
     public override string ReturnTextPrompt()
     {
-        return "Press F to Interact";
+        return LanguageSettings.s_Instance.GetLocalizedString("Interact");
     }
 
     private void OnDestroy()

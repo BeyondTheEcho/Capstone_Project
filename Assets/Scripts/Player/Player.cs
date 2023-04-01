@@ -17,6 +17,9 @@ public class Player : MonoBehaviour
     [SerializeField] private float m_InteractRange = 1.7f; //Default Value lines up with colliders
     [SerializeField] private SpriteRenderer m_PopupSpriteRenderer;
     [SerializeField] private GameObject m_ItemPopup;
+    [SerializeField] private GameObject m_TextPrompt;
+
+
 
     //Private Vars
     private ToolManager m_ToolManager;
@@ -24,6 +27,12 @@ public class Player : MonoBehaviour
     private PlayerNumber m_PlayerNumber;
     private float m_InteractDelay = 0.5f;
     private Coroutine m_InteractDelayCoroutine;
+
+    private Vector3 m_PreviousPos = new Vector3();
+    private Vector3 m_CurrentPos = new Vector3();
+
+    private Vector3 m_RightVector3 = new Vector3(1, 1, 1);
+    private Vector3 m_LeftVector3 = new Vector3(-1, 1, 1);
 
     void Awake()
     {
@@ -34,8 +43,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         m_PlayerNumber = gameObject.GetComponent<PlayerController>().m_PlayerNumber;
-
-        if(m_PlayerNumber == PlayerNumber.PlayerOne)
+        
+        if (m_PlayerNumber == PlayerNumber.PlayerOne)
         {
             InputManager.s_Instance.Player_1_Interact += PlayerInteract;
             InputManager.s_Instance.Player_1_Drop += PlayerDrop;
@@ -69,6 +78,25 @@ public class Player : MonoBehaviour
         {
             m_ItemPopup.gameObject.SetActive(false);
             m_PopupSpriteRenderer.gameObject.SetActive(false);
+        }
+
+        m_PreviousPos = m_CurrentPos;
+        m_CurrentPos = gameObject.transform.position;
+
+        Vector3 directionVector = (m_CurrentPos - m_PreviousPos).normalized;
+
+        if (directionVector.x > 0)
+        {
+            gameObject.transform.localScale = m_RightVector3;
+            m_ItemPopup.transform.localScale = m_LeftVector3;
+            m_TextPrompt.transform.localScale = m_RightVector3;
+        }
+
+        if (directionVector.x < 0)
+        {
+            gameObject.transform.localScale = m_LeftVector3;
+            m_ItemPopup.transform.localScale = m_RightVector3;
+            m_TextPrompt.transform.localScale = m_LeftVector3;
         }
     }
 
