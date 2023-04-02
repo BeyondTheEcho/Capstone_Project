@@ -637,6 +637,10 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1911641701}
+    - target: {fileID: 6803558039008745240, guid: a866bb080db2d1046945f9a65c6ab472, type: 3}
+      propertyPath: m_TagString
+      value: noChangeFont
+      objectReference: {fileID: 0}
     - target: {fileID: 6803558039039115819, guid: a866bb080db2d1046945f9a65c6ab472, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

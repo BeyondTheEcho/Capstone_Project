@@ -44,3 +44,4 @@ ValStatus^ Vial is {0}
 
 TimeUp^ Time Up
 
+THANKS^ Thank you for playing our game!
