@@ -45,3 +45,5 @@ ValStatus^ Le flacon est {0}
 TimeUp^Temps écoulé
 
 THANKS^ Merci d'avoir joué à notre jeu !
+
+Credit^ Crédit

@@ -362,26 +362,14 @@ PrefabInstance:
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1911641701}
-    - target: {fileID: 9166910725866309502, guid: 859f89f58f54e544798d8228d891576a, type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: FrenchChosen
-      objectReference: {fileID: 0}
     - target: {fileID: 9166910726165092494, guid: 859f89f58f54e544798d8228d891576a, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1911641701}
-    - target: {fileID: 9166910726165092494, guid: 859f89f58f54e544798d8228d891576a, type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MandarinChosen
-      objectReference: {fileID: 0}
     - target: {fileID: 9166910726234073328, guid: 859f89f58f54e544798d8228d891576a, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1911641701}
-    - target: {fileID: 9166910726234073328, guid: 859f89f58f54e544798d8228d891576a, type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: EnglishChosen
-      objectReference: {fileID: 0}
     - target: {fileID: 9166910726967269772, guid: 859f89f58f54e544798d8228d891576a, type: 3}
       propertyPath: m_RootOrder
       value: 6

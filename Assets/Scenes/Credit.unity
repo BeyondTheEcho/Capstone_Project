@@ -264,6 +264,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1555434123}
+    - target: {fileID: 6272709141536331077, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_text
+      value: '
+
+        Carolyn Reed
+
+        David Bruce
+
+        James Dupuis
+
+        Liliana
+        Simion
+
+        Majid Moghadam'
+      objectReference: {fileID: 0}
     - target: {fileID: 6272709141795017318, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
