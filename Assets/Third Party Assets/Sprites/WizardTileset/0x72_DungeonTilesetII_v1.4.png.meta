@@ -1743,7 +1743,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.4_81
+      name: Demon0
       rect:
         serializedVersion: 2
         x: 368
@@ -1764,7 +1764,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.4_82
+      name: Demon1
       rect:
         serializedVersion: 2
         x: 384
@@ -1785,7 +1785,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.4_83
+      name: Demon2
       rect:
         serializedVersion: 2
         x: 400
@@ -1806,7 +1806,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: 0x72_DungeonTilesetII_v1.4_84
+      name: Demon3
       rect:
         serializedVersion: 2
         x: 416
@@ -11162,7 +11162,6 @@ TextureImporter:
       0x72_DungeonTilesetII_v1.4_478: -893592530
       0x72_DungeonTilesetII_v1.4_237: -5432812
       0x72_DungeonTilesetII_v1.4_381: 1566314518
-      0x72_DungeonTilesetII_v1.4_82: 1736923757
       0x72_DungeonTilesetII_v1.4_262: -1507259544
       0x72_DungeonTilesetII_v1.4_277: 666037654
       0x72_DungeonTilesetII_v1.4_408: -643728470
@@ -11197,6 +11196,7 @@ TextureImporter:
       0x72_DungeonTilesetII_v1.4_233: 1275521047
       0x72_DungeonTilesetII_v1.4_475: 356539201
       0x72_DungeonTilesetII_v1.4_516: 273744689
+      Demon3: 1592893112
       0x72_DungeonTilesetII_v1.4_425: -896661333
       0x72_DungeonTilesetII_v1.4_174: -1294870520
       0x72_DungeonTilesetII_v1.4_283: 360754187
@@ -11217,14 +11217,14 @@ TextureImporter:
       0x72_DungeonTilesetII_v1.4_147: 1868262954
       0x72_DungeonTilesetII_v1.4_497: -176085651
       0x72_DungeonTilesetII_v1.4_175: 1482701992
+      Demon2: 2016167263
       0x72_DungeonTilesetII_v1.4_228: 1352233161
       0x72_DungeonTilesetII_v1.4_47: -32306229
       0x72_DungeonTilesetII_v1.4_319: 694366170
       0x72_DungeonTilesetII_v1.4_355: -1290376313
-      0x72_DungeonTilesetII_v1.4_84: 1592893112
+      0x72_DungeonTilesetII_v1.4_518: -1996759037
       0x72_DungeonTilesetII_v1.4_240: -1807989969
       0x72_DungeonTilesetII_v1.4_418: 2076312775
-      0x72_DungeonTilesetII_v1.4_518: -1996759037
       0x72_DungeonTilesetII_v1.4_388: -1687637443
       0x72_DungeonTilesetII_v1.4_400: -2044182122
       0x72_DungeonTilesetII_v1.4_2: 275107308
@@ -11288,28 +11288,27 @@ TextureImporter:
       0x72_DungeonTilesetII_v1.4_91: 1818020350
       0x72_DungeonTilesetII_v1.4_437: -911314658
       0x72_DungeonTilesetII_v1.4_138: -487808646
-      0x72_DungeonTilesetII_v1.4_311: 1377177325
-      0x72_DungeonTilesetII_v1.4_81: -453666621
+      0x72_DungeonTilesetII_v1.4_382: 1135275632
       0x72_DungeonTilesetII_v1.4_238: -1374746557
       0x72_DungeonTilesetII_v1.4_284: 1509893168
       0x72_DungeonTilesetII_v1.4_93: -1169611093
+      0x72_DungeonTilesetII_v1.4_311: 1377177325
       0x72_DungeonTilesetII_v1.4_60: -1712021885
-      0x72_DungeonTilesetII_v1.4_382: 1135275632
       0x72_DungeonTilesetII_v1.4_1: 1571230755
       0x72_DungeonTilesetII_v1.4_88: -1531545406
       0x72_DungeonTilesetII_v1.4_102: 1094850186
       0x72_DungeonTilesetII_v1.4_338: -25436001
       0x72_DungeonTilesetII_v1.4_150: 1637539782
-      0x72_DungeonTilesetII_v1.4_510: -1399451384
+      0x72_DungeonTilesetII_v1.4_248: 448549554
       0x72_DungeonTilesetII_v1.4_416: -1118806460
       0x72_DungeonTilesetII_v1.4_21: 680555772
-      0x72_DungeonTilesetII_v1.4_124: -59220033
-      0x72_DungeonTilesetII_v1.4_182: 2078528123
       0x72_DungeonTilesetII_v1.4_193: -2054703184
+      0x72_DungeonTilesetII_v1.4_182: 2078528123
+      0x72_DungeonTilesetII_v1.4_510: -1399451384
+      0x72_DungeonTilesetII_v1.4_124: -59220033
       0x72_DungeonTilesetII_v1.4_399: -42477965
       0x72_DungeonTilesetII_v1.4_75: -797254130
       0x72_DungeonTilesetII_v1.4_275: -1621316957
-      0x72_DungeonTilesetII_v1.4_248: 448549554
       0x72_DungeonTilesetII_v1.4_441: -1591743182
       0x72_DungeonTilesetII_v1.4_402: -1111407677
       0x72_DungeonTilesetII_v1.4_422: -1496350819
@@ -11400,6 +11399,7 @@ TextureImporter:
       0x72_DungeonTilesetII_v1.4_177: -312684440
       0x72_DungeonTilesetII_v1.4_320: 1862806399
       0x72_DungeonTilesetII_v1.4_296: -710800451
+      Demon0: -453666621
       0x72_DungeonTilesetII_v1.4_327: 669910328
       0x72_DungeonTilesetII_v1.4_466: -1817513704
       0x72_DungeonTilesetII_v1.4_485: 1916167690
@@ -11435,14 +11435,14 @@ TextureImporter:
       0x72_DungeonTilesetII_v1.4_106: -1511018194
       0x72_DungeonTilesetII_v1.4_109: -2028943310
       0x72_DungeonTilesetII_v1.4_144: -1283330193
-      0x72_DungeonTilesetII_v1.4_85: -817672969
+      0x72_DungeonTilesetII_v1.4_435: 1569004097
       0x72_DungeonTilesetII_v1.4_366: -1937147139
       0x72_DungeonTilesetII_v1.4_292: -1651481498
-      0x72_DungeonTilesetII_v1.4_218: -1146523266
+      0x72_DungeonTilesetII_v1.4_85: -817672969
       0x72_DungeonTilesetII_v1.4_31: -883249741
       0x72_DungeonTilesetII_v1.4_352: 2003977001
+      0x72_DungeonTilesetII_v1.4_218: -1146523266
       0x72_DungeonTilesetII_v1.4_315: 1505190516
-      0x72_DungeonTilesetII_v1.4_435: 1569004097
       0x72_DungeonTilesetII_v1.4_488: -1855363646
       0x72_DungeonTilesetII_v1.4_246: -1026366857
       0x72_DungeonTilesetII_v1.4_273: -2080674549
@@ -11458,12 +11458,11 @@ TextureImporter:
       0x72_DungeonTilesetII_v1.4_227: -1617612118
       0x72_DungeonTilesetII_v1.4_235: -187592023
       0x72_DungeonTilesetII_v1.4_301: -100795625
-      0x72_DungeonTilesetII_v1.4_83: 2016167263
       0x72_DungeonTilesetII_v1.4_107: -384891867
-      0x72_DungeonTilesetII_v1.4_254: -680189263
       0x72_DungeonTilesetII_v1.4_184: 2134018327
-      0x72_DungeonTilesetII_v1.4_492: 1923217383
+      0x72_DungeonTilesetII_v1.4_254: -680189263
       0x72_DungeonTilesetII_v1.4_460: -65211227
+      0x72_DungeonTilesetII_v1.4_492: 1923217383
       0x72_DungeonTilesetII_v1.4_462: -34548914
       0x72_DungeonTilesetII_v1.4_50: -1968711924
       0x72_DungeonTilesetII_v1.4_216: 2103339906
@@ -11616,6 +11615,7 @@ TextureImporter:
       0x72_DungeonTilesetII_v1.4_90: -965267905
       0x72_DungeonTilesetII_v1.4_245: -464790669
       0x72_DungeonTilesetII_v1.4_401: 1634754028
+      Demon1: 1736923757
       0x72_DungeonTilesetII_v1.4_204: 1276853053
       0x72_DungeonTilesetII_v1.4_259: -644326631
       0x72_DungeonTilesetII_v1.4_442: -767908389
