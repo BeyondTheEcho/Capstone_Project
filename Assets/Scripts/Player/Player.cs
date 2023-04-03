@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float m_InteractRange = 1.7f; //Default Value lines up with colliders
     [SerializeField] private SpriteRenderer m_PopupSpriteRenderer;
     [SerializeField] private GameObject m_ItemPopup;
+    [SerializeField] private GameObject m_TextPrompt;
 
 
 
@@ -87,11 +88,15 @@ public class Player : MonoBehaviour
         if (directionVector.x > 0)
         {
             gameObject.transform.localScale = m_RightVector3;
+            m_ItemPopup.transform.localScale = m_LeftVector3;
+            m_TextPrompt.transform.localScale = m_RightVector3;
         }
 
         if (directionVector.x < 0)
         {
             gameObject.transform.localScale = m_LeftVector3;
+            m_ItemPopup.transform.localScale = m_RightVector3;
+            m_TextPrompt.transform.localScale = m_LeftVector3;
         }
     }
 

@@ -161,6 +161,7 @@ public class LanguageSettings : MonoBehaviour
 
         for (int i = 0; i < t.Length; i++)
         {
+            if (t[i].tag!="noChangeFont")
             t[i].font = font;
         }
     }

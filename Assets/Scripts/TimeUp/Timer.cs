@@ -8,13 +8,17 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-    [SerializeField] float timeNum=15;
-    public GameObject[] timeUI;
-    public Sprite[] spriteTexture;
+    [SerializeField] float m_TimeNum = 15;
+    public GameObject[] m_TimeUI;
+    public Sprite[] m_SpriteTexture;
 
-    private int num0;
-    private int num1;
-    private int num2;
+    private int m_Num0;
+    private int m_Num1;
+    private int m_Num2;
+    private int m_Num3;
+
+    int m_Minutes;
+    int m_Seconds;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,39 +32,32 @@ public class Timer : MonoBehaviour
 
     void TimerCountDown()
     {
+        m_TimeNum = m_TimeNum - Time.deltaTime;
+        m_Minutes = (int)m_TimeNum / 60;
+        m_Seconds = (int)m_TimeNum % 60;
+        m_Num0 = (int)(m_Minutes / 10);
+        m_Num1 = (int)(m_Minutes % 10);
+        m_Num2 = (int)(m_Seconds / 10);
+        m_Num3 = (int)(m_Seconds % 10);
 
-        timeNum = timeNum - Time.deltaTime;
-        if (timeNum < 10 && timeNum >= 0)
-        {
-            timeUI[0].GetComponent<Image>().sprite = spriteTexture[(int)timeNum];
-            timeUI[1].SetActive(false);
-            timeUI[2].SetActive(false);
-        }
-        else if (timeNum < 100 && timeNum >= 10)
-        {
-            num0 = (int)(timeNum / 10);
-            num1 = (int)(timeNum % 10);
-            timeUI[0].GetComponent<Image>().sprite = spriteTexture[num0];
-            timeUI[1].GetComponent<Image>().sprite = spriteTexture[num1];
-            timeUI[1].SetActive(true);
-            timeUI[2].SetActive(false);
-        }
-        else if (timeNum < 1000 && timeNum >= 100)
-        {
-            num0 = (int)(timeNum / 100);
-            num1 = (int)((timeNum % 100) / 10);
-            num2 = (int)((timeNum % 100) % 10);
-            timeUI[0].GetComponent<Image>().sprite = spriteTexture[num0];
-            timeUI[1].GetComponent<Image>().sprite = spriteTexture[num1];
-            timeUI[2].GetComponent<Image>().sprite = spriteTexture[num2];
-            timeUI[0].SetActive(true);
-            timeUI[1].SetActive(true);
-            timeUI[2].SetActive(true);
-        }
+        m_TimeUI[0].GetComponent<Image>().sprite = m_SpriteTexture[m_Num0];
+        m_TimeUI[1].GetComponent<Image>().sprite = m_SpriteTexture[m_Num1];
+        m_TimeUI[2].GetComponent<Image>().sprite = m_SpriteTexture[m_Num2];
+        m_TimeUI[3].GetComponent<Image>().sprite = m_SpriteTexture[m_Num3];
 
-        if (timeNum < 0 )
+        if (m_TimeNum < 0)
         {
             SceneManager.LoadScene("TimeUP");
         }
+    }
+
+    public void AddSec(int sec)
+    {
+        m_TimeNum += sec;
+    }
+
+    public void ReduceSec(int sec)
+    {
+        m_TimeNum -= sec;
     }
 }
