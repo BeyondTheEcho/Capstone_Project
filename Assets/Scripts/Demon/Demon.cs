@@ -9,7 +9,7 @@ public class Demon : MonoBehaviour
     [SerializeField] private float m_Speed = 1.0f;
 
     private Player m_Target;
-
+    private bool m_IsMoving = false;
 
 
     // Start is called before the first frame update
@@ -25,16 +25,18 @@ public class Demon : MonoBehaviour
 
         if (gameObject.activeSelf)
         {
-            if (m_Target != null) 
+            if (m_Target != null && m_Target.m_HeldItem != null) 
             { 
-                StartCoroutine(MoveDemon());
-                
+                if (!m_IsMoving)
+                {
+                    StartCoroutine(MoveDemon());
+                }
             }
             else
             { 
                 m_Target = PickPlayer();
             }
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
         else
         {
@@ -44,8 +46,10 @@ public class Demon : MonoBehaviour
 
     IEnumerator MoveDemon()
     {
+        m_IsMoving= true;
         transform.position = Vector3.MoveTowards(transform.position, m_Target.transform.position, m_Speed * Time.deltaTime);
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.01f);
+        m_IsMoving= false;
     }
 
     [CanBeNull]
