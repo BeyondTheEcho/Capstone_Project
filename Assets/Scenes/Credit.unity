@@ -415,6 +415,32 @@ PrefabInstance:
       propertyPath: m_Counts.Array.data[7]
       value: 
       objectReference: {fileID: 1367335803}
+    - target: {fileID: 8264655257454183555, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_text
+      value: "Li, ChungHao\n\nIt is an incredible journey!\nI built the:\nLocalization
+        System\nTimer count down\nStory and Lobby Scene\nMenu, TimeUp, Credit Scene
+        design \n\nGame Programming Rocks!!!"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264655257454183555, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_margin.x
+      value: -134.79892
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264655257454183555, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_margin.z
+      value: -148.57428
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264655257454183555, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264655257454183555, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264655257559654502, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
 --- !u!114 &1367335793 stripped
