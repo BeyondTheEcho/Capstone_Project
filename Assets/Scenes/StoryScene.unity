@@ -366,6 +366,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7663649657673020161, guid: 68d5b73f56891aa408c20ad49af03ca2, type: 3}
+      propertyPath: m_TextSpeed
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 7663649657948605904, guid: 68d5b73f56891aa408c20ad49af03ca2, type: 3}
       propertyPath: m_Name
       value: MenuUI

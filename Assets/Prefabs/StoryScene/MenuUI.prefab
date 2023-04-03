@@ -156,12 +156,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee59a946981b059438281a6954ce72c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_textComponent: {fileID: 7663649659546519353}
-  m_textSpeed: 0.03
-  m_storyTeller:
+  m_TextComponent: {fileID: 7663649659546519353}
+  m_TextSpeed: 0.1
+  m_StoryTeller:
   - {fileID: 7663649658413441540}
   - {fileID: 7663649658336912284}
-  m_storyTellerMouth:
+  m_StoryTellerMouth:
   - {fileID: 7663649657697379331}
   - {fileID: 7663649659217913170}
 --- !u!1 &7663649657697379359

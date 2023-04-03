@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class CreditList : MonoBehaviour
 {
-    [SerializeField] GameObject[] counts;
-    [SerializeField] float timeBetween = 3.5f; // Time in seconds
+    [SerializeField] GameObject[] m_Counts;
+    [SerializeField] float m_TimeBetween = 3.5f; // Time in seconds
 
     private void Start()
     {
@@ -19,17 +19,17 @@ public class CreditList : MonoBehaviour
 
     public IEnumerator Count()
     {
-        for (int i=0; i< counts.Length; i++)
+        for (int i=0; i< m_Counts.Length; i++)
         {
 
-            counts[i].SetActive(true);
+            m_Counts[i].SetActive(true);
 
             LanguageSettings.ChangeFont(LanguageSettings.m_FinalFont);
 
-            yield return new WaitForSeconds(timeBetween); // Waits for the time set in timeBetween, affected by timeScale.
-            if (i < counts.Length - 1)
+            yield return new WaitForSeconds(m_TimeBetween); // Waits for the time set in timeBetween, affected by timeScale.
+            if (i < m_Counts.Length - 1)
             {
-                counts[i].SetActive(false);
+                m_Counts[i].SetActive(false);
 
             }
         }
