@@ -80,13 +80,10 @@ public class GameManager : MonoBehaviour
     public void UpdateScore(int scoreToAdd)
     {
         m_Score += scoreToAdd;
-        Debug.Log("ScoreUpdated " + m_Score);
-        Debug.Log("Added:" +  scoreToAdd);
     }
 
     public int GetScore()
     {
-        Debug.Log("Score: " + m_Score);
         return m_Score;
     }
 
