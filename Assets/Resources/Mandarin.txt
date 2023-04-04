@@ -42,3 +42,7 @@ Full^ 滿了
 ValStatus^ 小瓶是 {0}
 
 TimeUp^時間到
+
+THANKS^ 希望大家會喜歡我們的作品!
+
+Credit^ 開發者
