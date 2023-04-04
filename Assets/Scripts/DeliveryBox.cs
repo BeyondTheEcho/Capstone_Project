@@ -6,6 +6,8 @@ using UnityEngine;
 public class DeliveryBox : InteractableBase
 {
     private Animator m_Animator;
+    public int m_PointValue;
+    private GameManager m_GameManager;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,7 @@ public class DeliveryBox : InteractableBase
             {
                 Destroy(vial);
                 player.m_HeldItem = null;
+                GameManager.s_Instance.UpdateScore(m_PointValue);
             }
         }
     }
