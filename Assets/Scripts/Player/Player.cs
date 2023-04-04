@@ -100,6 +100,17 @@ public class Player : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Player")
+        {
+            PlayerDrop();
+        }
+        if(col.gameObject.tag == "Vial")
+        {
+            Destroy(col.gameObject);
+        }
+    }
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.TryGetComponent(out InteractableBase interactable))

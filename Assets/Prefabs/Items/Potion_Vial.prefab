@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 7804538868223898004}
   - component: {fileID: 2845321753616749726}
   - component: {fileID: -216842893551632093}
+  - component: {fileID: 8169779533433048940}
   m_Layer: 0
   m_Name: Potion_Vial
-  m_TagString: Untagged
+  m_TagString: Vial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,3 +103,19 @@ MonoBehaviour:
   m_VialFilledRed: {fileID: 1470104819, guid: f65716d728c82b1489692376f5c04f05, type: 3}
   m_VialFilledGreen: {fileID: -1359897825, guid: f65716d728c82b1489692376f5c04f05, type: 3}
   m_VialFilledBlue: {fileID: 928624353, guid: f65716d728c82b1489692376f5c04f05, type: 3}
+--- !u!70 &8169779533433048940
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1712923133903900400}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.011982322, y: -0.083875954}
+  m_Size: {x: 0.5446756, y: 0.8801776}
+  m_Direction: 0
