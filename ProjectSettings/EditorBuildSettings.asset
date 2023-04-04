@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TimeUp.unity
     guid: 6f7c42d80c9ba444a97892ee4806c3a5
+  - enabled: 1
+    path: Assets/Scenes/Credit.unity
+    guid: 0794fc4019b2ca94bb9f327f9fa777df
   m_configObjects: {}
