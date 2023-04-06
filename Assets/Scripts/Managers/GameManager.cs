@@ -85,6 +85,11 @@ public class GameManager : MonoBehaviour
     public void UpdateScoreMinus(int scoreToDeduct)
     {
         m_Score -= scoreToDeduct;
+
+        if (m_Score < 0)
+        {
+            m_Score = 0;
+        }
     }
 
     public int GetScore()
