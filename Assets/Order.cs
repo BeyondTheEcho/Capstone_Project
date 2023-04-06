@@ -1,8 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static Vials;
 
 public class Order : MonoBehaviour
 {
@@ -15,6 +17,22 @@ public class Order : MonoBehaviour
     private float m_MaxTime = 30.0f;
     private float m_TimeRemaining;
     private float m_TimePerVial = 20.0f;
+
+    public VialColor m_VialColor
+    {
+        get
+        {
+            return m_BackingVialColor;
+        }
+        set
+        {
+            m_BackingVialColor = value;
+
+            m_SpriteRenderer.sprite = OrderManager.GetSprite(value);
+        }
+    }
+
+    private VialColor m_BackingVialColor = VialColor.Empty;
 
     private void Start()
     {
@@ -42,20 +60,15 @@ public class Order : MonoBehaviour
         m_OrderQuantityText.text = $"x {m_OrderQuantity}";
     }
 
-    public void SetOrderSprite(Sprite s)
-    {
-        m_SpriteRenderer.sprite = s;
-    }
-
     public void SetOrderQuantity(int value) 
     {
         m_OrderQuantity = value;
         m_MaxTime = m_TimePerVial * m_OrderQuantity;
     }
 
-    public bool TryDeliverVial(Sprite sprite)
+    public bool TryDeliverVial(VialColor color)
     {
-        if (sprite == m_SpriteRenderer.sprite)
+        if (color == m_VialColor)
         {
             m_OrderQuantity--;
             return true;
