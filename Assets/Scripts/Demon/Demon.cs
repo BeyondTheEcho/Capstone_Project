@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Demon : MonoBehaviour
 {
-    private Rigidbody2D m_RB;
     [SerializeField] private float m_Speed = 1.0f;
 
     private Player m_Target;
@@ -16,7 +15,7 @@ public class Demon : MonoBehaviour
     void Start()
     {
         //change to false when done
-        gameObject.SetActive(true);
+        Destroy(gameObject, 10.0f);
     }
 
     // Update is called once per frame
@@ -36,11 +35,6 @@ public class Demon : MonoBehaviour
             { 
                 m_Target = PickPlayer();
             }
-            //gameObject.SetActive(false);
-        }
-        else
-        {
-            
         }
     }
 
@@ -50,6 +44,14 @@ public class Demon : MonoBehaviour
         transform.position = Vector3.MoveTowards(transform.position, m_Target.transform.position, m_Speed * Time.deltaTime);
         yield return new WaitForSeconds(0.01f);
         m_IsMoving= false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            m_Target.PlayerDrop();
+        }
     }
 
     [CanBeNull]
