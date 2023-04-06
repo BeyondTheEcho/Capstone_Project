@@ -1652,19 +1652,19 @@ PrefabInstance:
       objectReference: {fileID: 2071555711}
     - target: {fileID: 3864176730359212490, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
       propertyPath: m_SortingLayer
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3864176730359212490, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
       propertyPath: m_SortingLayerID
-      value: 0
+      value: 447809123
       objectReference: {fileID: 0}
     - target: {fileID: 5313105260397413568, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
       propertyPath: m_SortingLayer
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5313105260397413568, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
       propertyPath: m_SortingLayerID
-      value: 0
+      value: 447809123
       objectReference: {fileID: 0}
     - target: {fileID: 5711332952890038702, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
       propertyPath: m_PlayerNumber
@@ -1696,19 +1696,19 @@ PrefabInstance:
       objectReference: {fileID: 257123230}
     - target: {fileID: 6530949422528132823, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
       propertyPath: m_SortingLayer
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6530949422528132823, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
       propertyPath: m_SortingLayerID
-      value: 0
+      value: 447809123
       objectReference: {fileID: 0}
     - target: {fileID: 6541575737395075744, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
       propertyPath: m_SortingLayer
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6541575737395075744, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
       propertyPath: m_SortingLayerID
-      value: 0
+      value: 447809123
       objectReference: {fileID: 0}
     - target: {fileID: 6877136396429825219, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
       propertyPath: m_Materials.Array.data[0]
