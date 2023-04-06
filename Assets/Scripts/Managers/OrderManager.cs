@@ -3,8 +3,7 @@ using System.Collections;
 using UnityEngine;
 using TMPro;
 using Random = UnityEngine.Random;
-using UnityEngine.UI;
-using DG.Tweening;
+using static Vials;
 
 public class OrderManager : MonoBehaviour
 {
@@ -13,7 +12,6 @@ public class OrderManager : MonoBehaviour
 
     //Order Vars
     [Header("Order Settings")]
-    [SerializeField] private Sprite[] m_OrderSprites;
     [SerializeField] private Order[] m_Orders;
     [SerializeField] private GameObject m_OrderPrefab;
     private int m_MaxOrderSize = 5;
@@ -21,6 +19,23 @@ public class OrderManager : MonoBehaviour
     private float m_OrderOffsetPosition = 5.0f;
     private Vector3 m_InitialOrderPosition = new Vector3(-20.0f, 10.5f, 0.0f);
     private int m_OrderSpawnDelay = 15;
+
+    [Header("Vial Sprites")]
+    [SerializeField] private Sprite m_VialEmpty;
+    [SerializeField] private Sprite m_VialFilled;
+    [SerializeField] private Sprite m_VialFilledRed;
+    [SerializeField] private Sprite m_VialFilledGreen;
+    [SerializeField] private Sprite m_VialFilledBlue;
+
+    public static Sprite GetSprite(VialColor color) => color switch
+    {
+        VialColor.Empty => s_Instance.m_VialEmpty,
+        VialColor.Filled => s_Instance.m_VialFilled,
+        VialColor.Red => s_Instance.m_VialFilledRed,
+        VialColor.Green => s_Instance.m_VialFilledGreen,
+        VialColor.Blue => s_Instance.m_VialFilledBlue,
+        _ => throw new InvalidOperationException($"Unknown VialColor {color}")
+    };
 
     private void Awake()
     {
@@ -73,18 +88,19 @@ public class OrderManager : MonoBehaviour
 
     private void InitializeOrder(Order order)
     {
-        order.SetOrderSprite(m_OrderSprites[(int)Random.Range(0, m_OrderSprites.Length)]);
+        //Magic number 2 is neccesary to ensure that only color vials are selected for orders
+        order.m_VialColor = (VialColor)Random.Range(2, Enum.GetValues(typeof(VialColor)).Length);
 
         order.SetOrderQuantity((int)Random.Range(m_MinOrderSize, m_MaxOrderSize));
     }
 
-    public bool TryDeliverVial(Sprite sprite)
+    public bool TryDeliverVial(VialColor color)
     {
         for (int i = m_Orders.Length - 1; i >= 0; i--) 
         {
-            if (m_Orders[i]  != null)
+            if (m_Orders[i] != null)
             {
-                if (m_Orders[i].TryDeliverVial(sprite)) { return true; }
+                if (m_Orders[i].TryDeliverVial(color)) return true;
             }
         }
 
