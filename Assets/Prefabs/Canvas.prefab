@@ -113,6 +113,10 @@ PrefabInstance:
       value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 3767460859158038673, guid: 1e513625fc512df479267929f57336dc, type: 3}
+      propertyPath: m_TimeNum
+      value: 360
+      objectReference: {fileID: 0}
+    - target: {fileID: 3767460859158038673, guid: 1e513625fc512df479267929f57336dc, type: 3}
       propertyPath: m_TimeUI.Array.size
       value: 4
       objectReference: {fileID: 0}
