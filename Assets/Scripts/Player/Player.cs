@@ -19,8 +19,6 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject m_ItemPopup;
     [SerializeField] private GameObject m_TextPrompt;
 
-
-
     //Private Vars
     private ToolManager m_ToolManager;
     private TMP_Text m_ToolPrompt;

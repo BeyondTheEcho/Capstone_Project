@@ -7,7 +7,6 @@ public class DeliveryBox : InteractableBase
 {
     private Animator m_Animator;
     public int m_PointValue;
-    private GameManager m_GameManager;
 
     // Start is called before the first frame update
     void Start()
