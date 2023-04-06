@@ -16,36 +16,17 @@ public class Vials : InteractableBase, IDropable
         { 
             m_BackingVialColor = value;
 
-            m_Renderer.sprite = m_BackingVialColor switch
-            {
-                VialColor.Empty => m_VialEmpty,
-                VialColor.Filled => m_VialFilled,
-                VialColor.Red => m_VialFilledRed,
-                VialColor.Green => m_VialFilledGreen,
-                VialColor.Blue => m_VialFilledBlue,
-                _ => throw new InvalidOperationException($"Unknown VialColor {value}")
-            };
+            m_Renderer.sprite = OrderManager.GetSprite(value);
         }  
     }
 
     private VialColor m_BackingVialColor = VialColor.Empty;
-
-    public Sprite m_VialEmpty;
-    public Sprite m_VialFilled;
-    public Sprite m_VialFilledRed;
-    public Sprite m_VialFilledGreen;
-    public Sprite m_VialFilledBlue;
 
     private SpriteRenderer m_Renderer;
 
     private void Awake()
     {
         m_Renderer = gameObject.GetComponent<SpriteRenderer>();
-    }
-
-    public Sprite GetVialSprite()
-    {
-        return m_Renderer.sprite;
     }
 
     public void OnDrop(Player player)
@@ -103,6 +84,7 @@ public class Vials : InteractableBase, IDropable
         InteractablesManager.s_Instance.AddIDropable(this);
     }
 
+    //Other code requires that this enum begins indexing at 0
     public enum VialColor
     {
         Empty,

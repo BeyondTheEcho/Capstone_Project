@@ -29,9 +29,7 @@ public class DeliveryBox : InteractableBase
 
         if (player.m_HeldItem.gameObject.TryGetComponent<Vials>(out Vials vial)) 
         {
-            Sprite sprite = vial.GetVialSprite();
-
-            if (OrderManager.s_Instance.TryDeliverVial(sprite))
+            if (OrderManager.s_Instance.TryDeliverVial(vial.m_VialColor))
             {
                 Destroy(vial);
                 player.m_HeldItem = null;
