@@ -2388,7 +2388,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 918074390664961359, guid: 84b6d92f9483009428aedacec46099c3, type: 3}
       propertyPath: m_TimeNum
-      value: 360
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4104206959165603003, guid: 84b6d92f9483009428aedacec46099c3, type: 3}
       propertyPath: m_Pivot.x

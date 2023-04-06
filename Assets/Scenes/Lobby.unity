@@ -130,6 +130,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6563240293933689422, guid: 5ce2ee50d3b008440b8a689997b1d3ba, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b671f84b9cd32164a8a5e7e304461781, type: 3}
+    - target: {fileID: 6563240293933689422, guid: 5ce2ee50d3b008440b8a689997b1d3ba, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c6ff25ca280ab9f4cb41a729d71dfeb8, type: 3}
+    - target: {fileID: 6563240293933689423, guid: 5ce2ee50d3b008440b8a689997b1d3ba, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 43b4873dbde5010449a2fc95d815a96e, type: 3}
     - target: {fileID: 6563240294445293096, guid: 5ce2ee50d3b008440b8a689997b1d3ba, type: 3}
       propertyPath: m_Name
       value: MenuUI
@@ -178,6 +190,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6563240295265786699, guid: 5ce2ee50d3b008440b8a689997b1d3ba, type: 3}
+      propertyPath: m_SpriteState.m_PressedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b671f84b9cd32164a8a5e7e304461781, type: 3}
+    - target: {fileID: 6563240295265786699, guid: 5ce2ee50d3b008440b8a689997b1d3ba, type: 3}
+      propertyPath: m_SpriteState.m_HighlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c6ff25ca280ab9f4cb41a729d71dfeb8, type: 3}
+    - target: {fileID: 6563240295265786700, guid: 5ce2ee50d3b008440b8a689997b1d3ba, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 43b4873dbde5010449a2fc95d815a96e, type: 3}
     - target: {fileID: 6563240295284996710, guid: 5ce2ee50d3b008440b8a689997b1d3ba, type: 3}
       propertyPath: m_TagString
       value: noChangeFont
