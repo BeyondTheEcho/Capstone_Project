@@ -43,7 +43,7 @@ public class MouseControl : MonoBehaviour
             multiplier = 0.25f;
         }
         
-        if (SceneManager.GetActiveScene().name == "Level 1")
+        if (SceneManager.GetActiveScene().name == "GameSceneFinal")
         {
             m_Position.x = transform.position.x + m_InputDirection.x * 10.0f * multiplier;
             m_Position.y = transform.position.y + m_InputDirection.y * 10.0f * multiplier;
