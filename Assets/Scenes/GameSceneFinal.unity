@@ -990,6 +990,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Order Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 2296676489596288150, guid: 3e935f62344b591419c3b73ca7973691, type: 3}
+      propertyPath: m_OrderValueMinus
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2296676489596288151, guid: 3e935f62344b591419c3b73ca7973691, type: 3}
       propertyPath: m_RootOrder
       value: 1
