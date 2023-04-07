@@ -12,6 +12,7 @@ public class CreditLanguage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        LanguageSettings.ChangeFont(LanguageSettings.m_FinalFont);
         m_QuitButtonText.text = LanguageSettings.s_Instance.GetLocalizedString("QUIT");
         m_BackButtonText.text = LanguageSettings.s_Instance.GetLocalizedString("TOMenu");
         m_ThanksText.text = LanguageSettings.s_Instance.GetLocalizedString("THANKS");

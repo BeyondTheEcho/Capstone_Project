@@ -30,12 +30,13 @@ public class PauseFeature : MonoBehaviour
         {
             if (m_InPause == false)
             {
-                m_BackButtonText.text = LanguageSettings.s_Instance.GetLocalizedString("BACK");
-                m_QuitButtonText.text = LanguageSettings.s_Instance.GetLocalizedString("TOMenu");
-                m_TakeABreakText.text = LanguageSettings.s_Instance.GetLocalizedString("PAUSE");
                 m_InPause = true;
                 m_QuitButtonText.fontSize = 14;
                 m_PauseCanvas.SetActive(true);
+                LanguageSettings.ChangeFont(LanguageSettings.m_FinalFont);
+                m_BackButtonText.text = LanguageSettings.s_Instance.GetLocalizedString("BACK");
+                m_QuitButtonText.text = LanguageSettings.s_Instance.GetLocalizedString("TOMenu");
+                m_TakeABreakText.text = LanguageSettings.s_Instance.GetLocalizedString("PAUSE");
                 Time.timeScale = 0;
             }
 

@@ -47,5 +47,5 @@ THANKS^ 希望大家會喜歡我們的作品!
 
 Credit^ 開發者
 
-THANKSMentor^特別感謝:
-OurProf^我們的教授:
+THANKSMentor^ 特別感謝:
+OurProf^ 我們的教授:
