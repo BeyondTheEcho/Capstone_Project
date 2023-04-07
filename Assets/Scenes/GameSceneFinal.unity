@@ -2413,7 +2413,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6617129509039697615, guid: 84b6d92f9483009428aedacec46099c3, type: 3}
       propertyPath: m_TimeNum
-      value: 3
+      value: 360
       objectReference: {fileID: 0}
     - target: {fileID: 6617129509039697615, guid: 84b6d92f9483009428aedacec46099c3, type: 3}
       propertyPath: m_TimeUI.Array.size
