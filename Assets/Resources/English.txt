@@ -47,3 +47,6 @@ TimeUp^ Time Up
 THANKS^ Thank you for playing our game!
 
 Credit^ Credit
+
+THANKSMentor^Special Thanks:
+OurProf^Our Professors:
