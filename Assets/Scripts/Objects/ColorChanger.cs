@@ -57,9 +57,53 @@ public class ColorChanger : InteractableBase
 
         yield return StartCoroutine(ProgressCountdown(m_MachineProcessingDelay));
 
-        if (m_MachineColor == MachineColor.Blue) { vial.m_VialColor = Vials.VialColor.Blue; }
-        if (m_MachineColor == MachineColor.Red) { vial.m_VialColor = Vials.VialColor.Red; }
-        if (m_MachineColor == MachineColor.Green) { vial.m_VialColor = Vials.VialColor.Green; }
+        if (m_MachineColor == MachineColor.Blue)
+        { 
+            if (vial.m_VialColor == Vials.VialColor.Red)
+            {
+                vial.m_VialColor = Vials.VialColor.Purple;
+            }
+            else if (vial.m_VialColor == Vials.VialColor.Green) 
+            {
+                vial.m_VialColor = Vials.VialColor.Teal;
+            }
+            else
+            {
+                vial.m_VialColor = Vials.VialColor.Blue;
+            }     
+        }
+
+        if (m_MachineColor == MachineColor.Red)
+        {
+            if (vial.m_VialColor == Vials.VialColor.Blue)
+            {
+                vial.m_VialColor = Vials.VialColor.Purple;
+            }
+            else if (vial.m_VialColor == Vials.VialColor.Green)
+            {
+                vial.m_VialColor = Vials.VialColor.Orange;
+            }
+            else
+            {
+                vial.m_VialColor = Vials.VialColor.Red;
+            }
+        }
+
+        if (m_MachineColor == MachineColor.Green) 
+        {
+            if (vial.m_VialColor == Vials.VialColor.Blue)
+            {
+                vial.m_VialColor = Vials.VialColor.Teal;
+            }
+            else if (vial.m_VialColor == Vials.VialColor.Red)
+            {
+                vial.m_VialColor = Vials.VialColor.Orange;
+            }
+            else
+            {
+                vial.m_VialColor = Vials.VialColor.Green;
+            }
+        }
 
         m_Vial = vial;
         m_VialStates = VialStates.Ready;
