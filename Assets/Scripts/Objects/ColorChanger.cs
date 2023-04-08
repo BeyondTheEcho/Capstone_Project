@@ -128,7 +128,16 @@ public class ColorChanger : InteractableBase
 
         if (player.m_HeldItem.gameObject.TryGetComponent<Vials>(out Vials vial))
         {
-            if (vial.m_VialColor == Vials.VialColor.Empty) { return; }
+            //Guards for invalid vial inputs
+            if (vial.m_VialColor == Vials.VialColor.Empty) return;
+            if (vial.m_VialColor == Vials.VialColor.Purple) return;
+            if (vial.m_VialColor == Vials.VialColor.Orange) return;
+            if (vial.m_VialColor == Vials.VialColor.Teal) return;
+
+            //Guards prevents reprocessing the same color
+            if (m_MachineColor == MachineColor.Red && vial.m_VialColor == Vials.VialColor.Red) return;
+            if (m_MachineColor == MachineColor.Blue && vial.m_VialColor == Vials.VialColor.Blue) return;
+            if (m_MachineColor == MachineColor.Green && vial.m_VialColor == Vials.VialColor.Green) return;
 
             player.m_HeldItem = null;
 
