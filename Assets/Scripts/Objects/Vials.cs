@@ -91,6 +91,10 @@ public class Vials : InteractableBase, IDropable
         Filled,
         Red,
         Green,
-        Blue
+        Blue,
+        Purple,
+        Orange,
+        Teal
+
     }
 }
