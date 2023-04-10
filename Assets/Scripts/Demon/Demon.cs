@@ -7,6 +7,8 @@ public class Demon : MonoBehaviour
 {
     [SerializeField] private float m_Speed = 1.0f;
 
+    [SerializeField] private int m_DScore;
+
     private Player m_Target;
     private bool m_IsMoving = false;
 
@@ -51,6 +53,7 @@ public class Demon : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             m_Target.PlayerDrop();
+            GameManager.s_Instance.UpdateScoreMinus(m_DScore);
         }
     }
 

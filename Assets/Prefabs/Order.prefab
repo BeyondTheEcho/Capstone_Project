@@ -289,6 +289,7 @@ MonoBehaviour:
   m_TimerBar: {fileID: 6391479463644040454}
   m_SpriteRenderer: {fileID: 1810551549013496937}
   m_OrderQuantityText: {fileID: 8550995372195307306}
+  m_MissedOrderPenalty: 10
 --- !u!1 &4403333412809476328
 GameObject:
   m_ObjectHideFlags: 0
