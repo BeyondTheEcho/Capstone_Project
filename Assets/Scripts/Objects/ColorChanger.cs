@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ColorChanger : InteractableBase
 {
@@ -11,11 +12,18 @@ public class ColorChanger : InteractableBase
 
     //UI Vars
     [Header("UI Settings")]
-    [SerializeField] private TMP_Text m_ProcessingText;
+    [SerializeField] private Image m_ProgressBar;
+    [SerializeField] private GameObject m_ProgressBarContainer;
 
     private VialStates m_VialStates = VialStates.Unprocessed;
     private Vials m_Vial = null;
-    private float m_MachineProcessingDelay = 3.5f;
+    private float m_MachineProcessingDelay => m_MachineColor switch
+    {
+        MachineColor.Red => 3.5f,
+        MachineColor.Green => 7.5f,
+        MachineColor.Blue => 13.5f,
+        _ => 10.5f,
+    };
 
     private void Start()
     {
@@ -47,14 +55,71 @@ public class ColorChanger : InteractableBase
         vial.transform.position = transform.position;
         vial.transform.SetParent(transform);
 
-        yield return new WaitForSeconds(m_MachineProcessingDelay);
+        yield return StartCoroutine(ProgressCountdown(m_MachineProcessingDelay));
 
-        if (m_MachineColor == MachineColor.Blue) { vial.m_VialColor = Vials.VialColor.Blue; }
-        if (m_MachineColor == MachineColor.Red) { vial.m_VialColor = Vials.VialColor.Red; }
-        if (m_MachineColor == MachineColor.Green) { vial.m_VialColor = Vials.VialColor.Green; }
+        if (m_MachineColor == MachineColor.Blue)
+        { 
+            if (vial.m_VialColor == Vials.VialColor.Red)
+            {
+                vial.m_VialColor = Vials.VialColor.Purple;
+            }
+            else if (vial.m_VialColor == Vials.VialColor.Green) 
+            {
+                vial.m_VialColor = Vials.VialColor.Teal;
+            }
+            else
+            {
+                vial.m_VialColor = Vials.VialColor.Blue;
+            }     
+        }
+
+        if (m_MachineColor == MachineColor.Red)
+        {
+            if (vial.m_VialColor == Vials.VialColor.Blue)
+            {
+                vial.m_VialColor = Vials.VialColor.Purple;
+            }
+            else if (vial.m_VialColor == Vials.VialColor.Green)
+            {
+                vial.m_VialColor = Vials.VialColor.Orange;
+            }
+            else
+            {
+                vial.m_VialColor = Vials.VialColor.Red;
+            }
+        }
+
+        if (m_MachineColor == MachineColor.Green) 
+        {
+            if (vial.m_VialColor == Vials.VialColor.Blue)
+            {
+                vial.m_VialColor = Vials.VialColor.Teal;
+            }
+            else if (vial.m_VialColor == Vials.VialColor.Red)
+            {
+                vial.m_VialColor = Vials.VialColor.Orange;
+            }
+            else
+            {
+                vial.m_VialColor = Vials.VialColor.Green;
+            }
+        }
 
         m_Vial = vial;
         m_VialStates = VialStates.Ready;
+    }
+
+    IEnumerator ProgressCountdown(float delay)
+    {
+        float progress = 0;
+
+        while (progress <= delay) 
+        {
+            yield return new WaitForSeconds(1.0f);
+            progress += 1.0f;
+
+            m_ProgressBar.fillAmount = progress / delay;
+        }
     }
 
     private void InputVial(Player player)
@@ -63,7 +128,16 @@ public class ColorChanger : InteractableBase
 
         if (player.m_HeldItem.gameObject.TryGetComponent<Vials>(out Vials vial))
         {
-            if (vial.m_VialColor == Vials.VialColor.Empty) { return; }
+            //Guards for invalid vial inputs
+            if (vial.m_VialColor == Vials.VialColor.Empty) return;
+            if (vial.m_VialColor == Vials.VialColor.Purple) return;
+            if (vial.m_VialColor == Vials.VialColor.Orange) return;
+            if (vial.m_VialColor == Vials.VialColor.Teal) return;
+
+            //Guards prevents reprocessing the same color
+            if (m_MachineColor == MachineColor.Red && vial.m_VialColor == Vials.VialColor.Red) return;
+            if (m_MachineColor == MachineColor.Blue && vial.m_VialColor == Vials.VialColor.Blue) return;
+            if (m_MachineColor == MachineColor.Green && vial.m_VialColor == Vials.VialColor.Green) return;
 
             player.m_HeldItem = null;
 
@@ -90,16 +164,15 @@ public class ColorChanger : InteractableBase
     {
         if (m_VialStates == VialStates.Processing)
         {
-            m_ProcessingText.text = LanguageSettings.s_Instance.GetLocalizedString("Processing"); 
+            m_ProgressBarContainer.gameObject.SetActive(true);
         }
         else if (m_VialStates == VialStates.Ready)
         {
-            m_ProcessingText.text = string.Format(LanguageSettings.s_Instance.GetLocalizedString("Ready"), LanguageSettings.s_Instance.GetLocalizedString(m_MachineColor.ToString()));
-            //m_ProcessingText.text = $"{m_MachineColor} Vial is Ready";
+            m_ProgressBarContainer.gameObject.SetActive(true);
         }
         else
         {
-            m_ProcessingText.text = "";
+            m_ProgressBarContainer.gameObject.SetActive(false);
         }
     }
 
