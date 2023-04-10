@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/StoryScene.unity
     guid: f4c6ac8cc7e0a124dbd74233f87c2cb2
   - enabled: 1
-    path: Assets/Scenes/Level 1.unity
+    path: Assets/Scenes/GameSceneFinal.unity
     guid: 6a010704fc353104fa97dff0fde78287
   - enabled: 1
     path: Assets/Scenes/TimeUp.unity
