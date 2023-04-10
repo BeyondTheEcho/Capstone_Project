@@ -30,6 +30,10 @@ public class OrderManager : MonoBehaviour
     [SerializeField] private Sprite m_VialFilledOrange;
     [SerializeField] private Sprite m_VialFilledTeal;
 
+    [Header("Score Value")]
+    public int m_OrderValue;
+    public int m_OrderValueMinus;
+
     public static Sprite GetSprite(VialColor color) => color switch
     {
         VialColor.Empty => s_Instance.m_VialEmpty,
@@ -120,6 +124,7 @@ public class OrderManager : MonoBehaviour
             if (item == order)
             {
                 Destroy(item.gameObject);
+                GameManager.s_Instance.UpdateScore(m_OrderValue);
                 return;
             }
         }

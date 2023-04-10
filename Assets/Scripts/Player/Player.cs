@@ -20,7 +20,6 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject m_TextPrompt;
     [SerializeField] private ParticleSystem m_WalkParticle;
 
-
     //Private Vars
     private ToolManager m_ToolManager;
     private TMP_Text m_ToolPrompt;

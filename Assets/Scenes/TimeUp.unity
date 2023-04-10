@@ -252,6 +252,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4155387952927689004, guid: f0d0afe53665d19449f63a5b27d7437b, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155387954091278044, guid: f0d0afe53665d19449f63a5b27d7437b, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4155387954091278045, guid: f0d0afe53665d19449f63a5b27d7437b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6542607684429234978, guid: 6d56fff65c5f6244b8a8da818d92ec6c, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -296,18 +308,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4155387952927689004, guid: f0d0afe53665d19449f63a5b27d7437b, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155387954091278044, guid: f0d0afe53665d19449f63a5b27d7437b, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4155387954091278045, guid: f0d0afe53665d19449f63a5b27d7437b, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    - target: {fileID: 6542607684429234979, guid: 6d56fff65c5f6244b8a8da818d92ec6c, type: 3}
+      propertyPath: m_HeadingText
       value: 
-      objectReference: {fileID: 432361584}
+      objectReference: {fileID: 1595227371}
+    - target: {fileID: 6542607684429234979, guid: 6d56fff65c5f6244b8a8da818d92ec6c, type: 3}
+      propertyPath: m_BackButtonText
+      value: 
+      objectReference: {fileID: 1595227372}
+    - target: {fileID: 6542607684429234979, guid: 6d56fff65c5f6244b8a8da818d92ec6c, type: 3}
+      propertyPath: m_CreditButtonText
+      value: 
+      objectReference: {fileID: 1595227373}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d56fff65c5f6244b8a8da818d92ec6c, type: 3}
 --- !u!1001 &1051732162
