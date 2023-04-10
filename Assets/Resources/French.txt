@@ -1,4 +1,4 @@
-START^ Commence le travaille!
+START^ Commencer
 QUIT^ Quitter sur le bureau
 TOMenu^ Quitter au menu
 PICK^ Appuyez sur 'F' pour récupérer le {0}!!
