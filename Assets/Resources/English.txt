@@ -28,9 +28,9 @@ OTHER3^ You need to do it fast, or there will ba a huge disaster ahead!
 GoodLuck^ Good luck! The world needs you!!
 GoGoGo^ GOOOOOOO!!!
 
-PickUp^ Press F to deliver vial
-Retrieve^ Press F to retrieve
-Interact^ Press F to Interact
+PickUp^ X
+Retrieve^ X
+Interact^ X
 Processing^ Processing...
 Ready^ {0} Vial is Ready!!
 Red^ Red

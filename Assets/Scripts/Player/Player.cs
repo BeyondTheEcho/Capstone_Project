@@ -121,6 +121,11 @@ public class Player : MonoBehaviour
         m_ToolPrompt.text = prompt;
     }
 
+    public void ShowXButton(bool shown) 
+    {
+        m_ButtonSpriteRenderer.gameObject.SetActive(shown);
+    }
+
     private IEnumerator InteractDelay()
     {
         yield return new WaitForSeconds(m_InteractDelay);

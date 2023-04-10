@@ -201,8 +201,11 @@ public class InteractablesManager : MonoBehaviour
         if (m_TextPromptInteractables.Count == 0)
         {
             player.UpdatePrompt("");
+            player.ShowXButton(false);
+            Debug.Log("WORKING");
             return;
         }
+        Debug.Log("OUTSIDE IF");
 
         float distance = float.MaxValue;
         InteractableBase closestObject = null;
@@ -219,5 +222,6 @@ public class InteractablesManager : MonoBehaviour
         }
 
         player.UpdatePrompt(closestObject.ReturnTextPrompt());
+        player.ShowXButton(true);
     }  
 }
