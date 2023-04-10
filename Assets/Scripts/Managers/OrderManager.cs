@@ -26,6 +26,13 @@ public class OrderManager : MonoBehaviour
     [SerializeField] private Sprite m_VialFilledRed;
     [SerializeField] private Sprite m_VialFilledGreen;
     [SerializeField] private Sprite m_VialFilledBlue;
+    [SerializeField] private Sprite m_VialFilledPurple;
+    [SerializeField] private Sprite m_VialFilledOrange;
+    [SerializeField] private Sprite m_VialFilledTeal;
+
+    [Header("Score Value")]
+    public int m_OrderValue;
+    public int m_OrderValueMinus;
 
     public static Sprite GetSprite(VialColor color) => color switch
     {
@@ -34,6 +41,9 @@ public class OrderManager : MonoBehaviour
         VialColor.Red => s_Instance.m_VialFilledRed,
         VialColor.Green => s_Instance.m_VialFilledGreen,
         VialColor.Blue => s_Instance.m_VialFilledBlue,
+        VialColor.Purple => s_Instance.m_VialFilledPurple, //red blue = purple
+        VialColor.Orange => s_Instance.m_VialFilledOrange, //red green = orange
+        VialColor.Teal => s_Instance.m_VialFilledTeal,     //green blue = teal
         _ => throw new InvalidOperationException($"Unknown VialColor {color}")
     };
 
@@ -114,6 +124,7 @@ public class OrderManager : MonoBehaviour
             if (item == order)
             {
                 Destroy(item.gameObject);
+                GameManager.s_Instance.UpdateScore(m_OrderValue);
                 return;
             }
         }

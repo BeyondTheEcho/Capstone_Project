@@ -44,9 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba6329cb791a69346a49f2015fbab791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OrderSprites:
-  - {fileID: 1470104819, guid: f65716d728c82b1489692376f5c04f05, type: 3}
-  - {fileID: 928624353, guid: f65716d728c82b1489692376f5c04f05, type: 3}
-  - {fileID: -1359897825, guid: f65716d728c82b1489692376f5c04f05, type: 3}
   m_Orders: []
   m_OrderPrefab: {fileID: 2024625299617280376, guid: e9d8c4f2b02a4534f9ae2fdef0a4d5bc, type: 3}
+  m_VialEmpty: {fileID: 1103640267, guid: f65716d728c82b1489692376f5c04f05, type: 3}
+  m_VialFilled: {fileID: -1737542236, guid: f65716d728c82b1489692376f5c04f05, type: 3}
+  m_VialFilledRed: {fileID: 1470104819, guid: f65716d728c82b1489692376f5c04f05, type: 3}
+  m_VialFilledGreen: {fileID: -1359897825, guid: f65716d728c82b1489692376f5c04f05, type: 3}
+  m_VialFilledBlue: {fileID: 928624353, guid: f65716d728c82b1489692376f5c04f05, type: 3}
+  m_OrderValue: 50
+  m_OrderValueMinus: -10
