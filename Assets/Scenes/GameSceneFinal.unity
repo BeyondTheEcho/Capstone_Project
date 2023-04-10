@@ -1770,7 +1770,7 @@ PrefabInstance:
     - target: {fileID: 6297712611327154701, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
       propertyPath: m_TextPrompt
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 666455640899562241}
     - target: {fileID: 6297712611327154701, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
       propertyPath: m_PopupSpriteRenderer
       value: 
@@ -1899,6 +1899,11 @@ PrefabInstance:
     - {fileID: 8766374295800262494, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
     - {fileID: 8120856082539309911, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
+--- !u!1 &666455640899562241 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6674821166310830552, guid: d523ed703babfbc47a70ceb3b4c3e3c8, type: 3}
+  m_PrefabInstance: {fileID: 666455640899562240}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1029110165399453475
 PrefabInstance:
   m_ObjectHideFlags: 0
