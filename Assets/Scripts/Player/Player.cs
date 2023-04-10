@@ -16,9 +16,9 @@ public class Player : MonoBehaviour
     //Private Serialized Vars
     [SerializeField] private float m_InteractRange = 1.7f; //Default Value lines up with colliders
     [SerializeField] private SpriteRenderer m_PopupSpriteRenderer;
+    [SerializeField] private SpriteRenderer m_ButtonSpriteRenderer;
     [SerializeField] private GameObject m_ItemPopup;
     [SerializeField] private GameObject m_TextPrompt;
-
 
 
     //Private Vars
