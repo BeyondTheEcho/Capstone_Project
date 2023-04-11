@@ -312,6 +312,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6542607684429234979, guid: 6d56fff65c5f6244b8a8da818d92ec6c, type: 3}
+      propertyPath: m_HeadingText
+      value: 
+      objectReference: {fileID: 1595227371}
+    - target: {fileID: 6542607684429234979, guid: 6d56fff65c5f6244b8a8da818d92ec6c, type: 3}
+      propertyPath: m_BackButtonText
+      value: 
+      objectReference: {fileID: 1595227372}
+    - target: {fileID: 6542607684429234979, guid: 6d56fff65c5f6244b8a8da818d92ec6c, type: 3}
+      propertyPath: m_CreditButtonText
+      value: 
+      objectReference: {fileID: 1595227373}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d56fff65c5f6244b8a8da818d92ec6c, type: 3}
 --- !u!1001 &1051732162

@@ -11,6 +11,7 @@ public class Order : MonoBehaviour
     [SerializeField] private Image m_TimerBar;
     [SerializeField] private SpriteRenderer m_SpriteRenderer;
     [SerializeField] private TMP_Text m_OrderQuantityText;
+    [SerializeField] private int m_MissedOrderPenalty;
 
     private float m_FillValue;
     private int m_OrderQuantity;
@@ -51,6 +52,7 @@ public class Order : MonoBehaviour
 
         if (m_TimeRemaining <= 0)
         {
+            GameManager.s_Instance.UpdateScoreMinus(m_MissedOrderPenalty);
             OrderManager.s_Instance.RemoveOrder(this);
         }
 

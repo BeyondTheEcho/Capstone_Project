@@ -47,3 +47,5 @@ MonoBehaviour:
   m_BackButtonText: {fileID: 0}
   m_QuitButtonText: {fileID: 0}
   m_ThanksText: {fileID: 0}
+  m_MentorsThankText: {fileID: 0}
+  m_OurPorfText: {fileID: 0}
