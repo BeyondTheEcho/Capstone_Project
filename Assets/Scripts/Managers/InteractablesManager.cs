@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class InteractablesManager : MonoBehaviour
 {
@@ -200,11 +201,11 @@ public class InteractablesManager : MonoBehaviour
     {
         if (m_TextPromptInteractables.Count == 0)
         {
-            player.UpdatePrompt("");
+            //player.UpdatePrompt("");
             player.ShowXButton(false);
             return;
         }
-
+  
         float distance = float.MaxValue;
         InteractableBase closestObject = null;
 
@@ -218,11 +219,8 @@ public class InteractablesManager : MonoBehaviour
                 distance = delta;
             }
         }
-
-        if (Input.anyKeyDown)
-        {
-            player.UpdatePrompt(closestObject.ReturnTextPrompt());
-        }
+        
+        //player.UpdatePrompt(closestObject.ReturnTextPrompt());
         player.ShowXButton(true);
     }  
 }

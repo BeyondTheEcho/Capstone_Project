@@ -28,9 +28,9 @@ OTHER3^ You need to do it fast, or there will ba a huge disaster ahead!
 GoodLuck^ Good luck! The world needs you!!
 GoGoGo^ GOOOOOOO!!!
 
-PickUp^ X
-Retrieve^ X
-Interact^ X
+PickUp^ F
+Retrieve^ F
+Interact^ F
 Processing^ Processing...
 Ready^ {0} Vial is Ready!!
 Red^ Red
