@@ -178,10 +178,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6563240295284996710, guid: 5ce2ee50d3b008440b8a689997b1d3ba, type: 3}
-      propertyPath: m_TagString
-      value: noChangeFont
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5ce2ee50d3b008440b8a689997b1d3ba, type: 3}
 --- !u!1 &919742972 stripped
@@ -620,18 +616,18 @@ PrefabInstance:
     - target: {fileID: 1706602565930593885, guid: 0f41c829c7ba89447a7d9975940502e3, type: 3}
       propertyPath: m_HintJoinText
       value: 
-      objectReference: {fileID: 1217809351}
+      objectReference: {fileID: 0}
     - target: {fileID: 1706602565930593885, guid: 0f41c829c7ba89447a7d9975940502e3, type: 3}
       propertyPath: m_HintLeaveText
       value: 
-      objectReference: {fileID: 1217809350}
+      objectReference: {fileID: 0}
     - target: {fileID: 1706602565930593885, guid: 0f41c829c7ba89447a7d9975940502e3, type: 3}
       propertyPath: m_BackButtonText
       value: 
-      objectReference: {fileID: 1217809353}
+      objectReference: {fileID: 0}
     - target: {fileID: 1706602565930593885, guid: 0f41c829c7ba89447a7d9975940502e3, type: 3}
       propertyPath: m_PlayButtonText
       value: 
-      objectReference: {fileID: 1217809352}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f41c829c7ba89447a7d9975940502e3, type: 3}

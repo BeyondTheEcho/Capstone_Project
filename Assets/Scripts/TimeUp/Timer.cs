@@ -45,9 +45,14 @@ public class Timer : MonoBehaviour
         m_TimeUI[2].GetComponent<Image>().sprite = m_SpriteTexture[m_Num2];
         m_TimeUI[3].GetComponent<Image>().sprite = m_SpriteTexture[m_Num3];
 
-        if (m_TimeNum < 0)
+        if (m_TimeNum < 0 && GameManager.s_Instance.GetScore() <= 1000)
         {
             SceneManager.LoadScene("TimeUP");
+        }
+
+        if (m_TimeNum < 0 && GameManager.s_Instance.GetScore() >= 1000)
+        {
+            SceneManager.LoadScene("Winner");
         }
     }
 

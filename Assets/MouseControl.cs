@@ -63,7 +63,7 @@ public class MouseControl : MonoBehaviour
 
         List<RaycastResult> results = new List<RaycastResult>();
 
-        if (Input.GetButtonDown("Add1"))
+        if (Input.GetButtonDown("Add1") || Input.GetMouseButtonDown(0))
         {
             EventSystem.current.RaycastAll(data, results);
             if (results[0].gameObject != null)
