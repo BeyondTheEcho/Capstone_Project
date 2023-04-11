@@ -17,6 +17,7 @@ public class Order : MonoBehaviour
     private float m_MaxTime = 30.0f;
     private float m_TimeRemaining;
     private float m_TimePerVial = 20.0f;
+    private int m_OrderValue = 50;
 
     public VialColor m_VialColor
     {
@@ -45,6 +46,7 @@ public class Order : MonoBehaviour
         if (m_OrderQuantity == 0)
         {
             OrderManager.s_Instance.RemoveOrder(this);
+            GameManager.s_Instance.UpdateScore(m_OrderValue);
         }
 
         if (m_TimeRemaining <= 0)
