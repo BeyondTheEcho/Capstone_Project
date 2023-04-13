@@ -6,6 +6,7 @@ using UnityEngine;
 public class Score : MonoBehaviour
 {
     public TextMeshProUGUI m_ScoreText;
+    public TextMeshProUGUI m_HighScoreText;
 
     // Start is called before the first frame update
     void Start()
@@ -22,5 +23,6 @@ public class Score : MonoBehaviour
     public void ScoreText()
     {
         m_ScoreText.text = "Score: " + GameManager.s_Instance.GetScore().ToString();
+        m_HighScoreText.text = "High Score: " + GameManager.s_Instance.GetHighScore().ToString();
     }
 }

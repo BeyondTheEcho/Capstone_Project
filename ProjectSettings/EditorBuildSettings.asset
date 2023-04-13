@@ -24,6 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TimeUp.unity
     guid: 6f7c42d80c9ba444a97892ee4806c3a5
   - enabled: 1
+    path: Assets/Scenes/Winner.unity
+    guid: 5bf9abc8f4c1ceb4e9f1dd5bb016e024
+  - enabled: 1
     path: Assets/Scenes/Credit.unity
     guid: 0794fc4019b2ca94bb9f327f9fa777df
   m_configObjects: {}

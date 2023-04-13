@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     //vars for score system
     private int m_Score = 0;
+    private int m_HighScore = 0;
 
     private void Awake()
     {
@@ -95,6 +96,16 @@ public class GameManager : MonoBehaviour
     public int GetScore()
     {
         return m_Score;
+    }
+
+    public int GetHighScore()
+    {
+        if (m_Score > m_HighScore)
+        {
+            m_HighScore = m_Score;
+        }
+
+        return m_HighScore;
     }
 
 
