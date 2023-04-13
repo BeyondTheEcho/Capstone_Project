@@ -1011,10 +1011,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Color Changer - Red
       objectReference: {fileID: 0}
-    - target: {fileID: 8917592228270450993, guid: 00b6a6d73bafc0d4aa132c62fea8b4a9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00b6a6d73bafc0d4aa132c62fea8b4a9, type: 3}
 --- !u!4 &1938340927528938119 stripped
@@ -1198,10 +1194,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 908521372}
-    - target: {fileID: 6437984240478654471, guid: c79f5d8476e34854e8f525d2b7f3bac0, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c79f5d8476e34854e8f525d2b7f3bac0, type: 3}
 --- !u!1001 &3301818265893507712
@@ -1697,10 +1689,6 @@ PrefabInstance:
     - target: {fileID: 4250129139901504257, guid: 847689b1d9977d948adb259cedad7cdc, type: 3}
       propertyPath: m_Name
       value: Color Changer - Green
-      objectReference: {fileID: 0}
-    - target: {fileID: 5623992594384807473, guid: 847689b1d9977d948adb259cedad7cdc, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6150699689486526707, guid: 847689b1d9977d948adb259cedad7cdc, type: 3}
       propertyPath: m_Camera

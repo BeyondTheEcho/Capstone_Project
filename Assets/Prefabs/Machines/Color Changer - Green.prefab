@@ -184,7 +184,7 @@ MonoBehaviour:
   m_MachineColor: 1
   m_ProgressBar: {fileID: 8197234854410077013}
   m_ProgressBarContainer: {fileID: 5623992594384807473}
-  m_DoneParticles: {fileID: 0}
+  m_DoneParticles: {fileID: 9134956178251290728}
 --- !u!58 &3489565574281528607
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -281,7 +281,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3683724497797193539
 RectTransform:
   m_ObjectHideFlags: 0
