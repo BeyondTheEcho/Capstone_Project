@@ -200,6 +200,10 @@ PrefabInstance:
       value: Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 3347823884671673747, guid: 5c90d9408d6e75f4e8e7253848d9ceee, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347823884671673747, guid: 5c90d9408d6e75f4e8e7253848d9ceee, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -331,7 +335,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1929403555065845410, guid: b2b8138c8ab008e4988c7c63daefd9e1, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1929403555065845410, guid: b2b8138c8ab008e4988c7c63daefd9e1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -454,6 +458,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 157171172, guid: f0d0afe53665d19449f63a5b27d7437b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 293827834, guid: f0d0afe53665d19449f63a5b27d7437b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
