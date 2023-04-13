@@ -175,7 +175,7 @@ public class ColorChanger : InteractableBase
         }
         else
         {
-            m_ProgressBarContainer.gameObject.SetActive(false);
+            m_ProgressBarContainer.gameObject.SetActive(false);
             m_DoneParticles.SetActive(false);
         }
     }
