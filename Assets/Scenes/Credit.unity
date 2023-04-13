@@ -417,6 +417,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8264655256968144697, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264655256968144703, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_text
+      value: "Ethan Kennedy \n\nProgrammer (Student)"
+      objectReference: {fileID: 0}
     - target: {fileID: 8264655257040424223, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
       propertyPath: m_Counts.Array.size
       value: 8
@@ -453,11 +461,23 @@ PrefabInstance:
       propertyPath: m_Counts.Array.data[7]
       value: 
       objectReference: {fileID: 1367335803}
+    - target: {fileID: 8264655257336110332, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_text
+      value: 'Stelios
+
+
+        Programmer (Student) '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264655257336110334, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -4
+      objectReference: {fileID: 0}
     - target: {fileID: 8264655257454183555, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
       propertyPath: m_text
-      value: "Li, ChungHao\n\nIt is an incredible journey!\nI built the:\nLocalization
-        System\nTimer count down\nStory and Lobby Scene\nMenu, TimeUp, Credit Scene
-        design \n\nGame Programming Rocks!!!"
+      value: 'Li, ChungHao
+
+
+        Game Programming Rocks!!!'
       objectReference: {fileID: 0}
     - target: {fileID: 8264655257454183555, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
       propertyPath: m_margin.x
@@ -475,7 +495,63 @@ PrefabInstance:
       propertyPath: m_HorizontalAlignment
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8264655257454183565, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -11
+      objectReference: {fileID: 0}
     - target: {fileID: 8264655257559654502, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264655257618842884, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264655257908369340, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264655257978537103, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264655258179742645, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6e0323088370a424ba3772cef81691ee, type: 3}
+    - target: {fileID: 8264655258179742645, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264655258179742645, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264655258179742645, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264655258179742646, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 657
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264655258236899779, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_text
+      value: "Dorian Scrimshaw \n\r\nGame dev student"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264655258236899788, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264655258241336581, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264655258241336603, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_text
+      value: "Joshua Da Silva  \n\nProgrammer (Student)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8264655258343369525, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
