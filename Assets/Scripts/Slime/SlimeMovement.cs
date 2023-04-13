@@ -2,16 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SlimeMovement : MonoBehaviour
 {
     private Rigidbody2D m_Rb;
     private float m_SpeedMagnitude = 10000.0f;
     private Vector2 m_MoveDirection = new();
+    Scene m_Scene;
+    string m_SceneName;
 
     // Start is called before the first frame update
     void Start()
     {
+        m_Scene = SceneManager.GetActiveScene();
+        m_SceneName = m_Scene.name;
         Random.InitState((int)System.DateTime.Now.Ticks);
         m_Rb = GetComponent<Rigidbody2D>();
 
@@ -20,15 +25,19 @@ public class SlimeMovement : MonoBehaviour
 
     IEnumerator StartMovement()
     {
-        while (true)
+        if (m_SceneName != "Tutorial")
         {
-            m_MoveDirection.x = Random.Range(-1.0f, 1.0f);
-            m_MoveDirection.y = Random.Range(-1.0f, 1.0f);
+            while (true)
+            {
+                m_MoveDirection.x = Random.Range(-1.0f, 1.0f);
+                m_MoveDirection.y = Random.Range(-1.0f, 1.0f);
 
-            m_Rb.AddForce(m_MoveDirection * m_SpeedMagnitude);
+                m_Rb.AddForce(m_MoveDirection * m_SpeedMagnitude);
 
-            yield return new WaitForSeconds(Random.Range(1.0f, 1.5f)); 
-        } 
+                yield return new WaitForSeconds(Random.Range(1.0f, 1.5f));
+            }
+        }
+        
     }
 
     // Update is called once per frame

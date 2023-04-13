@@ -20,18 +20,6 @@ public class PlayerController : MonoBehaviour
         m_Source = GetComponent<AudioSource>();
     }
 
-    void Update()
-    {
-        if(velocity.x != 0 || velocity.y != 0)
-        {
-            SoundManager.s_Instance.PlayWalk(m_Source);
-        }
-        else
-        {
-            SoundManager.s_Instance.StopWalk();
-        }
-    }
-
     void FixedUpdate()
     {
         if (m_PlayerNumber == PlayerNumber.PlayerOne)
@@ -67,4 +55,5 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
 }

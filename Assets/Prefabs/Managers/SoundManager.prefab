@@ -144,9 +144,9 @@ MonoBehaviour:
   m_AudioSource: {fileID: 5694706346665402856}
   m_PlayerAudioSource: {fileID: -6362588305167606157, guid: e5b8f862be8e5c2469c007e8b80cfc59, type: 3}
   m_AudioClips:
-  - {fileID: 8300000, guid: ccc83ebb169cd074ead702dc5880a0c6, type: 3}
+  - {fileID: 8300000, guid: 2eeca5910a82dd84bba75f57d516416e, type: 3}
   - {fileID: 8300000, guid: b9a6a908006696a479c5f4e53c652041, type: 3}
-  - {fileID: 8300000, guid: 10a1392762e3ba54b924d508f6c9be1d, type: 3}
+  - {fileID: 8300000, guid: 7098458f82669934dab8d82bf7c012ba, type: 3}
   - {fileID: 8300000, guid: b59125ad2d249ab40a1683a98229098b, type: 3}
   m_Alarm: {fileID: 8300000, guid: 7d1c355438a169646bfe08a1f3003107, type: 3}
   m_Clamp: {fileID: 8300000, guid: f514275817c1e3941a214b3c39e0ded7, type: 3}
