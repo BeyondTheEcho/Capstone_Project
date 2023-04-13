@@ -29,7 +29,6 @@ public class GameManager : MonoBehaviour
 
     //vars for score system
     private int m_Score = 0;
-    private int m_HighScore = 0;
 
     private void Awake()
     {
@@ -99,27 +98,19 @@ public class GameManager : MonoBehaviour
     }
 
     public int GetHighScore()
-    {      
-        if (PlayerPrefs.HasKey("High Score"))
+    {
+        if (!PlayerPrefs.HasKey("High Score"))
         {
-            if (m_Score > PlayerPrefs.GetInt("High Score"))
-            {
-                m_HighScore = m_Score;
-                PlayerPrefs.SetInt("High Score", m_HighScore);
-                PlayerPrefs.Save();
-            }
-        }
-        else
-        {
-            if (m_Score > m_HighScore)
-            {
-                m_HighScore = m_Score;
-                PlayerPrefs.SetInt("High Score", m_HighScore);
-                PlayerPrefs.Save();
-            }
+            return -1;
         }
 
-        return m_HighScore;
+        if (m_Score > PlayerPrefs.GetInt("High Score"))
+        {
+            PlayerPrefs.SetInt("High Score", m_Score);
+            PlayerPrefs.Save();
+        }
+
+        return PlayerPrefs.GetInt("High Score");
     }
 
 
