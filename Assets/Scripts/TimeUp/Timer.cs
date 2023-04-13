@@ -51,7 +51,7 @@ public class Timer : MonoBehaviour
         }
         else if (m_TimeNum < 0 && m_TimeNum > 1000)
         {
-            SceneManager.LoadScene("LevelPassed");
+            SceneManager.LoadScene("Winner");
         }
     }
 
