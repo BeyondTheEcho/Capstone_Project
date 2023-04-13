@@ -1014,10 +1014,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3050937464784693211, guid: 00b6a6d73bafc0d4aa132c62fea8b4a9, type: 3}
-      propertyPath: m_DoneParticles
-      value: 
-      objectReference: {fileID: 1103248774}
     - target: {fileID: 3102911434669467459, guid: 00b6a6d73bafc0d4aa132c62fea8b4a9, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1161,10 +1157,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Color Changer - Blue
       objectReference: {fileID: 0}
-    - target: {fileID: 2536606021773508389, guid: c79f5d8476e34854e8f525d2b7f3bac0, type: 3}
-      propertyPath: m_DoneParticles
-      value: 
-      objectReference: {fileID: 74760008}
     - target: {fileID: 2536606021773508391, guid: c79f5d8476e34854e8f525d2b7f3bac0, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1726,10 +1718,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 908521372}
-    - target: {fileID: 8724351577871536818, guid: 847689b1d9977d948adb259cedad7cdc, type: 3}
-      propertyPath: m_DoneParticles
-      value: 
-      objectReference: {fileID: 651741886}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 847689b1d9977d948adb259cedad7cdc, type: 3}
 --- !u!4 &8003415113808647592 stripped
