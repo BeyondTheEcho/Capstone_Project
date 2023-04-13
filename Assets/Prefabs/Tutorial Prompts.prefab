@@ -31,12 +31,178 @@ Transform:
   - {fileID: 3149118958097063716}
   - {fileID: 3149118956685866100}
   - {fileID: 3149118957327261530}
+  - {fileID: 5701660256739076884}
   - {fileID: 3149118958064997842}
   - {fileID: 3149118957919535660}
   - {fileID: 3149118957874643374}
+  - {fileID: 7247587584215764815}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1373820971
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5703652263495717927}
+    m_Modifications:
+    - target: {fileID: 7247587584091295361, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587584091295361, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -3.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587584091295362, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_text
+      value: Up here is where you'll see the orders you need to fill. You'll get
+        points for completing them before the bar empties
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.017714525
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587585534760811, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_Name
+      value: Orders
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+--- !u!4 &7247587584215764815 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+  m_PrefabInstance: {fileID: 1373820971}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3149361155830561904
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 5703652263495717927}
+    m_Modifications:
+    - target: {fileID: 7247587584091295361, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 20.8895
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587584091295361, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 4.7035
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587584091295361, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.4552
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587584091295361, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -4.0317
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587584091295362, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_text
+      value: 'Some colors require you to mix multiple colors together:
+
+        Red
+        + Blue = Purple
+
+        Blue + Green = Teal
+
+        Green + Red = Orange'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.017714525
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587585534760811, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_Name
+      value: Colors2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+--- !u!4 &5701660256739076884 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+  m_PrefabInstance: {fileID: 3149361155830561904}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5703652262836765366
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50,20 +216,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7247587584091295362, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_text
-      value: "This is where you fill the vials for orders, press \u2018F\u2019 to
-        drop the vial then grab it once it finishes, then head to the colored blocks."
+      value: "This is where you fill the vials for orders, press \u2018X\u2019 to
+        drop the vial then grab it once it finishes, then head to the slimes."
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.57
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.58
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -128,11 +294,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.05
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.93
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -191,11 +357,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.43
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -262,15 +428,16 @@ PrefabInstance:
     - target: {fileID: 7247587584091295362, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_text
       value: "Once you\u2019ve filled the vial correctly place it here to add it
-        to the order, you complete the level once you fill out the order completely\r\n"
+        to the order, you complete the level once you fill out the order completely\r.
+        You should head to the upper left next.\n"
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.56
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -336,9 +503,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7247587584091295362, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_text
-      value: "These three stations are where you pour in your \u201Cingredients\u201D.
-        Once you have a filled vial, place it in one to change its color. Once that
-        finishes, bring it to the chest on the right."
+      value: These are the slimes you will see running around. When you have a filled
+        vial bring it to a slime to place it inside. Once that finishes, bring it
+        to the chest on the right.
+      objectReference: {fileID: 0}
+    - target: {fileID: 7247587584938934851, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.14
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_RootOrder
@@ -346,7 +517,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.36
+      value: -3.25
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.y
@@ -409,7 +580,7 @@ PrefabInstance:
     - target: {fileID: 7247587584091295362, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_text
       value: "This is where you pick up the vials for your orders, grab one with
-        \u2018F\u2019, then head to the fountain up top."
+        \u2018X\u2019, then head to the fountain up top."
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_RootOrder
@@ -417,7 +588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.48
+      value: -8.5
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.y

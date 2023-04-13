@@ -4,11 +4,15 @@ using UnityEngine;
 using TMPro;
 using Random = UnityEngine.Random;
 using static Vials;
+using UnityEngine.SceneManagement;
 
 public class OrderManager : MonoBehaviour
 {
     //Static Instance
     public static OrderManager s_Instance { get; private set; }
+
+    Scene m_Scene;
+    string m_SceneName;
 
     //Order Vars
     [Header("Order Settings")]
@@ -33,6 +37,7 @@ public class OrderManager : MonoBehaviour
     [Header("Score Value")]
     public int m_OrderValue;
     public int m_OrderValueMinus;
+
 
     public static Sprite GetSprite(VialColor color) => color switch
     {
@@ -61,8 +66,13 @@ public class OrderManager : MonoBehaviour
 
     void Start()
     {
-        m_Orders = new Order[m_MaxOrderSize];
-        StartCoroutine(OrderGeneration());
+        m_Scene = SceneManager.GetActiveScene();
+        m_SceneName = m_Scene.name;
+        if (m_SceneName != "Tutorial")
+        {
+            m_Orders = new Order[m_MaxOrderSize];
+            StartCoroutine(OrderGeneration());
+        }
     }
 
     IEnumerator OrderGeneration()

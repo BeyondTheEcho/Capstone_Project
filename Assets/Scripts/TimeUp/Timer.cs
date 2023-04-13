@@ -19,15 +19,23 @@ public class Timer : MonoBehaviour
 
     int m_Minutes;
     int m_Seconds;
+
+    Scene m_Scene;
+    string m_SceneName;
     // Start is called before the first frame update
     void Start()
     {
+        m_Scene = SceneManager.GetActiveScene();
+        m_SceneName = m_Scene.name;
     }
 
     // Update is called once per frame
     void Update()
     {
-        TimerCountDown();
+        if (m_SceneName != "Tutorial")
+        {
+            TimerCountDown();
+        }
     }
 
     void TimerCountDown()
