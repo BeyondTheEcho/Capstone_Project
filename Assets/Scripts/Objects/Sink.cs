@@ -18,7 +18,8 @@ public class Sink : InteractableBase
 
     //UI Vars
     [Header("UI Settings")]
-    [SerializeField] private TMP_Text m_ProcessingText;
+    [SerializeField] private Image m_ProgressBar;
+    [SerializeField] private GameObject m_ProgressBarContainer;
 
     private void Start()
     {
@@ -37,12 +38,25 @@ public class Sink : InteractableBase
         vial.transform.position = transform.position;
         vial.transform.SetParent(transform);
 
-        yield return new WaitForSeconds(m_MachineProcessingDelay);
+        yield return StartCoroutine(ProgressBarCountdown(m_MachineProcessingDelay));
 
         vial.m_VialColor = Vials.VialColor.Filled;
 
         m_Vial = vial;
         m_VialStates = VialStates.Full;
+    }
+
+    IEnumerator ProgressBarCountdown(float delay)
+    {
+        float progress = 0;
+
+        while (progress <= delay)
+        {
+            yield return new WaitForSeconds(0.1f);
+            progress += 0.1f;
+
+            m_ProgressBar.fillAmount = progress / delay;
+        }
     }
 
     public override void OnInteract(Player player)
@@ -95,16 +109,15 @@ public class Sink : InteractableBase
     {   
         if (m_VialStates == VialStates.Filling)
         {
-            //m_ProcessingText.text = $"{m_VialProcessing}{m_VialFillStates[0]}";
-            m_ProcessingText.text = string.Format(LanguageSettings.s_Instance.GetLocalizedString("ValStatus"), LanguageSettings.s_Instance.GetLocalizedString(m_VialFillStates[0].ToString()));
+            m_ProgressBarContainer.gameObject.SetActive(true);
         }
         else if (m_VialStates == VialStates.Full)
         {
-            m_ProcessingText.text = string.Format(LanguageSettings.s_Instance.GetLocalizedString("ValStatus"), LanguageSettings.s_Instance.GetLocalizedString(m_VialFillStates[1].ToString()));
+            m_ProgressBarContainer.gameObject.SetActive(true);
         }
         else
         {
-            m_ProcessingText.text = "";
+            m_ProgressBarContainer.gameObject.SetActive(false);
         }
     }
 
