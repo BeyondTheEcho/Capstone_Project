@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     //vars for score system
     private int m_Score = 0;
     private int m_HighScore = 0;
+    private int m_NewHighScore = 0;
 
     private void Awake()
     {
@@ -102,10 +103,11 @@ public class GameManager : MonoBehaviour
     {
         if (m_Score > m_HighScore)
         {
-            m_HighScore = m_Score;
+            m_Score = m_HighScore;
+            m_HighScore = m_NewHighScore;
         }
 
-        return m_HighScore;
+        return m_NewHighScore;
     }
 
 
