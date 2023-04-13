@@ -15,6 +15,8 @@ public class ColorChanger : InteractableBase
     [SerializeField] private Image m_ProgressBar;
     [SerializeField] private GameObject m_ProgressBarContainer;
 
+    [SerializeField] private GameObject m_DoneParticles;
+
     private VialStates m_VialStates = VialStates.Unprocessed;
     private Vials m_Vial = null;
     private float m_MachineProcessingDelay => m_MachineColor switch
@@ -169,10 +171,12 @@ public class ColorChanger : InteractableBase
         else if (m_VialStates == VialStates.Ready)
         {
             m_ProgressBarContainer.gameObject.SetActive(true);
+            m_DoneParticles.SetActive(true);
         }
         else
         {
             m_ProgressBarContainer.gameObject.SetActive(false);
+            m_DoneParticles.SetActive(false);
         }
     }
 

@@ -50,7 +50,7 @@ public class Demon : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && m_Target != null)
         {
             m_Target.PlayerDrop();
             GameManager.s_Instance.UpdateScoreMinus(m_DScore);
