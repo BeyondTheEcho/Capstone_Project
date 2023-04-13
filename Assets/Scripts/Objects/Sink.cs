@@ -15,6 +15,7 @@ public class Sink : InteractableBase
     private Vials m_Vial = null;
     private string[] m_VialFillStates = { "Filling", "Full" };
     private string m_VialProcessing = "Vial is ";
+    [SerializeField] private ParticleSystem m_Particles;
 
     //UI Vars
     [Header("UI Settings")]
@@ -113,10 +114,22 @@ public class Sink : InteractableBase
         }
         else if (m_VialStates == VialStates.Full)
         {
+            if (!m_Particles.isPlaying)
+            {
+                m_Particles.loop = true;
+                m_Particles.Play();
+            }
+
             m_ProgressBarContainer.gameObject.SetActive(true);
         }
         else
         {
+            if (m_Particles.isPlaying)
+            {
+                m_Particles.loop = false;
+                m_Particles.Stop();
+            }
+
             m_ProgressBarContainer.gameObject.SetActive(false);
         }
     }
