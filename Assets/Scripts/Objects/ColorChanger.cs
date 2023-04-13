@@ -117,8 +117,8 @@ public class ColorChanger : InteractableBase
 
         while (progress <= delay) 
         {
-            yield return new WaitForSeconds(0.1f);
-            progress += 0.1f;
+            yield return new WaitForSeconds(1.0f);
+            progress += 1.0f;
 
             m_ProgressBar.fillAmount = progress / delay;
         }
