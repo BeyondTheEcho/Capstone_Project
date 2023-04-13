@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     [SerializeField] private SpriteRenderer m_PopupSpriteRenderer;
     [SerializeField] private GameObject m_ItemPopup;
     [SerializeField] private GameObject m_TextPrompt;
+    [SerializeField] private ParticleSystem m_WalkParticle;
 
     //Private Vars
     private ToolManager m_ToolManager;
@@ -26,8 +27,13 @@ public class Player : MonoBehaviour
     private float m_InteractDelay = 0.5f;
     private Coroutine m_InteractDelayCoroutine;
 
+    
+
     private Vector3 m_PreviousPos = new Vector3();
     private Vector3 m_CurrentPos = new Vector3();
+
+    private Vector3 m_PreviousParticlePos = new Vector3();
+    private Vector3 m_CurrentParticlePos = new Vector3();
 
     private Vector3 m_RightVector3 = new Vector3(1, 1, 1);
     private Vector3 m_LeftVector3 = new Vector3(-1, 1, 1);
@@ -41,7 +47,9 @@ public class Player : MonoBehaviour
     void Start()
     {
         m_PlayerNumber = gameObject.GetComponent<PlayerController>().m_PlayerNumber;
-        
+
+        StartCoroutine(DustParticleCheck());
+
         if (m_PlayerNumber == PlayerNumber.PlayerOne)
         {
             InputManager.s_Instance.Player_1_Interact += PlayerInteract;
@@ -83,18 +91,39 @@ public class Player : MonoBehaviour
 
         Vector3 directionVector = (m_CurrentPos - m_PreviousPos).normalized;
 
-        if (directionVector.x > 0)
+        if (directionVector.x > 0.0f)
         {
             gameObject.transform.localScale = m_RightVector3;
             m_ItemPopup.transform.localScale = m_LeftVector3;
             m_TextPrompt.transform.localScale = m_RightVector3;
         }
-
-        if (directionVector.x < 0)
+        else if (directionVector.x < 0.0f)
         {
             gameObject.transform.localScale = m_LeftVector3;
             m_ItemPopup.transform.localScale = m_RightVector3;
-            m_TextPrompt.transform.localScale = m_LeftVector3;
+            m_TextPrompt.transform.localScale = m_LeftVector3;;
+        }
+    }
+
+    IEnumerator DustParticleCheck()
+    {
+        while (true)
+        {
+            m_PreviousParticlePos = m_CurrentParticlePos;
+            m_CurrentParticlePos = gameObject.transform.position;
+
+            Vector3 directionVector = (m_CurrentParticlePos - m_PreviousParticlePos).normalized;
+
+            if (directionVector.x != 0.0f)
+            {
+                m_WalkParticle.Play();
+            }
+            else
+            {
+                m_WalkParticle.Stop();
+            }
+
+            yield return new WaitForSeconds(0.1f);
         }
     }
 
