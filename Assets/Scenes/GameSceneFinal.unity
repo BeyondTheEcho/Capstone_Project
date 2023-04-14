@@ -201,6 +201,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 412368525}
     m_Modifications:
+    - target: {fileID: -8545914525214816564, guid: da68ecc51b4288c428d089196c237e06, type: 3}
+      propertyPath: m_MagicDing
+      value: 
+      objectReference: {fileID: 8300000, guid: 9b4a94faee92f1b4782efc109ae6d983, type: 3}
     - target: {fileID: 5694706346665402857, guid: da68ecc51b4288c428d089196c237e06, type: 3}
       propertyPath: m_RootOrder
       value: 0

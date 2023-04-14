@@ -31,6 +31,7 @@ public class DeliveryBox : InteractableBase
         {
             if (OrderManager.s_Instance.TryDeliverVial(vial.m_VialColor))
             {
+                SoundManager.s_Instance.PlayMagicDing();
                 m_CompletionParticles.Play();
                 Destroy(vial);
                 player.m_HeldItem = null;
