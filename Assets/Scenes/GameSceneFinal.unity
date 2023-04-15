@@ -1485,6 +1485,14 @@ PrefabInstance:
       propertyPath: m_TimeNum
       value: 500
       objectReference: {fileID: 0}
+    - target: {fileID: 6617129509039697615, guid: 84b6d92f9483009428aedacec46099c3, type: 3}
+      propertyPath: m_SpriteTexture.Array.data[7]
+      value: 
+      objectReference: {fileID: 21300000, guid: cdba6f7e1f66b3944b6c1a493be3c634, type: 3}
+    - target: {fileID: 6617129509039697615, guid: 84b6d92f9483009428aedacec46099c3, type: 3}
+      propertyPath: m_SpriteTexture.Array.data[9]
+      value: 
+      objectReference: {fileID: 21300000, guid: 600722e8f3108594c98736dfa016c312, type: 3}
     - target: {fileID: 7908001477667387120, guid: 84b6d92f9483009428aedacec46099c3, type: 3}
       propertyPath: m_LocalScale.x
       value: 51.17
