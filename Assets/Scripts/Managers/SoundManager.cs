@@ -15,7 +15,7 @@ public class SoundManager : MonoBehaviour
     Scene m_Scene;
     string m_SceneName;
     [SerializeField] private AudioSource m_AudioSource;
-    [SerializeField] private AudioSource m_PlayerAudioSource;
+    [SerializeField] public AudioSource m_PlayerAudioSource;
     [SerializeField] private List<AudioClip> m_AudioClips = new List<AudioClip>();
 
     [Header("Sound Clips")]
@@ -25,19 +25,20 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip m_GameOver;
     [SerializeField] private AudioClip m_Box;
     [SerializeField] private AudioClip m_Bolt;
-    [SerializeField] private AudioClip m_Walk;
+    [SerializeField] private AudioClip m_Water;
+    [SerializeField] private AudioClip m_OrderDone;
     private float m_SoundTime;
-    public static SoundManager s_Instance { get; private set; }
+    public static SoundManager m_Instance { get; private set; }
 
     private void Awake()
     {
-        if (s_Instance != null && s_Instance != this)
+        if (m_Instance != null && m_Instance != this)
         {
             Destroy(this);
         }
         else
         {
-            s_Instance = this;
+            m_Instance = this;
         }
     }
 
@@ -73,17 +74,17 @@ public class SoundManager : MonoBehaviour
 
     public void PlayAlarm()
     {
-        m_AudioSource.PlayOneShot(m_Alarm, 0.5f);
+        m_AudioSource.PlayOneShot(m_Alarm, 0.25f);
     }
 
     public void PlayClamp()
     {
-        m_AudioSource.PlayOneShot(m_Clamp, 0.5f);
+        m_AudioSource.PlayOneShot(m_Clamp, 0.25f);
     }
 
     public void PlayHeatTreat()
     {
-        m_AudioSource.PlayOneShot(m_Heat_treating, 0.5f);
+        m_AudioSource.PlayOneShot(m_Heat_treating, 0.25f);
     }
 
     public void PlayGameOver()
@@ -93,24 +94,23 @@ public class SoundManager : MonoBehaviour
     }
     public void PlayBox()
     {
-        m_AudioSource.PlayOneShot(m_Box, 0.5f);
+        m_AudioSource.PlayOneShot(m_Box, 0.25f);
     }
     public void PlayBolt()
     {
-        m_AudioSource.PlayOneShot(m_Bolt, 0.5f);
+        m_AudioSource.PlayOneShot(m_Bolt, 0.25f);
     }
 
-    public void PlayWalk(AudioSource audio)
+    public void PlayWater(AudioSource audio)
     {
-        if (audio.isPlaying == false)
-        {
-            audio.PlayOneShot(m_Walk, 0.5f);
-        }
+        audio.PlayOneShot(m_Water, 0.25f);
     }
-    public void StopWalk()
+
+    public void PlayOrderDone(AudioSource audio)
     {
-        m_PlayerAudioSource.Stop();
+        audio.PlayOneShot(m_OrderDone, 0.25f);
     }
+    
 
     public void PauseMusic()
     {

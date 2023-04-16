@@ -16,6 +16,7 @@ public class Sink : InteractableBase
     private string[] m_VialFillStates = { "Filling", "Full" };
     private string m_VialProcessing = "Vial is ";
     [SerializeField] private ParticleSystem m_Particles;
+    public static SoundManager m_Instance { get; private set; }
 
     //UI Vars
     [Header("UI Settings")]
@@ -65,6 +66,7 @@ public class Sink : InteractableBase
         if (m_VialStates == VialStates.Empty)
         {
             InputVial(player);
+            SoundManager.m_Instance.PlayWater(SoundManager.m_Instance.m_PlayerAudioSource);
         }
         else if (m_VialStates == VialStates.Full)
         {

@@ -10,7 +10,7 @@ public class OrderManager : MonoBehaviour
 {
     //Static Instance
     public static OrderManager s_Instance { get; private set; }
-
+    public static SoundManager m_Instance { get; private set; }
     Scene m_Scene;
     string m_SceneName;
 
@@ -23,6 +23,8 @@ public class OrderManager : MonoBehaviour
     private float m_OrderOffsetPosition = 5.0f;
     private Vector3 m_InitialOrderPosition = new Vector3(-20.0f, 10.5f, 0.0f);
     private int m_OrderSpawnDelay = 15;
+    
+    
 
     [Header("Vial Sprites")]
     [SerializeField] private Sprite m_VialEmpty;
@@ -135,8 +137,10 @@ public class OrderManager : MonoBehaviour
             {
                 Destroy(item.gameObject);
                 GameManager.s_Instance.UpdateScore(m_OrderValue);
+                
                 return;
             }
         }
+        SoundManager.m_Instance.PlayOrderDone(SoundManager.m_Instance.m_PlayerAudioSource);
     }
 }

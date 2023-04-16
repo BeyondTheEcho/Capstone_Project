@@ -298,8 +298,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5799724227506445562}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.273936, y: -5.9754524, z: 0.19985925}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5172,10 +5172,8 @@ GameObject:
   - component: {fileID: 9055601344657651022}
   - component: {fileID: 7501452860929043976}
   - component: {fileID: 4458779894048155437}
-  - component: {fileID: 8403354475094978688}
   - component: {fileID: 396239938267304789}
   - component: {fileID: 3162103759271403569}
-  - component: {fileID: 3162103759271403570}
   - component: {fileID: 389981809863559554}
   m_Layer: 0
   m_Name: (T)Color Changer - Green
@@ -5191,7 +5189,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9081692089659403934}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.2260637, y: -1.5245476, z: -0.19985925}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5270,22 +5268,6 @@ MonoBehaviour:
   m_ProgressBar: {fileID: 3833045498857682634}
   m_ProgressBarContainer: {fileID: 792550307974992814}
   m_DoneParticles: {fileID: 5799724227506445562}
---- !u!58 &8403354475094978688
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9081692089659403934}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1.3
 --- !u!95 &396239938267304789
 Animator:
   serializedVersion: 5
@@ -5318,27 +5300,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a67e1dcd51814d04ea769bd37dc0d0ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!50 &3162103759271403570
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9081692089659403934}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 200
-  m_LinearDrag: 2.5
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 4
 --- !u!114 &389981809863559554
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -274,6 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78fbe12ae12f3f441aeb9bad566355ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_CompletionParticles: {fileID: 0}
   m_PointValue: 10
 --- !u!58 &948338602650313334
 CircleCollider2D:

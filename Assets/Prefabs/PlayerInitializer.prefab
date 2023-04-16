@@ -524,18 +524,6 @@ PrefabInstance:
       propertyPath: m_margin.z
       value: 6.5064545
       objectReference: {fileID: 0}
-    - target: {fileID: 1021873844487176943, guid: e5b8f862be8e5c2469c007e8b80cfc59, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 8dcd3e8136215c847a51778c72328c0e, type: 2}
-    - target: {fileID: 1354331641008599642, guid: e5b8f862be8e5c2469c007e8b80cfc59, type: 3}
-      propertyPath: m_margin.x
-      value: 6.5289497
-      objectReference: {fileID: 0}
-    - target: {fileID: 1354331641008599642, guid: e5b8f862be8e5c2469c007e8b80cfc59, type: 3}
-      propertyPath: m_margin.z
-      value: 6.5064545
-      objectReference: {fileID: 0}
     - target: {fileID: 1354331641008599642, guid: e5b8f862be8e5c2469c007e8b80cfc59, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -711,18 +699,6 @@ PrefabInstance:
       propertyPath: m_margin.z
       value: 7.002778
       objectReference: {fileID: 0}
-    - target: {fileID: 1021873844487176943, guid: e5b8f862be8e5c2469c007e8b80cfc59, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 4d5af51a32d7b8241abcbf81058e9e36, type: 2}
-    - target: {fileID: 1354331641008599642, guid: e5b8f862be8e5c2469c007e8b80cfc59, type: 3}
-      propertyPath: m_margin.x
-      value: 7.000468
-      objectReference: {fileID: 0}
-    - target: {fileID: 1354331641008599642, guid: e5b8f862be8e5c2469c007e8b80cfc59, type: 3}
-      propertyPath: m_margin.z
-      value: 7.002778
-      objectReference: {fileID: 0}
     - target: {fileID: 1354331641008599642, guid: e5b8f862be8e5c2469c007e8b80cfc59, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -885,18 +861,6 @@ PrefabInstance:
     - target: {fileID: 881317216113532229, guid: e5b8f862be8e5c2469c007e8b80cfc59, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 1.06
-      objectReference: {fileID: 0}
-    - target: {fileID: 1021873844487176943, guid: e5b8f862be8e5c2469c007e8b80cfc59, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 789a1ae23c68b364abb8c22ee7b35d20, type: 2}
-    - target: {fileID: 1354331641008599642, guid: e5b8f862be8e5c2469c007e8b80cfc59, type: 3}
-      propertyPath: m_margin.x
-      value: 6.7068944
-      objectReference: {fileID: 0}
-    - target: {fileID: 1354331641008599642, guid: e5b8f862be8e5c2469c007e8b80cfc59, type: 3}
-      propertyPath: m_margin.z
-      value: 6.7004447
       objectReference: {fileID: 0}
     - target: {fileID: 1021873844487176943, guid: e5b8f862be8e5c2469c007e8b80cfc59, type: 3}
       propertyPath: m_Controller

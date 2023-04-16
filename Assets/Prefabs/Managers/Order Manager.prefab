@@ -51,5 +51,8 @@ MonoBehaviour:
   m_VialFilledRed: {fileID: 1470104819, guid: f65716d728c82b1489692376f5c04f05, type: 3}
   m_VialFilledGreen: {fileID: -1359897825, guid: f65716d728c82b1489692376f5c04f05, type: 3}
   m_VialFilledBlue: {fileID: 928624353, guid: f65716d728c82b1489692376f5c04f05, type: 3}
+  m_VialFilledPurple: {fileID: 0}
+  m_VialFilledOrange: {fileID: 0}
+  m_VialFilledTeal: {fileID: 0}
   m_OrderValue: 50
   m_OrderValueMinus: -10
