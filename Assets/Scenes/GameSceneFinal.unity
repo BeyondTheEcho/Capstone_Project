@@ -391,6 +391,72 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8661183240719553984, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
   m_PrefabInstance: {fileID: 8661183239913865836}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1273129457
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 2011263629}
+    m_Modifications:
+    - target: {fileID: 8661183240719553984, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661183240719553984, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661183240719553984, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661183240719553984, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.19985925
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661183240719553984, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661183240719553984, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661183240719553984, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661183240719553984, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661183240719553984, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661183240719553984, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661183240719553984, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661183240719553989, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
+      propertyPath: m_Name
+      value: Vial Storage 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8661183240719553991, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -628679372, guid: 9d2c4ae26d460e84f91c46956163c5a1, type: 3}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
+--- !u!4 &1273129458 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8661183240719553984, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
+  m_PrefabInstance: {fileID: 1273129457}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1296708827 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 345886239492914734, guid: 87efce2fbab481949b7b827b8d7f231f, type: 3}
@@ -564,6 +630,7 @@ Transform:
   - {fileID: 2010348719}
   - {fileID: 1938340927528938119}
   - {fileID: 8003415113808647592}
+  - {fileID: 1273129458}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1871,7 +1938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8661183240719553984, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5245475
+      value: 7.55
       objectReference: {fileID: 0}
     - target: {fileID: 8661183240719553984, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1909,5 +1976,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Vial Storage
       objectReference: {fileID: 0}
+    - target: {fileID: 8661183240719553991, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -628679372, guid: 9d2c4ae26d460e84f91c46956163c5a1, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 922e9344e9910c546bec0479a40ac0f3, type: 3}
