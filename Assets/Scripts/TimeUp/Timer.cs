@@ -5,9 +5,12 @@ using UnityEngine.UI;
 using UnityEngine;
 using System.Threading;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Timer : MonoBehaviour
 {
+    [SerializeField] TextMeshProUGUI m_TimeMinText;
+    [SerializeField] TextMeshProUGUI m_TimeSecText;
     [SerializeField] float m_TimeNum = 15;
     public GameObject[] m_TimeUI;
     public Sprite[] m_SpriteTexture;
@@ -33,17 +36,12 @@ public class Timer : MonoBehaviour
     void TimerCountDown()
     {
         m_TimeNum = m_TimeNum - Time.deltaTime;
+        int timeInt = (int)m_TimeNum;
         m_Minutes = (int)m_TimeNum / 60;
         m_Seconds = (int)m_TimeNum % 60;
-        m_Num0 = (int)(m_Minutes / 10);
-        m_Num1 = (int)(m_Minutes % 10);
-        m_Num2 = (int)(m_Seconds / 10);
-        m_Num3 = (int)(m_Seconds % 10);
-
-        m_TimeUI[0].GetComponent<Image>().sprite = m_SpriteTexture[m_Num0];
-        m_TimeUI[1].GetComponent<Image>().sprite = m_SpriteTexture[m_Num1];
-        m_TimeUI[2].GetComponent<Image>().sprite = m_SpriteTexture[m_Num2];
-        m_TimeUI[3].GetComponent<Image>().sprite = m_SpriteTexture[m_Num3];
+        m_TimeMinText.text = m_Minutes.ToString();
+        m_TimeSecText.text = m_Seconds.ToString();
+        
 
         if (m_TimeNum < 0 && GameManager.s_Instance.GetScore() <= 1000)
         {
