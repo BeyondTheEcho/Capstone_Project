@@ -32,6 +32,8 @@ public class MouseControl : MonoBehaviour
 
     void Update()
     {
+        Cursor.visible = false;
+
         m_InputDirection.x = Input.GetAxis("MouseX");
         m_InputDirection.y = Input.GetAxis("MouseY");
 
