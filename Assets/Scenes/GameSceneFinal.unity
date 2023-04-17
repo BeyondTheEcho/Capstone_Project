@@ -1540,7 +1540,7 @@ PrefabInstance:
     - target: {fileID: 2296676489596288150, guid: 3e935f62344b591419c3b73ca7973691, type: 3}
       propertyPath: m_VialFilled
       value: 
-      objectReference: {fileID: -1737542236, guid: f65716d728c82b1489692376f5c04f05, type: 3}
+      objectReference: {fileID: 236590689, guid: f65716d728c82b1489692376f5c04f05, type: 3}
     - target: {fileID: 2296676489596288150, guid: 3e935f62344b591419c3b73ca7973691, type: 3}
       propertyPath: m_VialFilledRed
       value: 
