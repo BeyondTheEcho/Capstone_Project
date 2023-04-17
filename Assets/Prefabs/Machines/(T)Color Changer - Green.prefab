@@ -5173,7 +5173,6 @@ GameObject:
   - component: {fileID: 7501452860929043976}
   - component: {fileID: 4458779894048155437}
   - component: {fileID: 396239938267304789}
-  - component: {fileID: 3162103759271403569}
   - component: {fileID: 389981809863559554}
   m_Layer: 0
   m_Name: (T)Color Changer - Green
@@ -5288,18 +5287,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &3162103759271403569
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9081692089659403934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a67e1dcd51814d04ea769bd37dc0d0ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &389981809863559554
 MonoBehaviour:
   m_ObjectHideFlags: 0
