@@ -27,6 +27,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] private AudioClip m_Bolt;
     [SerializeField] private AudioClip m_Water;
     [SerializeField] private AudioClip m_OrderDone;
+    [SerializeField] private AudioClip m_MagicDing;
     private float m_SoundTime;
     public static SoundManager m_Instance { get; private set; }
 
@@ -121,5 +122,10 @@ public class SoundManager : MonoBehaviour
     {
         m_AudioSource.time = m_SoundTime;
         m_AudioSource.Play();
+    }
+
+    public void PlayMagicDing()
+    {
+        m_AudioSource.PlayOneShot(m_MagicDing, 0.25f);
     }
 }

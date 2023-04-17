@@ -46,6 +46,7 @@ public class Sink : InteractableBase
 
         m_Vial = vial;
         m_VialStates = VialStates.Full;
+        SoundManager.s_Instance.PlayMagicDing();
     }
 
     IEnumerator ProgressBarCountdown(float delay)

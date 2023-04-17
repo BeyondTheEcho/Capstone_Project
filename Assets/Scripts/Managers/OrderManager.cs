@@ -18,7 +18,7 @@ public class OrderManager : MonoBehaviour
     [Header("Order Settings")]
     [SerializeField] private Order[] m_Orders;
     [SerializeField] private GameObject m_OrderPrefab;
-    private int m_MaxOrderSize = 5;
+    private int m_MaxOrderSize = 4;
     private int m_MinOrderSize = 1;
     private float m_OrderOffsetPosition = 5.0f;
     private Vector3 m_InitialOrderPosition = new Vector3(-20.0f, 10.5f, 0.0f);

@@ -51,7 +51,7 @@ public class MouseControl : MonoBehaviour
         else
         {
             m_Position.x = transform.position.x + m_InputDirection.x * 1000.0f * multiplier;
-            m_Position.y = transform.position.y + m_InputDirection.y * 1000.0f * multiplier;
+            m_Position.y = transform.position.y + -m_InputDirection.y * 1000.0f * multiplier;
         }
 
         m_Position.x = Mathf.Clamp(m_Position.x, 27, 1900);

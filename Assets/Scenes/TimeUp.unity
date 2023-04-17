@@ -458,13 +458,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 157171172, guid: f0d0afe53665d19449f63a5b27d7437b, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 293827834, guid: f0d0afe53665d19449f63a5b27d7437b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1294940082}
-    - target: {fileID: 1268921345, guid: f0d0afe53665d19449f63a5b27d7437b, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
+    - target: {fileID: 1712059667, guid: f0d0afe53665d19449f63a5b27d7437b, type: 3}
+      propertyPath: m_margin.z
+      value: -227.12988
       objectReference: {fileID: 0}
     - target: {fileID: 4155387952735394970, guid: f0d0afe53665d19449f63a5b27d7437b, type: 3}
       propertyPath: m_Name
