@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
     {
         if (!PlayerPrefs.HasKey("High Score"))
         {
-            return -1;
+            PlayerPrefs.SetInt("High Score", 0);
         }
 
         if (m_Score > PlayerPrefs.GetInt("High Score"))
