@@ -111,7 +111,7 @@ public class SoundManager : MonoBehaviour
     {
         if (audio.isPlaying == false)
         {
-            audio.PlayOneShot(m_Walk, 0.5f);
+            audio.PlayOneShot(m_Walk, 0.1f);
         }
     }
     public void StopWalk()
