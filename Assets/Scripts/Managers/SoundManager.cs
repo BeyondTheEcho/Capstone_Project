@@ -126,6 +126,10 @@ public class SoundManager : MonoBehaviour
 
     public void PlayMagicDing()
     {
+<<<<<<< HEAD
         m_AudioSource.PlayOneShot(m_MagicDing, 0.25f);
+=======
+        m_AudioSource.PlayOneShot(m_MagicDing, 0.5f);
+>>>>>>> 13f4f4a232f4c5d39463d952a11dc907e6f57790
     }
 }
