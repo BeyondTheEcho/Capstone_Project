@@ -28,8 +28,7 @@ public class Player : MonoBehaviour
     private PlayerNumber m_PlayerNumber;
     private float m_InteractDelay = 0.5f;
     private Coroutine m_InteractDelayCoroutine;
-
-    
+    private bool m_MovingLeft = false;
 
     private Vector3 m_PreviousPos = new Vector3();
     private Vector3 m_CurrentPos = new Vector3();
@@ -93,18 +92,21 @@ public class Player : MonoBehaviour
 
         Vector3 directionVector = (m_CurrentPos - m_PreviousPos).normalized;
 
-        if (directionVector.x > 0.0f)
+        //Debug.Log("directonVector" + directionVector);
+
+        if (directionVector.x > 0.0f && Input.GetAxis("Horizontal" + ((int)m_PlayerNumber + 1)) > 0.0f)
         {
             gameObject.transform.localScale = m_RightVector3;
             m_ItemPopup.transform.localScale = m_LeftVector3;
             m_TextPrompt.transform.localScale = m_RightVector3;
         }
-        else if (directionVector.x < 0.0f)
+        else if (directionVector.x < 0.0f && Input.GetAxis("Horizontal" + ((int)m_PlayerNumber + 1)) < 0.0f)
         {
             gameObject.transform.localScale = m_LeftVector3;
             m_ItemPopup.transform.localScale = m_RightVector3;
             m_TextPrompt.transform.localScale = m_LeftVector3;;
         }
+        
     }
 
     IEnumerator DustParticleCheck()
