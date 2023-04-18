@@ -112,11 +112,4 @@ public class GameManager : MonoBehaviour
 
         return PlayerPrefs.GetInt("High Score");
     }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-      
-    }
 }
