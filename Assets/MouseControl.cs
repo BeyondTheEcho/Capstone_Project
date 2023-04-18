@@ -43,7 +43,7 @@ public class MouseControl : MonoBehaviour
         //Used for pause menu
         if (multiplier <= 0)
         {
-            multiplier = 0.25f;
+            multiplier = 1.0f;
         }
         
         if (SceneManager.GetActiveScene().name == "GameSceneFinal")
