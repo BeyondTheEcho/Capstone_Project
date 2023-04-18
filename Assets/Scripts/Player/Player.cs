@@ -1,14 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
-using JetBrains.Annotations;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Experimental.Playables;
-using TMPro;
-using System.Linq;
-using System;
-
-using UnityEditor.Animations;
 
 public class Player : MonoBehaviour
 {
@@ -26,10 +17,10 @@ public class Player : MonoBehaviour
     [SerializeField] private ParticleSystem m_WalkParticle;
 
     [Header("Player Animator Controllers")]
-    [SerializeField] private AnimatorController m_PlayerOneAnim;
-    [SerializeField] private AnimatorController m_PlayerTwoAnim;
-    [SerializeField] private AnimatorController m_PlayerThreeAnim;
-    [SerializeField] private AnimatorController m_PlayerFourAnim;
+    [SerializeField] private RuntimeAnimatorController m_PlayerOneAnim;
+    [SerializeField] private RuntimeAnimatorController m_PlayerTwoAnim;
+    [SerializeField] private RuntimeAnimatorController m_PlayerThreeAnim;
+    [SerializeField] private RuntimeAnimatorController m_PlayerFourAnim;
 
     [Header("Player Sprites")]
     [SerializeField] private Sprite m_PlayerOneSprite;
