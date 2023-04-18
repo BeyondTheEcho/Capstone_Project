@@ -32,6 +32,9 @@ public class MouseControl : MonoBehaviour
 
     void Update()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         m_InputDirection.x = Input.GetAxis("MouseX");
         m_InputDirection.y = Input.GetAxis("MouseY");
 
@@ -63,7 +66,7 @@ public class MouseControl : MonoBehaviour
 
         List<RaycastResult> results = new List<RaycastResult>();
 
-        if (Input.GetButtonDown("Add1"))
+        if (Input.GetButtonDown("MenuInteraction") || Input.GetMouseButtonDown(0))
         {
             EventSystem.current.RaycastAll(data, results);
             if (results[0].gameObject != null)

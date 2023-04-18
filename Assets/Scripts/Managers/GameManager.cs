@@ -97,6 +97,22 @@ public class GameManager : MonoBehaviour
         return m_Score;
     }
 
+    public int GetHighScore()
+    {
+        if (!PlayerPrefs.HasKey("High Score"))
+        {
+            PlayerPrefs.SetInt("High Score", 0);
+        }
+
+        if (m_Score > PlayerPrefs.GetInt("High Score"))
+        {
+            PlayerPrefs.SetInt("High Score", m_Score);
+            PlayerPrefs.Save();
+        }
+
+        return PlayerPrefs.GetInt("High Score");
+    }
+
 
     // Update is called once per frame
     void Update()
