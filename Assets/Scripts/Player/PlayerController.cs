@@ -5,12 +5,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //Serialized Vars
-    [SerializeField] private float m_Speed = 10.0f;
+    public float m_Speed = 10.0f;
     public PlayerNumber m_PlayerNumber;
     Vector2 velocity;
-    
-    //Refs
     private Rigidbody2D m_Rigidbody;
     private AudioSource m_Source;
 

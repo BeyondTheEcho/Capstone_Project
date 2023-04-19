@@ -1,34 +1,66 @@
 using System.Collections;
-using System.Collections.Generic;
-using JetBrains.Annotations;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Experimental.Playables;
-using TMPro;
-using System.Linq;
-using System;
 
 public class Player : MonoBehaviour
 {
-    //Public Vars
-    [SerializeField] public IDropable m_HeldItem = null;
+    //Inspector Vars
+    [Header("Player Settings")]
+    [SerializeField] private float m_InteractRange = 1.7f;
 
-    //Private Serialized Vars
-    [SerializeField] private float m_InteractRange = 1.7f; //Default Value lines up with colliders
+    [Header("References")]
     [SerializeField] private SpriteRenderer m_PopupSpriteRenderer;
     [SerializeField] private SpriteRenderer m_ButtonSpriteRenderer;
     [SerializeField] private GameObject m_ItemPopup;
     [SerializeField] private GameObject m_TextPrompt;
+
+    [Header("Particle Systems")]
     [SerializeField] private ParticleSystem m_WalkParticle;
 
+    [Header("Player Animator Controllers")]
+    [SerializeField] private RuntimeAnimatorController m_PlayerOneAnim;
+    [SerializeField] private RuntimeAnimatorController m_PlayerTwoAnim;
+    [SerializeField] private RuntimeAnimatorController m_PlayerThreeAnim;
+    [SerializeField] private RuntimeAnimatorController m_PlayerFourAnim;
+
+    [Header("Player Sprites")]
+    [SerializeField] private Sprite m_PlayerOneSprite;
+    [SerializeField] private Sprite m_PlayerTwoSprite;
+    [SerializeField] private Sprite m_PlayerThreeSprite;
+    [SerializeField] private Sprite m_PlayerFourSprite;
+
+    //Public Vars
+    public IDropable m_HeldItem = null;
 
     //Private Vars
-    private ToolManager m_ToolManager;
-    private TMP_Text m_ToolPrompt;
-    private PlayerNumber m_PlayerNumber;
     private float m_InteractDelay = 0.5f;
     private Coroutine m_InteractDelayCoroutine;
-    private bool m_MovingLeft = false;
+    private PlayerController m_PlayerController;
+    private SpriteRenderer m_SpriteRenderer;
+    private Animator m_Animator;
+
+    //Backing Vars
+    private float m_SpeedBacking = 10.0f;
+    private PlayerNumber m_PlayerNumberBacking = PlayerNumber.PlayerOne;
+
+    //Properties
+    public float m_Speed
+    {
+        get { return m_SpeedBacking; }
+        set
+        {
+            m_SpeedBacking = value;
+            m_PlayerController.m_Speed = value;
+        }
+    }
+    public PlayerNumber m_PlayerNumber
+    {
+        get { return m_PlayerNumberBacking; }
+        set
+        {
+            m_PlayerNumberBacking = value;
+            m_PlayerController.m_PlayerNumber = value;
+        }
+    }
 
     private Vector3 m_PreviousPos = new Vector3();
     private Vector3 m_CurrentPos = new Vector3();
@@ -41,36 +73,14 @@ public class Player : MonoBehaviour
 
     void Awake()
     {
-        m_ToolPrompt = GetComponentInChildren<TMP_Text>();
-        m_ToolManager = FindObjectOfType<ToolManager>();
+        m_PlayerController = GetComponent<PlayerController>();
+        m_SpriteRenderer = GetComponent<SpriteRenderer>();
+        m_Animator = GetComponent<Animator>();
     }
 
     void Start()
     {
-        m_PlayerNumber = gameObject.GetComponent<PlayerController>().m_PlayerNumber;
-
         StartCoroutine(DustParticleCheck());
-
-        if (m_PlayerNumber == PlayerNumber.PlayerOne)
-        {
-            InputManager.s_Instance.Player_1_Interact += PlayerInteract;
-            InputManager.s_Instance.Player_1_Drop += PlayerDrop;
-        }
-        else if(m_PlayerNumber == PlayerNumber.PlayerTwo)
-        {
-            InputManager.s_Instance.Player_2_Interact += PlayerInteract;
-            InputManager.s_Instance.Player_2_Drop += PlayerDrop;
-        }
-        else if (m_PlayerNumber == PlayerNumber.PlayerThree)
-        {
-            InputManager.s_Instance.Player_3_Interact += PlayerInteract;
-            InputManager.s_Instance.Player_3_Drop += PlayerDrop;
-        }
-        else if (m_PlayerNumber == PlayerNumber.PlayerFour)
-        {
-            InputManager.s_Instance.Player_4_Interact += PlayerInteract;
-            InputManager.s_Instance.Player_4_Drop += PlayerDrop;
-        }
     }
 
     void Update()
@@ -147,11 +157,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void UpdatePrompt(string prompt)
-    {
-        m_ToolPrompt.text = prompt;
-    }
-
     public void ShowXButton(bool shown) 
     {
         m_ButtonSpriteRenderer.gameObject.SetActive(shown);
@@ -197,6 +202,47 @@ public class Player : MonoBehaviour
             {
                 m_HeldItem.OnDrop(this);
             }
+        }
+    }
+
+    public void SetupPlayer(PlayerNumber num)
+    {
+        m_PlayerNumber = num;
+
+        if (m_PlayerNumber == PlayerNumber.PlayerOne)
+        {
+            m_SpriteRenderer.sprite = m_PlayerOneSprite;
+            m_Animator.runtimeAnimatorController = m_PlayerOneAnim;
+
+            InputManager.s_Instance.Player_1_Interact += PlayerInteract;
+            InputManager.s_Instance.Player_1_Drop += PlayerDrop;
+        }
+
+        if (m_PlayerNumber == PlayerNumber.PlayerTwo)
+        {
+            m_SpriteRenderer.sprite = m_PlayerTwoSprite;
+            m_Animator.runtimeAnimatorController = m_PlayerTwoAnim;
+
+            InputManager.s_Instance.Player_2_Interact += PlayerInteract;
+            InputManager.s_Instance.Player_2_Drop += PlayerDrop;
+        }
+
+        if (m_PlayerNumber == PlayerNumber.PlayerThree)
+        {
+            m_SpriteRenderer.sprite = m_PlayerThreeSprite;
+            m_Animator.runtimeAnimatorController = m_PlayerThreeAnim;
+
+            InputManager.s_Instance.Player_3_Interact += PlayerInteract;
+            InputManager.s_Instance.Player_3_Drop += PlayerDrop;
+        }
+
+        if (m_PlayerNumber == PlayerNumber.PlayerFour)
+        {
+            m_SpriteRenderer.sprite = m_PlayerFourSprite;
+            m_Animator.runtimeAnimatorController = m_PlayerFourAnim;
+
+            InputManager.s_Instance.Player_4_Interact += PlayerInteract;
+            InputManager.s_Instance.Player_4_Drop += PlayerDrop;
         }
     }
 }
