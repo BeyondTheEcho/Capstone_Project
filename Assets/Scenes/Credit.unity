@@ -439,6 +439,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8264655256968144703, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
+      propertyPath: m_text
+      value: "E Kennedy \n\nProgrammer (Student)"
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 28e1a3723dcf3b547a4787b006032700, type: 3}
 --- !u!114 &1367335793 stripped
