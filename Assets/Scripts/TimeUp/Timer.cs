@@ -20,6 +20,8 @@ public class Timer : MonoBehaviour
     int m_TenMinutes;
     int m_Seconds;
     int m_TenSeconds;
+    Scene m_Scene;
+    string m_SceneName;
     // Start is called before the first frame update
     void Start()
     {

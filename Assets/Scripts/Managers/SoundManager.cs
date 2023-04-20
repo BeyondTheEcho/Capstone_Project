@@ -106,7 +106,7 @@ public class SoundManager : MonoBehaviour
     {
         if (audio.isPlaying == false)
         {
-            audio.PlayOneShot(m_Walk, 0.1f);
+            audio.PlayOneShot(m_Water, 0.1f);
         }
     }
 
