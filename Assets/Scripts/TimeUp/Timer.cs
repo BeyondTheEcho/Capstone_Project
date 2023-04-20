@@ -11,11 +11,15 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI m_TimeMinText;
+    [SerializeField] TextMeshProUGUI m_TimeTenMinText;
     [SerializeField] TextMeshProUGUI m_TimeSecText;
+    [SerializeField] TextMeshProUGUI m_TimeTenSecText;
     [SerializeField] float m_TimeNum = 15;
 
     int m_Minutes;
+    int m_TenMinutes;
     int m_Seconds;
+    int m_TenSeconds;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,9 +35,14 @@ public class Timer : MonoBehaviour
     {
         m_TimeNum = m_TimeNum - Time.deltaTime;
         int timeInt = (int)m_TimeNum;
-        m_Minutes = (int)m_TimeNum / 60;
-        m_Seconds = (int)m_TimeNum % 60;
+        m_Minutes = ((int)m_TimeNum / 60)%10;
+        m_TenMinutes = ((int)m_TimeNum / 60)/10;
+        m_TenSeconds = ((int)m_TimeNum % 60)/10;
+        m_Seconds = ((int)m_TimeNum % 60)%10;
+        
+        m_TimeTenMinText.text = m_TenMinutes.ToString();
         m_TimeMinText.text = m_Minutes.ToString();
+        m_TimeTenSecText.text = m_TenSeconds.ToString();
         m_TimeSecText.text = m_Seconds.ToString();
 
         if (m_TimeNum < 0 && GameManager.s_Instance.GetScore() <= 1000)
