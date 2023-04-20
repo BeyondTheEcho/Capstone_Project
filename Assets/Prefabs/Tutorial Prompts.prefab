@@ -463,8 +463,8 @@ PrefabInstance:
       propertyPath: m_text
       value: 'Welcome to your first day on the job!
 
-        Walk over to the spot
-        on the left to find out what to do!'
+        Walk over to the upper
+        right to find out what to do!'
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_RootOrder
@@ -770,11 +770,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.5
+      value: 8.46
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: 6.91
       objectReference: {fileID: 0}
     - target: {fileID: 7247587585534760804, guid: 8ac4bb4532e9dcd42b2a6142d5839cd7, type: 3}
       propertyPath: m_LocalPosition.z

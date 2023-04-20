@@ -156,3 +156,4 @@ MonoBehaviour:
   m_Bolt: {fileID: 8300000, guid: b430365970935b844a099e7e6b5c3726, type: 3}
   m_Water: {fileID: 8300000, guid: 673b9cbb70e4086429fe11758e7e8089, type: 3}
   m_OrderDone: {fileID: 8300000, guid: b3e50607d94785249b0753aebdc67297, type: 3}
+  m_MagicDing: {fileID: 8300000, guid: 9b4a94faee92f1b4782efc109ae6d983, type: 3}
