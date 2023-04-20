@@ -16,7 +16,7 @@ public class Order : MonoBehaviour
     private float m_FillValue;
     private int m_OrderQuantity;
     private float m_MaxTime = 120.0f;
-    public static float m_TimeRemaining;
+    public float m_TimeRemaining;
     private float m_TimePerVial = 35.0f;
     private int m_OrderValue = 50;
 

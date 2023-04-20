@@ -124,7 +124,7 @@ public class OrderManager : MonoBehaviour
             if (item == order)
             {
                 Destroy(item.gameObject);
-                if(Order.m_TimeRemaining > 0)
+                if(order.m_TimeRemaining > 0)
                 {
                     GameManager.s_Instance.UpdateScore(m_OrderValue);
                 }
