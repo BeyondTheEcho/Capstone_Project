@@ -9,6 +9,7 @@ TagManager:
   - Heat
   - Bolt
   - Tutorial
+  - Vial
   layers:
   - Default
   - TransparentFX
