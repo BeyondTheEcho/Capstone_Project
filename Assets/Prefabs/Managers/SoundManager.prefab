@@ -154,6 +154,7 @@ MonoBehaviour:
   m_GameOver: {fileID: 8300000, guid: 083aebd3692aba148a25b4d9c68d1d0c, type: 3}
   m_Box: {fileID: 8300000, guid: 3d6955b079f97d94ea4188e25127026d, type: 3}
   m_Bolt: {fileID: 8300000, guid: b430365970935b844a099e7e6b5c3726, type: 3}
+  m_Walk: {fileID: 8300000, guid: fa134c48910fadc47ac10f14b6355ca8, type: 3}
+  m_MagicDing: {fileID: 8300000, guid: 9b4a94faee92f1b4782efc109ae6d983, type: 3}
   m_Water: {fileID: 8300000, guid: 673b9cbb70e4086429fe11758e7e8089, type: 3}
   m_OrderDone: {fileID: 8300000, guid: b3e50607d94785249b0753aebdc67297, type: 3}
-  m_MagicDing: {fileID: 8300000, guid: 9b4a94faee92f1b4782efc109ae6d983, type: 3}

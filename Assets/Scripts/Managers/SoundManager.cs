@@ -104,7 +104,10 @@ public class SoundManager : MonoBehaviour
 
     public void PlayWater(AudioSource audio)
     {
-        audio.PlayOneShot(m_Water, 0.25f);
+        if (audio.isPlaying == false)
+        {
+            audio.PlayOneShot(m_Walk, 0.1f);
+        }
     }
 
     public void PlayOrderDone(AudioSource audio)

@@ -95,7 +95,7 @@ public class OrderManager : MonoBehaviour
             {
                 Vector3 pos = m_InitialOrderPosition;
 
-                pos.x += m_OrderOffsetPosition * i;
+                pos.y -= m_OrderOffsetPosition * i;
 
                 var obj = Instantiate(m_OrderPrefab, pos, Quaternion.identity);
 

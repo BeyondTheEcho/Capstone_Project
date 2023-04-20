@@ -298,6 +298,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20771f96d48265549957d4730d7ab2a8, type: 3}
+--- !u!114 &717630452 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 717630452, guid: 859f89f58f54e544798d8228d891576a, type: 3}
+  m_PrefabInstance: {fileID: 1179976176}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &746468401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -362,18 +373,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 9166910725866309502, guid: 859f89f58f54e544798d8228d891576a, type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    - target: {fileID: 565680123, guid: 859f89f58f54e544798d8228d891576a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1911641701}
-    - target: {fileID: 9166910726165092494, guid: 859f89f58f54e544798d8228d891576a, type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    - target: {fileID: 565680123, guid: 859f89f58f54e544798d8228d891576a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: FrenchChosen
+      objectReference: {fileID: 0}
+    - target: {fileID: 843357181, guid: 859f89f58f54e544798d8228d891576a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1911641701}
-    - target: {fileID: 9166910726234073328, guid: 859f89f58f54e544798d8228d891576a, type: 3}
-      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    - target: {fileID: 843357181, guid: 859f89f58f54e544798d8228d891576a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: EnglishChosen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7293945565759774426, guid: 859f89f58f54e544798d8228d891576a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1911641701}
+    - target: {fileID: 7293945565759774426, guid: 859f89f58f54e544798d8228d891576a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MandarinChosen
+      objectReference: {fileID: 0}
     - target: {fileID: 9166910726967269772, guid: 859f89f58f54e544798d8228d891576a, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -461,6 +484,10 @@ PrefabInstance:
       propertyPath: m_QuitButtonText
       value: 
       objectReference: {fileID: 1179976178}
+    - target: {fileID: 1434128581459657032, guid: 281b42cb8ac647e4fb0a713527a129b1, type: 3}
+      propertyPath: m_CreditButtonText
+      value: 
+      objectReference: {fileID: 717630452}
     - target: {fileID: 1434128581459657033, guid: 281b42cb8ac647e4fb0a713527a129b1, type: 3}
       propertyPath: m_Name
       value: LanguageSettings

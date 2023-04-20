@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 //using System.IO;
 //using static Unity.VisualScripting.Icons;
@@ -11,6 +12,7 @@ public class LanguageSettings : MonoBehaviour
 {
     [SerializeField] private TMPro.TMP_Text m_PlayButtonText;
     [SerializeField] private TMPro.TMP_Text m_QuitButtonText;
+    [SerializeField] private TMPro.TMP_Text m_CreditButtonText;
 
     //set default to English, so programmer can directly start from game scene
     [SerializeField] public Languages m_Language;
@@ -129,6 +131,7 @@ public class LanguageSettings : MonoBehaviour
         m_PlayButtonText.fontSize = 24;
 
         m_QuitButtonText.text = m_LocalizationDictionary_English["QUIT"];
+        m_CreditButtonText.text = m_LocalizationDictionary_English["Credit"];
         m_QuitButtonText.fontSize = 24;
     }
 
@@ -141,6 +144,8 @@ public class LanguageSettings : MonoBehaviour
         m_PlayButtonText.fontSize = 15;
         m_QuitButtonText.text = m_LocalizationDictionary_French["QUIT"];
         m_QuitButtonText.fontSize = 15;
+        m_CreditButtonText.text = m_LocalizationDictionary_French["Credit"];
+        
     }
 
     public void MandarinChosen()
@@ -152,6 +157,8 @@ public class LanguageSettings : MonoBehaviour
         m_PlayButtonText.fontSize = 15;
         m_QuitButtonText.text = m_LocalizationDictionary_Mandarin["QUIT"];
         m_QuitButtonText.fontSize = 15;
+        m_CreditButtonText.text = m_LocalizationDictionary_Mandarin["Credit"];
+
     }
 
     public static void ChangeFont(TMP_FontAsset font)

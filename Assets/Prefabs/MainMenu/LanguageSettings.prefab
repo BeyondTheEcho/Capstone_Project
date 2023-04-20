@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlayButtonText: {fileID: 0}
   m_QuitButtonText: {fileID: 0}
+  m_CreditButtonText: {fileID: 0}
   m_Language: 0
   m_FrenchTXT: {fileID: 4900000, guid: 4330258c149074546bf880fbe3e3ed62, type: 3}
   m_EnglishTXT: {fileID: 4900000, guid: fed5004f357f382469e406f83ff0f3a5, type: 3}

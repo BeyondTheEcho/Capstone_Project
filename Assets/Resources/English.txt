@@ -1,4 +1,4 @@
-START^ Clock In!
+START^ Start!
 QUIT^ Quit to Desktop
 TOMenu^ Quit to menu
 SETTINGS^ Settings
