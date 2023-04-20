@@ -29,6 +29,11 @@ public class MenuButtons : MonoBehaviour
     {
         SceneManager.LoadScene("StoryScene");
     }
+
+    public void GoToCredit()
+    {
+        SceneManager.LoadScene("Credit");
+    }
     public void QuitGame() //For not built version (https://gamedevbeginner.com/how-to-quit-the-game-in-unity/)
     {
 #if UNITY_EDITOR

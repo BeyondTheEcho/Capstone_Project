@@ -45,4 +45,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BackButtonText: {fileID: 0}
+  m_CreditButtonText: {fileID: 0}
   m_HeadingText: {fileID: 0}
