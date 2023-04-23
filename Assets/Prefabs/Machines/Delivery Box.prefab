@@ -274,6 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78fbe12ae12f3f441aeb9bad566355ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_CompletionParticles: {fileID: 8301173886554854388}
   m_PointValue: 10
 --- !u!58 &948338602650313334
 CircleCollider2D:
@@ -430,7 +431,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 198791823504307442, guid: 3640199bf9dc32f4da57c37d57581f57, type: 3}
       propertyPath: lengthInSec
-      value: 1
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 198791823504307442, guid: 3640199bf9dc32f4da57c37d57581f57, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198791823504307442, guid: 3640199bf9dc32f4da57c37d57581f57, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 199017327467830378, guid: 3640199bf9dc32f4da57c37d57581f57, type: 3}
       propertyPath: m_Materials.Array.size
@@ -441,5 +450,10 @@ PrefabInstance:
 --- !u!4 &8214177950256348136 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4344050450701550, guid: 3640199bf9dc32f4da57c37d57581f57, type: 3}
+  m_PrefabInstance: {fileID: 8210609364740876038}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &8301173886554854388 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198791823504307442, guid: 3640199bf9dc32f4da57c37d57581f57, type: 3}
   m_PrefabInstance: {fileID: 8210609364740876038}
   m_PrefabAsset: {fileID: 0}

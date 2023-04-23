@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6300ebed8d519984c92b893647fc3cdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Particles: {fileID: 0}
+  m_Particles: {fileID: 5810993590038805098}
   m_ProgressBar: {fileID: 6806167441063700736}
   m_ProgressBarContainer: {fileID: 5049442118544068545}
 --- !u!58 &3929311716435933026
@@ -554,6 +554,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85ab2ba31682fca4e9c1e40ea154ee43, type: 3}
+--- !u!198 &5810993590038805098 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198437972640931972, guid: 85ab2ba31682fca4e9c1e40ea154ee43, type: 3}
+  m_PrefabInstance: {fileID: 5936929209609067246}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5941461460666509102 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4637813376089536, guid: 85ab2ba31682fca4e9c1e40ea154ee43, type: 3}
